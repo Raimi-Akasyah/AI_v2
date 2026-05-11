@@ -1,0 +1,1236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Training Hub — Pepper Labs Sdn Bhd</title>
+<link rel="icon" type="image/png" href="Untitled_design__1_-removebg-preview.png"/>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+:root {
+  --orange:      #F5831F;
+  --orange-dark: #D96A08;
+  --orange-light:#FFF6EE;
+  --orange-mid:  #FDDDB8;
+  --white:       #FFFFFF;
+  --off-white:   #F5F7FA;
+  --border:      #E8E8E8;
+  --border-dark: #D0D0D0;
+  --text-900:    #0D0D0D;
+  --text-700:    #1A1A2E;
+  --text-500:    #5A5A70;
+  --text-300:    #9A9AB0;
+  --navy:        #0B1D3A;
+  --navy-mid:    #1A3560;
+  --navy-light:  #EBF0F8;
+  --green:       #1FA37B;
+  --blue:        #0D6FBA;
+  --radius-sm:   6px;
+  --radius-md:   12px;
+  --radius-lg:   18px;
+  --radius-xl:   24px;
+  --shadow-xs:   0 1px 3px rgba(0,0,0,0.05);
+  --shadow-sm:   0 2px 8px rgba(0,0,0,0.07);
+  --shadow-md:   0 6px 24px rgba(0,0,0,0.08);
+  --shadow-lg:   0 16px 56px rgba(0,0,0,0.11);
+  --font:'Outfit', -apple-system, sans-serif;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{background:var(--white);color:var(--text-700);font-family:var(--font);font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden;}
+
+p,.hero-sub,.section-sub,.news-header-desc,.footer-brand-desc,.t-quote,.t-left-sub,.faq-answer-inner,.final-cta-sub,.who-card-desc,.lang-modal-sub{text-align:justify;}
+
+.container{max-width:1160px;margin:0 auto;padding:0 20px;}
+@media(min-width:640px){.container{padding:0 32px;}}
+@media(min-width:1200px){.container{padding:0 40px;}}
+
+.reveal{opacity:0;transform:translateY(20px);transition:opacity 0.55s ease,transform 0.55s cubic-bezier(.4,0,.2,1);}
+.reveal.in{opacity:1;transform:none;}
+.reveal-delay-1{transition-delay:0.1s;}
+.reveal-delay-2{transition-delay:0.2s;}
+.reveal-delay-3{transition-delay:0.3s;}
+.reveal-delay-4{transition-delay:0.4s;}
+
+/* TOPBAR */
+.topbar{background:var(--navy);color:rgba(255,255,255,0.85);text-align:center;font-family:var(--font);font-size:12px;font-weight:400;padding:10px 16px;letter-spacing:0.01em;line-height:1.5;}
+.topbar a{color:#F5A050;text-decoration:none;border-bottom:1px solid rgba(245,160,80,0.4);}
+.topbar a:hover{color:#fff;border-bottom-color:#fff;}
+
+/* NAV */
+nav{position:sticky;top:0;z-index:200;background:rgba(255,255,255,0.97);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);transition:box-shadow 0.3s;}
+nav.scrolled{box-shadow:0 2px 20px rgba(0,0,0,0.07);}
+.nav-inner{max-width:1160px;margin:0 auto;display:flex;align-items:center;height:60px;padding:0 20px;gap:16px;}
+@media(min-width:640px){.nav-inner{padding:0 32px;height:64px;gap:32px;}}
+.nav-logo{display:flex;align-items:center;text-decoration:none;flex-shrink:0;}
+.nav-logo img{height:38px;width:auto;display:block;}
+@media(min-width:640px){.nav-logo img{height:44px;}}
+.nav-links{display:none;}
+@media(min-width:860px){
+  .nav-links{display:flex;gap:28px;list-style:none;flex:1;}
+  .nav-links a{font-family:var(--font);font-size:14px;font-weight:500;color:var(--text-500);text-decoration:none;transition:color 0.2s;}
+  .nav-links a:hover{color:var(--text-900);}
+}
+.nav-actions{display:flex;align-items:center;gap:8px;margin-left:auto;flex-shrink:0;}
+.btn-orange{background:var(--orange);color:#fff;border:none;cursor:pointer;font-family:var(--font);font-size:13px;font-weight:600;padding:8px 16px;border-radius:var(--radius-sm);text-decoration:none;display:inline-flex;align-items:center;gap:5px;transition:background 0.2s,transform 0.15s;letter-spacing:0.01em;white-space:nowrap;}
+@media(min-width:640px){.btn-orange{font-size:14px;padding:9px 20px;}}
+.btn-orange:hover{background:var(--orange-dark);transform:translateY(-1px);}
+
+/* HERO */
+.hero{background:#F0F2F8;padding:48px 20px 52px;}
+@media(min-width:640px){.hero{padding:60px 32px;}}
+@media(min-width:860px){.hero{padding:72px 40px;}}
+.hero-inner{max-width:1160px;margin:0 auto;display:grid;grid-template-columns:1fr;gap:36px;}
+@media(min-width:860px){.hero-inner{grid-template-columns:1fr 1fr;gap:56px;align-items:center;}}
+.hero-tag{display:inline-flex;align-items:center;gap:7px;font-family:var(--font);font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:var(--orange);background:rgba(245,131,31,0.12);border:1px solid rgba(245,131,31,0.25);padding:5px 12px;border-radius:30px;margin-bottom:16px;}
+@media(min-width:640px){.hero-tag{font-size:11px;padding:6px 14px;margin-bottom:20px;}}
+.hero-tag-dot{width:5px;height:5px;border-radius:50%;background:var(--orange);animation:blink 2.5s ease-in-out infinite;flex-shrink:0;}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:0.25}}
+.hero h1{font-family:var(--font);font-size:clamp(32px,8vw,60px);font-weight:800;line-height:1.08;letter-spacing:-0.02em;color:var(--text-700);margin-bottom:16px;}
+.hero h1 span{color:var(--orange);}
+.hero-sub{font-family:var(--font);font-size:15px;color:var(--text-500);line-height:1.75;font-weight:400;margin-bottom:28px;}
+@media(min-width:640px){.hero-sub{font-size:16px;margin-bottom:36px;}}
+.hero-cta-row{display:flex;align-items:center;gap:12px;flex-wrap:wrap;}
+.hero-cta-btn{display:inline-flex;align-items:center;gap:8px;background:var(--orange);color:#fff;border:none;padding:13px 24px;font-size:14px;font-weight:700;font-family:var(--font);cursor:pointer;border-radius:var(--radius-sm);transition:background 0.2s,transform 0.15s;letter-spacing:0.01em;text-decoration:none;}
+@media(min-width:640px){.hero-cta-btn{padding:14px 28px;font-size:15px;}}
+.hero-cta-btn:hover{background:var(--orange-dark);transform:translateY(-1px);}
+.hero-cta-btn .btn-icon{width:26px;height:26px;background:rgba(255,255,255,0.2);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:11px;flex-shrink:0;}
+
+.hero-visual-mosaic{display:flex;flex-direction:column;gap:10px;}
+.hero-img-top{width:100%;height:200px;border-radius:var(--radius-lg);overflow:hidden;flex-shrink:0;}
+@media(min-width:400px){.hero-img-top{height:220px;}}
+@media(min-width:640px){.hero-img-top{height:240px;}}
+.hero-img-bottom-row{display:grid;grid-template-columns:1fr 1fr;gap:10px;flex-shrink:0;}
+.hero-img-bottom-left,.hero-img-bottom-right{height:140px;border-radius:var(--radius-lg);overflow:hidden;}
+@media(min-width:400px){.hero-img-bottom-left,.hero-img-bottom-right{height:160px;}}
+@media(min-width:640px){.hero-img-bottom-left,.hero-img-bottom-right{height:180px;}}
+.hero-img-top img,.hero-img-bottom-left img,.hero-img-bottom-right img{width:100%;height:100%;object-fit:cover;display:block;transition:transform 0.5s ease;}
+.hero-img-top:hover img,.hero-img-bottom-left:hover img,.hero-img-bottom-right:hover img{transform:scale(1.04);}
+
+/* STATS STRIP */
+.stats-strip{background:var(--white);border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:28px 20px;}
+@media(min-width:640px){.stats-strip{padding:40px 32px;}}
+.stats-inner{max-width:1160px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:0;}
+@media(min-width:640px){.stats-inner{grid-template-columns:repeat(4,1fr);}}
+.stat-box{text-align:center;padding:16px 12px;border-right:1px solid var(--border);border-bottom:1px solid var(--border);}
+.stat-box:nth-child(2n){border-right:none;}
+@media(min-width:640px){
+  .stat-box{border-bottom:none;padding:16px 20px;}
+  .stat-box:nth-child(2n){border-right:1px solid var(--border);}
+  .stat-box:last-child{border-right:none;}
+}
+.stat-num{font-family:var(--font);font-size:32px;font-weight:800;color:var(--orange);line-height:1;display:block;}
+@media(min-width:640px){.stat-num{font-size:40px;}}
+.stat-label{font-family:var(--font);font-size:12px;color:var(--text-300);margin-top:5px;font-weight:500;line-height:1.4;}
+
+/* MARQUEE */
+.marquee-wrap{border-top:1px solid var(--border);border-bottom:1px solid var(--border);background:var(--off-white);padding:14px 0;overflow:hidden;}
+.marquee-track{display:flex;gap:40px;animation:marquee 28s linear infinite;width:max-content;white-space:nowrap;}
+@media(min-width:640px){.marquee-track{gap:56px;}}
+.marquee-item{display:flex;align-items:center;gap:7px;font-family:var(--font);font-size:11px;font-weight:600;color:var(--text-300);letter-spacing:0.06em;text-transform:uppercase;}
+.marquee-item span{color:var(--orange);font-size:14px;}
+@keyframes marquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+/* SECTION */
+.section{padding:64px 20px;}
+@media(min-width:640px){.section{padding:80px 32px;}}
+@media(min-width:860px){.section{padding:96px 40px;}}
+.section-alt{background:var(--off-white);}
+.section-label{font-family:var(--font);font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.14em;color:var(--text-300);margin-bottom:12px;display:flex;align-items:center;gap:10px;}
+.section-label::before{content:'';display:inline-block;width:20px;height:2px;background:var(--orange);}
+.section-title{font-family:var(--font);font-size:clamp(26px,5vw,44px);font-weight:800;letter-spacing:-0.02em;line-height:1.1;color:var(--text-700);margin-bottom:14px;}
+.section-title em{font-style:normal;color:var(--orange);}
+.section-sub{font-family:var(--font);font-size:15px;color:var(--text-500);max-width:560px;line-height:1.8;font-weight:400;}
+@media(min-width:640px){.section-sub{font-size:16px;}}
+
+/* NEWS SECTION */
+.news-section{padding:60px 20px;background:var(--off-white);}
+@media(min-width:640px){.news-section{padding:72px 32px;}}
+@media(min-width:860px){.news-section{padding:80px 40px;}}
+.news-header{max-width:1160px;margin:0 auto;margin-bottom:32px;}
+@media(min-width:768px){.news-header{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start;margin-bottom:48px;}}
+.news-header-title{font-family:var(--font);font-size:clamp(26px,5vw,50px);font-weight:800;line-height:1.1;letter-spacing:-0.02em;color:var(--text-700);margin-bottom:12px;}
+@media(min-width:768px){.news-header-title{margin-bottom:0;}}
+.news-header-desc{font-family:var(--font);font-size:14px;color:var(--text-500);line-height:1.8;}
+@media(min-width:640px){.news-header-desc{font-size:16px;}}
+.news-grid{max-width:1160px;margin:0 auto;display:flex;flex-direction:column;gap:12px;}
+@media(min-width:700px){.news-grid{display:grid;grid-template-columns:1fr 1.2fr 1.2fr;grid-template-rows:auto;gap:16px;}}
+.news-col-left{display:flex;flex-direction:column;gap:12px;}
+@media(min-width:640px){.news-col-left{gap:16px;}}
+.news-card{position:relative;border-radius:var(--radius-lg);overflow:hidden;cursor:pointer;transition:transform 0.3s cubic-bezier(.4,0,.2,1),box-shadow 0.3s;background:#ddd;}
+.news-card:hover{transform:translateY(-4px);box-shadow:0 20px 50px rgba(0,0,0,0.15);}
+.news-card-sm{height:180px;}
+@media(min-width:400px){.news-card-sm{height:200px;}}
+.news-card-cta-height{height:180px;}
+@media(min-width:400px){.news-card-cta-height{height:200px;}}
+.news-card-tall{height:260px;}
+@media(min-width:400px){.news-card-tall{height:300px;}}
+@media(min-width:700px){.news-card-tall{height:416px;}}
+.news-card-tall-right{height:260px;}
+@media(min-width:400px){.news-card-tall-right{height:300px;}}
+@media(min-width:700px){.news-card-tall-right{height:416px;}}
+.news-card img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;}
+.news-card-overlay{position:absolute;inset:0;background:linear-gradient(to top, rgba(10,10,30,0.85) 0%, rgba(10,10,30,0.35) 50%, rgba(10,10,30,0.05) 100%);}
+.news-card-body{position:absolute;bottom:0;left:0;right:0;padding:16px 16px 18px;}
+@media(min-width:640px){.news-card-body{padding:20px 20px 22px;}}
+.news-card-tag{display:inline-flex;align-items:center;font-family:var(--font);font-size:10px;font-weight:700;padding:4px 11px;border-radius:30px;background:rgba(245,131,31,0.9);color:#fff;margin-bottom:8px;letter-spacing:0.04em;}
+@media(min-width:640px){.news-card-tag{font-size:11px;padding:5px 14px;}}
+.news-card-title{font-family:var(--font);font-size:13px;font-weight:700;color:#fff;line-height:1.4;margin-bottom:8px;}
+@media(min-width:640px){.news-card-title{font-size:15px;}}
+.news-card-link{display:inline-flex;align-items:center;gap:7px;font-family:var(--font);font-size:12px;font-weight:600;color:var(--orange);text-decoration:none;}
+@media(min-width:640px){.news-card-link{font-size:13px;}}
+.news-card-link-icon{width:22px;height:22px;background:var(--orange);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:10px;color:#fff;flex-shrink:0;transition:transform 0.2s;}
+.news-card:hover .news-card-link-icon{transform:scale(1.1);}
+.news-card-cta{background:linear-gradient(135deg,#4A2C8A 0%,#6B3FB5 60%,#8B52D4 100%);cursor:pointer;position:relative;overflow:hidden;transition:transform 0.25s cubic-bezier(.4,0,.2,1),box-shadow 0.25s;}
+.news-card-cta:hover{transform:translateY(-4px) scale(1.02);box-shadow:0 20px 50px rgba(80,40,160,0.35);}
+.news-card-cta::before{content:'';position:absolute;inset:0;background:radial-gradient(circle at 60% 40%, rgba(255,255,255,0.08) 0%, transparent 65%);pointer-events:none;}
+.news-cta-inner{position:absolute;inset:0;display:flex;flex-direction:column;align-items:flex-start;justify-content:flex-end;padding:18px 18px 20px;}
+@media(min-width:640px){.news-cta-inner{padding:22px 22px 24px;}}
+.news-cta-count{font-family:var(--font);font-size:28px;font-weight:900;color:#fff;line-height:1;margin-bottom:4px;letter-spacing:-0.02em;}
+@media(min-width:640px){.news-cta-count{font-size:32px;}}
+.news-cta-label{font-family:var(--font);font-size:12px;font-weight:500;color:rgba(255,255,255,0.75);margin-bottom:14px;line-height:1.4;}
+@media(min-width:640px){.news-cta-label{font-size:13px;margin-bottom:18px;}}
+.news-cta-btn{display:inline-flex;align-items:center;gap:7px;font-family:var(--font);font-size:11px;font-weight:700;color:#fff;background:rgba(255,255,255,0.15);border:1px solid rgba(255,255,255,0.3);padding:7px 14px;border-radius:30px;letter-spacing:0.04em;text-transform:uppercase;transition:background 0.2s,gap 0.2s;}
+.news-card-cta:hover .news-cta-btn{background:rgba(255,255,255,0.28);gap:12px;}
+.news-cta-arrow{display:inline-block;transition:transform 0.3s cubic-bezier(.4,0,.2,1);}
+.news-card-cta.open .news-cta-arrow{transform:rotate(180deg);}
+.news-extra-wrap{max-width:1160px;margin:0 auto;overflow:hidden;max-height:0;opacity:0;transition:max-height 0.7s cubic-bezier(.4,0,.2,1),opacity 0.5s ease,margin-top 0.4s ease;margin-top:0;}
+.news-extra-wrap.open{max-height:1200px;opacity:1;margin-top:12px;}
+@media(min-width:640px){.news-extra-wrap.open{margin-top:16px;}}
+.news-extra-grid{display:grid;grid-template-columns:1fr;gap:12px;}
+@media(min-width:480px){.news-extra-grid{grid-template-columns:1fr 1fr;}}
+@media(min-width:768px){.news-extra-grid{grid-template-columns:repeat(3,1fr);gap:16px;}}
+.news-extra-card{position:relative;height:200px;border-radius:var(--radius-lg);overflow:hidden;cursor:pointer;background:#ddd;opacity:0;transform:translateY(18px);transition:opacity 0.4s ease,transform 0.4s cubic-bezier(.4,0,.2,1),box-shadow 0.3s;}
+.news-extra-wrap.open .news-extra-card{opacity:1;transform:translateY(0);}
+.news-extra-wrap.open .news-extra-card:nth-child(1){transition-delay:0.05s;}
+.news-extra-wrap.open .news-extra-card:nth-child(2){transition-delay:0.12s;}
+.news-extra-wrap.open .news-extra-card:nth-child(3){transition-delay:0.19s;}
+.news-extra-wrap.open .news-extra-card:nth-child(4){transition-delay:0.26s;}
+.news-extra-wrap.open .news-extra-card:nth-child(5){transition-delay:0.33s;}
+.news-extra-card:hover{transform:translateY(-4px);box-shadow:0 20px 50px rgba(0,0,0,0.15);}
+.news-extra-card img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;}
+
+/* PARTNERS */
+.partners-section{padding:64px 20px;background:var(--off-white);}
+@media(min-width:640px){.partners-section{padding:80px 32px;}}
+@media(min-width:860px){.partners-section{padding:96px 40px;}}
+.partners-group-label{font-family:var(--font);font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.12em;color:var(--text-300);padding:24px 0 14px;border-top:1px solid var(--border-dark);margin-top:24px;}
+.partners-group-label:first-of-type{border-top:none;margin-top:32px;padding-top:0;}
+.stakeholders-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:32px 16px;}
+@media(min-width:480px){.stakeholders-grid{grid-template-columns:repeat(4,1fr);gap:36px 20px;}}
+@media(min-width:640px){.stakeholders-grid{gap:40px 24px;}}
+@media(min-width:860px){.stakeholders-grid{grid-template-columns:repeat(7,1fr);gap:36px 20px;}}
+.stakeholder-item{background:transparent;border:none;border-radius:0;padding:0;display:flex;align-items:center;justify-content:center;min-height:72px;transition:transform 0.25s ease;}
+@media(min-width:640px){.stakeholder-item{min-height:84px;}}
+.stakeholder-item:hover{box-shadow:none;transform:translateY(-3px);border-color:transparent;}
+.stakeholder-item img{height:64px;width:auto;max-width:100%;object-fit:contain;filter:grayscale(100%);opacity:0.65;transition:filter 0.3s,opacity 0.3s,transform 0.25s;display:block;}
+@media(min-width:640px){.stakeholder-item img{height:72px;}}
+.stakeholder-item:hover img{filter:grayscale(0%);opacity:1;transform:scale(1.1);}
+.stakeholder-fallback{font-family:var(--font);font-size:9px;font-weight:700;color:var(--text-300);text-align:center;letter-spacing:0.05em;text-transform:uppercase;}
+
+/* ═══════════════════════════════════════════════
+   COURSE CATALOG — Nexperts-style
+═══════════════════════════════════════════════ */
+.catalog-section{padding:64px 20px;background:var(--white);}
+@media(min-width:640px){.catalog-section{padding:80px 32px;}}
+@media(min-width:860px){.catalog-section{padding:96px 40px;}}
+
+/* Audience filter pills */
+.catalog-tabs{display:flex;flex-wrap:wrap;gap:8px;margin-top:32px;margin-bottom:36px;}
+.catalog-tab{display:flex;align-items:center;gap:8px;font-family:var(--font);font-size:13px;font-weight:600;padding:10px 20px;border-radius:30px;border:1.5px solid var(--border);background:var(--white);color:var(--text-500);cursor:pointer;transition:all 0.2s;white-space:nowrap;}
+@media(min-width:640px){.catalog-tab{font-size:14px;padding:11px 24px;}}
+.catalog-tab .tab-emoji{font-size:16px;}
+.catalog-tab:hover{border-color:var(--orange);color:var(--orange);background:var(--orange-light);}
+.catalog-tab.active{background:var(--orange);border-color:var(--orange);color:#fff;}
+.catalog-tab .tab-count{background:rgba(255,255,255,0.25);font-size:11px;font-weight:700;padding:2px 7px;border-radius:10px;margin-left:2px;}
+.catalog-tab:not(.active) .tab-count{background:var(--off-white);color:var(--text-300);}
+
+/* Panel */
+.catalog-panel{display:none;}
+.catalog-panel.active{display:block;}
+
+/* Audience banner */
+.audience-banner{border-radius:var(--radius-xl);padding:28px 28px;margin-bottom:36px;display:flex;align-items:center;gap:20px;position:relative;overflow:hidden;}
+@media(min-width:640px){.audience-banner{padding:32px 36px;}}
+.audience-banner::before{content:'';position:absolute;inset:0;opacity:0.08;background:radial-gradient(circle at 80% 50%,#fff 0%,transparent 60%);pointer-events:none;}
+.audience-banner-icon{font-size:40px;flex-shrink:0;position:relative;z-index:1;}
+@media(min-width:640px){.audience-banner-icon{font-size:48px;}}
+.audience-banner-text{position:relative;z-index:1;}
+.audience-banner-label{font-family:var(--font);font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.14em;color:rgba(255,255,255,0.7);margin-bottom:5px;}
+.audience-banner-title{font-family:var(--font);font-size:20px;font-weight:800;color:#fff;line-height:1.2;margin-bottom:6px;}
+@media(min-width:640px){.audience-banner-title{font-size:24px;}}
+.audience-banner-sub{font-family:var(--font);font-size:13px;color:rgba(255,255,255,0.75);line-height:1.55;}
+@media(min-width:640px){.audience-banner-sub{font-size:14px;}}
+.banner-govt{background:linear-gradient(135deg,#0B1D3A 0%,#1A3560 100%);}
+.banner-students{background:linear-gradient(135deg,#0D4F7A 0%,#1E88E5 100%);}
+.banner-entrepreneur{background:linear-gradient(135deg,#1A4A3A 0%,#1FA37B 100%);}
+.banner-educator{background:linear-gradient(135deg,#3A1A0B 0%,#C2692A 100%);}
+
+/* ── Vendor group header (Nexperts accordion) ── */
+.vendor-group{margin-bottom:8px;}
+.vendor-group-header{display:flex;align-items:center;gap:16px;padding:18px 0 16px;border-top:1px solid var(--border);cursor:pointer;user-select:none;}
+.vendor-group:first-child .vendor-group-header{border-top:none;}
+.vendor-group-avatar{width:48px;height:48px;border-radius:14px;display:flex;align-items:center;justify-content:center;font-family:var(--font);font-size:18px;font-weight:900;color:#fff;flex-shrink:0;letter-spacing:-0.01em;}
+.vendor-group-meta{flex:1;min-width:0;}
+.vendor-group-name{font-family:var(--font);font-size:17px;font-weight:700;color:var(--text-900);line-height:1.2;}
+.vendor-group-desc{font-family:var(--font);font-size:12px;color:var(--text-300);margin-top:3px;}
+.vendor-group-right{display:flex;align-items:center;gap:12px;flex-shrink:0;}
+.vendor-course-count-pill{font-family:var(--font);font-size:12px;font-weight:700;color:var(--text-500);background:var(--off-white);border:1.5px solid var(--border);padding:5px 14px;border-radius:30px;white-space:nowrap;letter-spacing:0.01em;}
+.vendor-chevron{width:30px;height:30px;border:1.5px solid var(--border);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:12px;color:var(--text-300);transition:transform 0.25s,background 0.2s,border-color 0.2s;flex-shrink:0;}
+.vendor-group.open .vendor-chevron{transform:rotate(180deg);background:var(--orange-light);border-color:var(--orange-mid);color:var(--orange);}
+
+/* Course cards grid */
+.vendor-courses{display:none;grid-template-columns:1fr;gap:1px;background:var(--border);border:1px solid var(--border);border-radius:var(--radius-md);overflow:hidden;margin-bottom:4px;}
+@media(min-width:560px){.vendor-courses{grid-template-columns:1fr 1fr;}}
+@media(min-width:860px){.vendor-courses{grid-template-columns:repeat(3,1fr);}}
+.vendor-group.open .vendor-courses{display:grid;}
+
+/* ── Nexperts course card (pixel-perfect) ── */
+.nx-card{
+  background:var(--white);
+  padding:20px 20px 16px;
+  display:flex;flex-direction:column;
+  position:relative;text-decoration:none;
+  transition:background 0.15s;
+  min-height:200px;
+}
+.nx-card:hover{background:#FAFBFF;}
+
+/* Top meta row: vendor label + CERT badge */
+.nx-card-meta{display:flex;align-items:center;gap:6px;margin-bottom:10px;}
+.nx-vendor-label{font-family:var(--font);font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:var(--text-300);}
+.nx-cert-badge{font-family:var(--font);font-size:9px;font-weight:800;text-transform:uppercase;letter-spacing:0.08em;padding:2px 7px;border-radius:3px;background:#FEE9E9;color:#D32F2F;border:1px solid #FFCDD2;}
+
+/* Title */
+.nx-card-title{font-family:var(--font);font-size:15px;font-weight:700;color:var(--text-900);line-height:1.3;margin-bottom:6px;}
+
+/* Description */
+.nx-card-desc{font-family:var(--font);font-size:13px;color:var(--text-500);line-height:1.6;flex:1;margin-bottom:14px;}
+
+/* Rating + enrolled row */
+.nx-card-stats{display:flex;align-items:center;justify-content:space-between;gap:8px;padding:10px 0;border-top:1px solid var(--border);border-bottom:1px solid var(--border);margin-bottom:12px;}
+.nx-rating{display:flex;align-items:center;gap:5px;font-family:var(--font);font-size:13px;font-weight:600;color:var(--text-900);}
+.nx-star{color:#F59E0B;font-size:13px;}
+.nx-rating-count{font-family:var(--font);font-size:12px;color:var(--text-300);font-weight:400;}
+.nx-enrolled{display:flex;align-items:center;gap:5px;font-family:var(--font);font-size:12px;color:var(--text-500);}
+.nx-enrolled-icon{font-size:13px;}
+
+/* Footer: level badge left, CTA button right */
+.nx-card-footer{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-top:auto;}
+.nx-level-badge{font-family:var(--font);font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;padding:4px 10px;border-radius:4px;}
+.level-foundation{background:#EBF5FF;color:#1565C0;}
+.level-intermediate{background:#E8F5E9;color:#2E7D32;}
+.level-advanced{background:#FFF3E0;color:#E65100;}
+.level-executive{background:#F3E5F5;color:#7B1FA2;}
+
+.nx-view-btn{display:inline-flex;align-items:center;gap:5px;font-family:var(--font);font-size:12px;font-weight:700;color:#fff;background:var(--orange);border:none;padding:7px 14px;border-radius:6px;cursor:pointer;text-decoration:none;white-space:nowrap;transition:background 0.2s;}
+.nx-view-btn:hover{background:var(--orange-dark);}
+
+/* Coming soon overlay */
+.nx-card.coming-soon{opacity:0.55;pointer-events:none;}
+.coming-soon-badge{font-family:var(--font);font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;background:var(--navy-light);color:var(--navy-mid);padding:3px 9px;border-radius:4px;}
+
+/* TESTIMONIALS */
+.testimonials-section{padding:72px 20px;background:#EDEEF5;}
+@media(min-width:640px){.testimonials-section{padding:88px 32px;}}
+@media(min-width:860px){.testimonials-section{padding:108px 40px;}}
+.testimonials-inner{max-width:1160px;margin:0 auto;display:grid;grid-template-columns:1fr;gap:40px;align-items:start;}
+@media(min-width:860px){.testimonials-inner{grid-template-columns:260px 1fr;gap:72px;}}
+.testimonials-left{position:relative;}
+@media(min-width:860px){.testimonials-left{position:sticky;top:80px;}}
+.t-stories-badge{display:inline-flex;align-items:center;gap:7px;background:#1A1A2E;color:#fff;font-family:var(--font);font-size:11px;font-weight:700;padding:7px 15px;border-radius:30px;letter-spacing:0.04em;margin-bottom:20px;}
+@media(min-width:640px){.t-stories-badge{font-size:12px;padding:8px 18px;margin-bottom:24px;}}
+.t-main-heading{font-family:var(--font);font-size:clamp(40px,7vw,68px);font-weight:800;line-height:1.0;letter-spacing:-0.03em;color:#1A1A2E;margin-bottom:0;}
+.t-main-heading .t-italic-line{display:block;font-style:italic;font-weight:800;color:var(--orange);line-height:1.05;}
+.t-left-sub{font-family:var(--font);font-size:13px;color:var(--text-300);line-height:1.7;margin-top:18px;max-width:240px;}
+@media(min-width:640px){.t-left-sub{font-size:14px;}}
+.testimonials-right{display:flex;flex-direction:column;gap:14px;}
+@media(min-width:640px){.testimonials-right{gap:16px;}}
+.t-row{display:grid;grid-template-columns:1fr;gap:14px;}
+@media(min-width:560px){.t-row{grid-template-columns:1fr 1fr;gap:14px;}}
+@media(min-width:860px){.t-row{gap:16px;}}
+.t-row-3{display:grid;grid-template-columns:1fr;gap:14px;}
+@media(min-width:560px){.t-row-3{grid-template-columns:1fr 1fr;}}
+@media(min-width:860px){.t-row-3{grid-template-columns:1fr 1fr 1fr;gap:16px;}}
+.t-card{background:#fff;border-radius:20px;padding:22px 20px 24px;border:1px solid #E0E2EF;transition:box-shadow 0.25s,transform 0.25s;display:flex;flex-direction:column;}
+@media(min-width:640px){.t-card{padding:26px 24px 28px;}}
+.t-card:hover{box-shadow:0 12px 40px rgba(0,0,0,0.09);transform:translateY(-3px);}
+.t-badge{display:inline-flex;align-items:center;gap:6px;background:#1E4DB7;color:#fff;font-family:var(--font);font-size:10px;font-weight:700;padding:5px 12px 5px 8px;border-radius:30px;margin-bottom:14px;letter-spacing:0.03em;width:fit-content;}
+@media(min-width:640px){.t-badge{font-size:11px;padding:5px 14px 5px 10px;margin-bottom:16px;}}
+.t-badge-icon{width:20px;height:20px;border-radius:50%;background:rgba(255,255,255,0.2);display:flex;align-items:center;justify-content:center;font-size:11px;flex-shrink:0;}
+.t-badge-ai{background:#1E4DB7;}
+.t-badge-public{background:#5B35AD;}
+.t-badge-workforce{background:#1A6B4A;}
+.t-badge-edu{background:#0D5F8A;}
+.t-quote{font-family:var(--font);font-size:14px;color:#2A2A3E;line-height:1.75;flex:1;margin-bottom:16px;}
+@media(min-width:640px){.t-quote{font-size:15px;}}
+.t-divider{height:1px;background:#EBEBF5;margin-bottom:14px;}
+.t-author-name{font-family:var(--font);font-size:13px;font-weight:700;color:#1A1A2E;margin-bottom:3px;}
+@media(min-width:640px){.t-author-name{font-size:14px;}}
+.t-author-role{font-family:var(--font);font-size:12px;color:var(--text-300);line-height:1.4;}
+@media(min-width:640px){.t-author-role{font-size:13px;}}
+
+/* FAQ */
+.faq-section{padding:64px 20px;background:var(--white);}
+@media(min-width:640px){.faq-section{padding:80px 32px;}}
+@media(min-width:860px){.faq-section{padding:96px 40px;}}
+.faq-layout{max-width:1160px;margin:0 auto;}
+@media(min-width:860px){.faq-layout{display:grid;grid-template-columns:1fr 2fr;gap:64px;align-items:start;}}
+.faq-tabs{display:flex;gap:6px;margin-top:20px;flex-wrap:wrap;}
+@media(min-width:860px){.faq-tabs{flex-direction:column;gap:4px;}}
+.faq-tab{font-family:var(--font);font-size:13px;font-weight:500;padding:9px 16px;border-radius:var(--radius-sm);border:1px solid transparent;background:transparent;color:var(--text-500);cursor:pointer;transition:all 0.2s;text-align:left;white-space:nowrap;}
+@media(min-width:640px){.faq-tab{font-size:14px;padding:11px 18px;}}
+.faq-tab.active{background:var(--white);border-color:var(--border);color:var(--text-900);box-shadow:var(--shadow-xs);}
+.faq-tab:hover:not(.active){background:rgba(0,0,0,0.03);color:var(--text-900);}
+.faq-content{margin-top:24px;}
+@media(min-width:860px){.faq-content{margin-top:0;}}
+.faq-item{background:var(--white);border:1px solid var(--border);border-radius:var(--radius-md);overflow:hidden;margin-bottom:8px;}
+.faq-item:last-child{margin-bottom:0;}
+.faq-question{display:flex;justify-content:space-between;align-items:center;padding:15px 18px;cursor:pointer;gap:14px;}
+@media(min-width:640px){.faq-question{padding:18px 22px;}}
+.faq-question-text{font-family:var(--font);font-size:13px;font-weight:600;color:var(--text-900);line-height:1.45;}
+@media(min-width:640px){.faq-question-text{font-size:14px;}}
+.faq-icon{width:20px;height:20px;flex-shrink:0;border:1px solid var(--border);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:11px;color:var(--text-300);transition:transform 0.25s,background 0.2s,border-color 0.2s;}
+.faq-item.open .faq-icon{transform:rotate(180deg);background:var(--orange-light);border-color:var(--orange-mid);color:var(--orange);}
+.faq-answer{max-height:0;overflow:hidden;transition:max-height 0.35s cubic-bezier(.4,0,.2,1);}
+.faq-answer-inner{padding:0 18px 16px;font-family:var(--font);font-size:13px;color:var(--text-500);line-height:1.75;border-top:1px solid var(--border);padding-top:14px;}
+@media(min-width:640px){.faq-answer-inner{padding:0 22px 18px;font-size:14px;padding-top:16px;}}
+.faq-item.open .faq-answer{max-height:300px;}
+
+/* FINAL CTA */
+.final-cta{background:var(--navy);padding:64px 20px;position:relative;overflow:hidden;}
+@media(min-width:640px){.final-cta{padding:80px 32px;}}
+@media(min-width:860px){.final-cta{padding:96px 40px;}}
+.final-cta::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 60% 80% at 50% 0%,rgba(245,131,31,0.1) 0%,transparent 65%);pointer-events:none;}
+.final-cta-inner{max-width:1160px;margin:0 auto;display:grid;grid-template-columns:1fr;gap:48px;position:relative;z-index:1;}
+@media(min-width:860px){.final-cta-inner{grid-template-columns:1fr 1fr;gap:64px;align-items:center;}}
+.final-cta-eyebrow{font-family:var(--font);font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.14em;color:var(--orange);margin-bottom:14px;}
+.final-cta-title{font-family:var(--font);font-size:clamp(26px,6vw,46px);font-weight:800;color:#fff;line-height:1.1;letter-spacing:-0.02em;margin-bottom:14px;}
+.final-cta-sub{font-family:var(--font);font-size:15px;color:rgba(255,255,255,0.6);margin-bottom:28px;line-height:1.8;}
+@media(min-width:640px){.final-cta-sub{font-size:16px;margin-bottom:36px;}}
+.final-cta-btn{background:var(--orange);color:#fff;border:none;padding:13px 28px;font-family:var(--font);font-size:14px;font-weight:700;cursor:pointer;border-radius:var(--radius-sm);transition:background 0.2s,transform 0.15s;display:inline-block;text-decoration:none;}
+@media(min-width:640px){.final-cta-btn{padding:14px 32px;font-size:15px;}}
+.final-cta-btn:hover{background:var(--orange-dark);transform:translateY(-1px);}
+.final-cta-links{display:flex;gap:8px;margin-top:16px;flex-wrap:wrap;}
+.final-cta-link{display:inline-flex;align-items:center;gap:5px;padding:8px 14px;border:1px solid rgba(255,255,255,0.12);border-radius:var(--radius-sm);color:rgba(255,255,255,0.65);font-family:var(--font);font-size:12px;font-weight:500;text-decoration:none;transition:border-color 0.2s,background 0.2s;}
+@media(min-width:640px){.final-cta-link{font-size:13px;padding:9px 16px;}}
+.final-cta-link:hover{border-color:rgba(255,255,255,0.35);background:rgba(255,255,255,0.05);color:#fff;}
+.final-cta-video{position:relative;border-radius:var(--radius-lg);overflow:hidden;box-shadow:0 24px 80px rgba(0,0,0,0.5);}
+.video-wrap{position:relative;padding-bottom:56.25%;height:0;overflow:hidden;background:#000;}
+.video-wrap iframe{position:absolute;inset:0;width:100%;height:100%;border:none;}
+.video-caption{background:rgba(0,0,0,0.35);padding:10px 14px;border-top:1px solid rgba(255,255,255,0.08);}
+@media(min-width:640px){.video-caption{padding:12px 16px;}}
+.video-caption-label{font-family:var(--font);font-size:10px;color:rgba(255,255,255,0.5);letter-spacing:0.04em;text-transform:uppercase;}
+.video-caption-title{font-family:var(--font);font-size:12px;color:#fff;font-weight:500;margin-top:3px;line-height:1.4;}
+@media(min-width:640px){.video-caption-title{font-size:13px;}}
+
+/* FOOTER */
+footer{background:var(--white);border-top:1px solid var(--border);padding:48px 20px 28px;}
+@media(min-width:640px){footer{padding:56px 32px 28px;}}
+@media(min-width:860px){footer{padding:64px 40px 32px;}}
+.footer-inner{max-width:1160px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:32px;}
+@media(min-width:640px){.footer-inner{grid-template-columns:1fr 1fr 1fr;gap:40px;}}
+@media(min-width:860px){.footer-inner{grid-template-columns:1.8fr 1fr 1fr 1fr;gap:48px;}}
+.footer-brand{grid-column:1/-1;}
+@media(min-width:640px){.footer-brand{grid-column:auto;}}
+.footer-brand-desc{font-family:var(--font);font-size:13px;color:var(--text-500);margin-top:12px;line-height:1.75;max-width:280px;}
+.footer-brand-contact{font-family:var(--font);font-size:13px;color:var(--text-500);margin-top:6px;}
+.footer-brand-contact a{color:var(--text-500);text-decoration:none;}
+.footer-col-title{font-family:var(--font);font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:var(--text-900);margin-bottom:14px;}
+@media(min-width:640px){.footer-col-title{font-size:11px;}}
+.footer-col-links{list-style:none;}
+.footer-col-links li{margin-bottom:9px;}
+.footer-col-links a{font-family:var(--font);font-size:13px;color:var(--text-500);text-decoration:none;transition:color 0.2s;}
+.footer-col-links a:hover{color:var(--text-900);}
+.footer-contact-col{display:none;}
+@media(min-width:640px){.footer-contact-col{display:block;}}
+.footer-bottom{max-width:1160px;margin:32px auto 0;padding-top:20px;border-top:1px solid var(--border);display:flex;flex-direction:column;gap:6px;font-family:var(--font);font-size:11px;color:var(--text-300);}
+@media(min-width:640px){.footer-bottom{flex-direction:row;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;font-size:12px;padding-top:24px;margin-top:40px;}}
+</style>
+</head>
+<body>
+
+<!-- TOPBAR -->
+<div class="topbar">
+  New batch starting June 2025 — <a href="#register">Register your interest today</a> · Seats are limited
+</div>
+
+<!-- NAV -->
+<nav id="main-nav">
+  <div class="nav-inner">
+    <a href="#" class="nav-logo">
+      <img src="https://pepperlabs.my/assets/logos/pepperlabs.png" alt="Pepper Labs">
+    </a>
+    <ul class="nav-links">
+      <li><a href="https://pepperlabs.my/">About Us</a></li>
+      <li><a href="#catalog">Courses</a></li>
+    </ul>
+    <div class="nav-actions">
+      <a href="https://pepper-s-site-1c7b.thinkific.com/users/sign_in" class="btn-orange">Register Now →</a>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-left">
+      <div class="reveal">
+        <div class="hero-tag">
+          <div class="hero-tag-dot"></div>
+          Malaysia's Premier AI Training Platform
+        </div>
+        <h1>AI Transformation<br><span>Starts Here.</span></h1>
+        <p class="hero-sub">Operationalizing AI for the public sector — from talent to transformation. We help ministries translate Malaysia's National AI Action Plan 2030 into real rakyat outcomes through Applied AI, Generative AI, and Agentic AI. From GovAI Labs to AI-as-a-Service, we bridge policy intent to service delivery impact.</p>
+      </div>
+      <div class="reveal reveal-delay-1">
+        <div class="hero-cta-row">
+          <a href="#catalog" class="hero-cta-btn">
+            Explore Courses
+            <div class="btn-icon">▶</div>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="hero-visual-mosaic reveal reveal-delay-2">
+      <div class="hero-img-top">
+        <img src="it-professionals-using-artificial-intelligence-augmented-reality-hologram.jpg" alt="Team collaboration" />
+      </div>
+      <div class="hero-img-bottom-row">
+        <div class="hero-img-bottom-left">
+          <img src="artificial-intelligence-tech-venture-employee-requests-help-from-manager.jpg" alt="Professional worker" />
+        </div>
+        <div class="hero-img-bottom-right">
+          <img src="startup-employee-looking-business-charts-using-ai-software.jpg" alt="Analytics dashboard" />
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<div class="stats-strip">
+  <div class="stats-inner">
+    <div class="stat-box reveal"><span class="stat-num" data-target="5000" data-suffix="+">0</span><div class="stat-label">Trained Professionals</div></div>
+    <div class="stat-box reveal reveal-delay-1"><span class="stat-num" data-target="30" data-suffix="+">0</span><div class="stat-label">AI Courses Available</div></div>
+    <div class="stat-box reveal reveal-delay-2"><span class="stat-num" data-target="98" data-suffix="%">0</span><div class="stat-label">Satisfaction Rate</div></div>
+    <div class="stat-box reveal reveal-delay-3"><span class="stat-num" data-target="12" data-suffix="+">0</span><div class="stat-label">Industry Partners</div></div>
+  </div>
+</div>
+
+<!-- MARQUEE -->
+<div class="marquee-wrap">
+  <div class="marquee-track">
+    <div class="marquee-item"><span>🤖</span> Generative AI</div>
+    <div class="marquee-item"><span>📊</span> Data Analysis</div>
+    <div class="marquee-item"><span>🧠</span> Machine Learning</div>
+    <div class="marquee-item"><span>⚡</span> Agentic AI</div>
+    <div class="marquee-item"><span>🔐</span> Responsible AI</div>
+    <div class="marquee-item"><span>📈</span> Power BI</div>
+    <div class="marquee-item"><span>🌐</span> AI Governance</div>
+    <div class="marquee-item"><span>💼</span> Workforce AI</div>
+    <div class="marquee-item"><span>🏛️</span> Public Sector AI</div>
+    <div class="marquee-item"><span>🎓</span> AI Certification</div>
+    <div class="marquee-item"><span>🤖</span> Generative AI</div>
+    <div class="marquee-item"><span>📊</span> Data Analysis</div>
+    <div class="marquee-item"><span>🧠</span> Machine Learning</div>
+    <div class="marquee-item"><span>⚡</span> Agentic AI</div>
+    <div class="marquee-item"><span>🔐</span> Responsible AI</div>
+    <div class="marquee-item"><span>📈</span> Power BI</div>
+    <div class="marquee-item"><span>🌐</span> AI Governance</div>
+    <div class="marquee-item"><span>💼</span> Workforce AI</div>
+    <div class="marquee-item"><span>🏛️</span> Public Sector AI</div>
+    <div class="marquee-item"><span>🎓</span> AI Certification</div>
+  </div>
+</div>
+
+<!-- NEWS SECTION -->
+<section class="news-section" id="news">
+  <div class="news-header reveal">
+    <div class="news-header-title">Check out our<br>newest publication</div>
+    <div class="news-header-desc">Discover the latest insights shaping Malaysia's AI and workforce landscape. From key industry trends and green economy challenges to the future skills framework, our newest publications highlight opportunities and strategies to help you stay ahead.</div>
+  </div>
+  <div class="news-grid">
+    <div class="news-col-left">
+      <div class="news-card news-card-sm reveal reveal-delay-1">
+        <img src="https://wargabiz.com.my/wp-content/uploads/2026/04/wargabiz-cover59.png" alt="Digital News Asia" />
+        <div class="news-card-overlay"></div>
+        <div class="news-card-body">
+          <div class="news-card-tag">Digital News Asia</div>
+          <div class="news-card-title">Pepper Labs Train 50000 Malaysians AI under AVPN, Google.org and Asian Development Bank-Backed Initiative</div>
+          <a href="https://www.digitalnewsasia.com/business/pepper-labs-train-50000-malaysians-ai-under-avpn-googleorg-and-asian-development-bank" class="news-card-link">Learn More <div class="news-card-link-icon">↓</div></a>
+        </div>
+      </div>
+      <div class="news-card news-card-cta news-card-cta-height reveal reveal-delay-2" id="newsCtaCard" onclick="toggleExtraNews()">
+        <div class="news-cta-inner">
+          <div class="news-cta-count">More</div>
+          <div class="news-cta-label">Available Publications</div>
+          <div class="news-cta-btn">See More <span class="news-cta-arrow">↓</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="news-card news-card-tall reveal reveal-delay-2">
+      <img src="https://assets.nst.com.my/images/articles/56328865B4B54EEB4F8AFBCF74DC33D7_low.jpg" alt="New Straits Times" />
+      <div class="news-card-overlay"></div>
+      <div class="news-card-body">
+        <div class="news-card-tag">New Straits Times</div>
+        <div class="news-card-title">Pepper Labs partners with AVPN, Google.org & ADB to accelerate Malaysia's AI talent</div>
+        <a href="https://www.nst.com.my/business/corporate/2026/04/1423950/pepper-labs-partners-avpn-googleorg-adb-accelerate-malaysias-ai" class="news-card-link">Learn More <div class="news-card-link-icon">↓</div></a>
+      </div>
+    </div>
+    <div class="news-card news-card-tall-right reveal reveal-delay-3">
+      <img src="https://publict.io/wp-content/uploads/2026/04/Image-2-5-1536x1024.jpg" alt="SME Magazine" />
+      <div class="news-card-overlay"></div>
+      <div class="news-card-body">
+        <div class="news-card-tag">SME Magazine</div>
+        <div class="news-card-title">Pepper Labs partners with AVPN, Google.org and Asian Development Bank to accelerate AI talent development for 50,000 Malaysians</div>
+        <a href="https://sme.asia/pepper-labs-partners-with-avpn-google-org-and-asian-development-bank-to-accelerate-ai-talent-development-for-50000-malaysians/" class="news-card-link">Learn More <div class="news-card-link-icon">↓</div></a>
+      </div>
+    </div>
+  </div>
+  <div class="news-extra-wrap" id="newsExtraWrap">
+    <div class="news-extra-grid">
+      <div class="news-extra-card"><img src="https://i.newscdn.net/publisher-c1a3f893382d2b2f8a9aa22a654d9c97/2025/04/1ac94f2f9f8ac4289ca4c665689e9d33.png=s800" alt="Malaysiakini" /><div class="news-card-overlay"></div><div class="news-card-body"><div class="news-card-tag">Malaysiakini</div><div class="news-card-title">Pepper Labs Collaborates with Microsoft to Empower Malaysians with AI Fluency</div><a href="https://www.malaysiakini.com/announcement/740536" class="news-card-link">Learn More <div class="news-card-link-icon">↓</div></a></div></div>
+      <div class="news-extra-card"><img src="https://assets.nst.com.my/images/articles/PEPPER_LABS_1754389234.jpg" alt="New Straits Times" /><div class="news-card-overlay"></div><div class="news-card-body"><div class="news-card-tag">New Straits Times</div><div class="news-card-title">Socso, Pepper Labs team up to train youth in AI, digital skills</div><a href="https://www.nst.com.my/business/corporate/2025/08/1255859/socso-pepper-labs-team-train-youth-ai-digital-skills" class="news-card-link">Learn More <div class="news-card-link-icon">↓</div></a></div></div>
+      <div class="news-extra-card"><img src="https://www.businesstoday.com.my/wp-content/uploads/2025/04/CnP_21042025_151811-1024x764.jpg" alt="Business Today" /><div class="news-card-overlay"></div><div class="news-card-body"><div class="news-card-tag">Business Today</div><div class="news-card-title">Pepper Labs, Microsoft Target 800,000 Malaysians For AI Fluency By 2025</div><a href="https://www.businesstoday.com.my/2025/04/21/pepper-labs-microsoft-target-800000-malaysians-for-ai-fluency-by-2025/" class="news-card-link">Learn More <div class="news-card-link-icon">↓</div></a></div></div>
+      <div class="news-extra-card"><img src="https://cdnx.premiumread.com/?url=https://www.malaymail.com/malaymail/uploads/images/2025/08/05/292189.jpg&w=1000&q=100&f=jpg&t=6" alt="Malaymail" /><div class="news-card-overlay"></div><div class="news-card-body"><div class="news-card-tag">Malaymail</div><div class="news-card-title">Perkeso and Pepper Labs partner to upskill unemployed graduates through Google Career Certificates Scholarships</div><a href="https://www.malaymail.com/news/life/2025/08/05/perkeso-and-pepper-labs-partner-to-upskill-unemployed-graduates-through-google-career-certificates-scholarships/186547" class="news-card-link">Learn More <div class="news-card-link-icon">↓</div></a></div></div>
+      <div class="news-extra-card"><img src="https://static.wixstatic.com/media/d65831_f941b94d01984882aa647e796e47c7ec~mv2.jpg/v1/fill/w_925,h_694,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/d65831_f941b94d01984882aa647e796e47c7ec~mv2.jpg" alt="Nabalu News" /><div class="news-card-overlay"></div><div class="news-card-body"><div class="news-card-tag">Nabalu News</div><div class="news-card-title">MINDET to launch AI Programme for MSME entrepreneurs: Ewon</div><a href="https://www.nabalunews.com/post/mindet-to-launch-ai-programme-for-msme-entrepreneurs-ewon" class="news-card-link">Learn More <div class="news-card-link-icon">↓</div></a></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- PARTNERS -->
+<section class="partners-section" id="stakeholders">
+  <div class="container">
+    <div class="reveal" style="text-align:center;margin-bottom:8px;">
+      <div class="section-label" style="justify-content:center;">Our Ecosystem</div>
+      <h2 class="section-title">Strategic <em>Partners</em></h2>
+      <p class="section-sub" style="margin:0 auto;text-align:justify;">Collaborating with leading ministries, agencies, and institutions to drive practical, responsible AI adoption across Malaysia — supporting MADANI governance, ARPA reform, and the AI Nation 2030 agenda.</p>
+    </div>
+    <div class="partners-group-label reveal reveal-delay-1">Strategic Partners</div>
+    <div class="stakeholders-grid reveal reveal-delay-2">
+      <div class="stakeholder-item"><img src="https://maset.org.my/assets/img/yayasan/Yayasan-Peneraju.png" alt="Yayasan Peneraju" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="stakeholder-fallback" style="display:none">Yayasan Peneraju</div></div>
+      <div class="stakeholder-item"><img src="https://catalyticcapitalconsortium.org/wp-content/uploads/2023/03/AVPN-Logo-Red.png" alt="AVPN" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="stakeholder-fallback" style="display:none">AVPN</div></div>
+      <div class="stakeholder-item"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d2/Google_org_logo.svg/960px-Google_org_logo.svg.png" alt="Google.org" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="stakeholder-fallback" style="display:none">Google.org</div></div>
+      <div class="stakeholder-item"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/96/Microsoft_logo_%282012%29.svg/1280px-Microsoft_logo_%282012%29.svg.png" alt="Microsoft" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="stakeholder-fallback" style="display:none">Microsoft</div></div>
+      <div class="stakeholder-item"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/52/Kementerian_Perpaduan_Negara_Malaysia.png/240px-Kementerian_Perpaduan_Negara_Malaysia.png" alt="Kementerian Perpaduan Negara" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="stakeholder-fallback" style="display:none">Kementerian Perpaduan Negara</div></div>
+      <div class="stakeholder-item"><img src="https://upload.wikimedia.org/wikipedia/commons/9/92/KBS_Malaysia.png" alt="KBS" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="stakeholder-fallback" style="display:none">KBS</div></div>
+      <div class="stakeholder-item"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/45/Kementerian_Sumber_Manusia_Malaysia.svg/320px-Kementerian_Sumber_Manusia_Malaysia.svg.png" alt="Kementerian Sumber Manusia" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="stakeholder-fallback" style="display:none">Kementerian Sumber Manusia</div></div>
+    </div>
+    <div class="partners-group-label reveal reveal-delay-1">Our Alumni</div>
+    <div class="stakeholders-grid reveal reveal-delay-2">
+      <div class="stakeholder-item"><img src="https://online.anyflip.com/mprll/accountlogo.png" alt="Bahagian Profesionalisme Guru" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="stakeholder-fallback" style="display:none">Bahagian Profesionalisme Guru</div></div>
+      <div class="stakeholder-item"><img src="https://www.pahang.gov.my/pahang/resources/jataphg.png" alt="SUK Pahang" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="stakeholder-fallback" style="display:none">SUK Pahang</div></div>
+      <div class="stakeholder-item"><img src="https://vectorseek.com/wp-content/uploads/2023/09/Perkeso-Socso-Logo-Vector.svg-.png" alt="PERKESO" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="stakeholder-fallback" style="display:none">PERKESO</div></div>
+      <div class="stakeholder-item"><img src="https://www.petra.gov.my/assets/img/logo-petra2.png" alt="PETRA" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="stakeholder-fallback" style="display:none">PETRA</div></div>
+      <div class="stakeholder-item"><img src="https://malaysiagazette.com/wp-content/uploads/2019/02/kpdnhep.png" alt="KPDNHEP" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="stakeholder-fallback" style="display:none">KPDNHEP</div></div>
+      <div class="stakeholder-item"><img src="https://static.wixstatic.com/media/ead8ee_a1de7dd9adfa494ba298de86b29d74ec~mv2.webp/v1/fill/w_199,h_200,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/kkm-logo-baru-01-8-edited.webp" alt="KKM" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="stakeholder-fallback" style="display:none">KKM</div></div>
+      <div class="stakeholder-item"><img src="https://www.iskandarinvestment.com/wp-content/uploads/2022/01/IIB-logo.png" alt="IIB" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="stakeholder-fallback" style="display:none">Iskandar Investment</div></div>
+    </div>
+    <div class="stakeholders-grid reveal reveal-delay-3" style="margin-top:10px;">
+      <div class="stakeholder-item"><img src="https://www.p194.com.my/wp-content/uploads/2022/01/p194-logo.png" alt="P194" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="stakeholder-fallback" style="display:none">P194 Petra Jaya</div></div>
+      <div class="stakeholder-item"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0d/Pejabat_Aku_Audit_Serawak_logo.png/320px-Pejabat_Aku_Audit_Serawak_logo.png" alt="Pejabat Audit" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="stakeholder-fallback" style="display:none">Pejabat Audit Sarawak</div></div>
+      <div class="stakeholder-item"><img src="https://sdec.com.my/wp-content/uploads/2023/03/sdec_logo.png" alt="SDEC" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="stakeholder-fallback" style="display:none">SDEC Sarawak</div></div>
+      <div class="stakeholder-item"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/31/Talentcorp_logo.png/320px-Talentcorp_logo.png" alt="TalentCorp" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="stakeholder-fallback" style="display:none">TalentCorp</div></div>
+      <div class="stakeholder-item"><img src="https://mranti.my/wp-content/uploads/2022/03/mranti-logo.png" alt="MRANTI" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="stakeholder-fallback" style="display:none">MRANTI</div></div>
+      <div class="stakeholder-item"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/MaGIC_logo.png/320px-MaGIC_logo.png" alt="MaGIC" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="stakeholder-fallback" style="display:none">MaGIC</div></div>
+      <div class="stakeholder-item"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/85/Maybank_logo.svg/2560px-Maybank_logo.svg.png" alt="Maybank" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="stakeholder-fallback" style="display:none">Maybank</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     COURSE CATALOG — Nexperts-style
+═══════════════════════════════════════════ -->
+<section class="catalog-section" id="catalog">
+  <div class="container">
+    <div class="reveal">
+      <div class="section-label">Course Catalog</div>
+      <h2 class="section-title">Find Your <em>Perfect Course</em></h2>
+      <p class="section-sub">Select your profile below to see courses built for your goals. All programmes are available on Thinkific in English and Bahasa Malaysia.</p>
+    </div>
+
+    <!-- Audience filter pills -->
+    <div class="catalog-tabs reveal reveal-delay-1">
+      <button class="catalog-tab active" data-panel="govt" onclick="switchPanel('govt',this)">
+        <span class="tab-emoji">🏛️</span> Government
+        <span class="tab-count">2</span>
+      </button>
+      <button class="catalog-tab" data-panel="students" onclick="switchPanel('students',this)">
+        <span class="tab-emoji">🎒</span> Students
+        <span class="tab-count">2</span>
+      </button>
+      <button class="catalog-tab" data-panel="entrepreneur" onclick="switchPanel('entrepreneur',this)">
+        <span class="tab-emoji">🚀</span> Entrepreneurs & Workforce
+        <span class="tab-count">2</span>
+      </button>
+      <button class="catalog-tab" data-panel="educator" onclick="switchPanel('educator',this)">
+        <span class="tab-emoji">🎓</span> Educators
+        <span class="tab-count">2</span>
+      </button>
+    </div>
+
+    <!-- ══════════════════════════════
+         GOVERNMENT PANEL
+    ══════════════════════════════ -->
+    <div class="catalog-panel active" id="panel-govt">
+      <div class="audience-banner banner-govt reveal">
+        <div class="audience-banner-icon">🏛️</div>
+        <div class="audience-banner-text">
+          <div class="audience-banner-label">Public Sector Track</div>
+          <div class="audience-banner-title">Government Professionals</div>
+          <div class="audience-banner-sub">AI programmes aligned with Malaysia's AI Action Plan 2030, ARPA reform, and GovAI Labs — for civil servants, ministry officers, and public sector leaders.</div>
+        </div>
+      </div>
+
+      <!-- Vendor group: Pepper Labs (Govt) -->
+      <div class="vendor-group open" id="vg-govt-pepper">
+        <div class="vendor-group-header" onclick="toggleVendorGroup('vg-govt-pepper')">
+          <div class="vendor-group-avatar" style="background:linear-gradient(135deg,#0B1D3A,#1A3560);">PL</div>
+          <div class="vendor-group-meta">
+            <div class="vendor-group-name">Pepper Labs</div>
+            <div class="vendor-group-desc">Public sector AI training aligned to Malaysia's AI Nation 2030</div>
+          </div>
+          <div class="vendor-group-right">
+            <span class="vendor-course-count">2 courses</span>
+            <div class="vendor-chevron">▾</div>
+          </div>
+        </div>
+        <div class="vendor-courses">
+
+          <!-- Card 1 -->
+          <div class="nx-card reveal reveal-delay-1">
+            <div class="nx-card-top">
+              <div class="nx-tag-row">
+                <span class="nx-vendor-pill">Pepper Labs</span>
+                <span class="nx-level level-foundation">Foundation</span>
+              </div>
+              <div class="nx-card-emoji">🏛️</div>
+            </div>
+            <div class="nx-card-title">AI Masterclass for Public Sector</div>
+            <div class="nx-card-desc">Strategic AI literacy for ministry officials, civil servants, and public sector leadership teams. Learn how to integrate AI into governance, policymaking, and public service delivery — aligned with MADANI and AI Nation 2030 objectives.</div>
+            <div class="nx-card-tags">
+              <span class="nx-tag">AI Literacy</span>
+              <span class="nx-tag">Governance</span>
+              <span class="nx-tag">Policy</span>
+              <span class="nx-tag">MADANI</span>
+              <span class="nx-tag">4–6 Weeks</span>
+            </div>
+            <div class="nx-card-footer">
+              <div class="nx-lang-row">
+                <a href="#register" class="nx-lang-btn"><span class="nx-btn-flag">🇬🇧</span> English</a>
+                <a href="#register" class="nx-lang-btn"><span class="nx-btn-flag">🇲🇾</span> BM</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 2 — Coming Soon -->
+          <div class="nx-card coming-soon reveal reveal-delay-2">
+            <div class="nx-card-top">
+              <div class="nx-tag-row">
+                <span class="nx-vendor-pill">Pepper Labs</span>
+                <span class="coming-soon-badge">Coming Soon</span>
+              </div>
+              <div class="nx-card-emoji">⚙️</div>
+            </div>
+            <div class="nx-card-title">GovAI Labs: Applied AI for Ministries</div>
+            <div class="nx-card-desc">Hands-on AI innovation labs embedded within ministries. From rapid proof-of-concepts to whole-of-government rollout — with governance, compliance, and scalability built in.</div>
+            <div class="nx-card-tags">
+              <span class="nx-tag">GovAI Labs</span>
+              <span class="nx-tag">PACU</span>
+              <span class="nx-tag">Agentic AI</span>
+            </div>
+            <div class="nx-card-footer">
+              <a href="#register" class="nx-enroll-btn">Register Interest →</a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- ══════════════════════════════
+         STUDENTS PANEL
+    ══════════════════════════════ -->
+    <div class="catalog-panel" id="panel-students">
+      <div class="audience-banner banner-students reveal">
+        <div class="audience-banner-icon">🎒</div>
+        <div class="audience-banner-text">
+          <div class="audience-banner-label">Student Track</div>
+          <div class="audience-banner-title">Students</div>
+          <div class="audience-banner-sub">Build practical AI skills from the ground up. Funded programmes with recognised certificates — designed for university students and recent graduates entering the workforce.</div>
+        </div>
+      </div>
+
+      <!-- Vendor group: AVPN / Google.org / ADB (Students) -->
+      <div class="vendor-group open" id="vg-students-avpn">
+        <div class="vendor-group-header" onclick="toggleVendorGroup('vg-students-avpn')">
+          <div class="vendor-group-avatar" style="background:linear-gradient(135deg,#0D4F7A,#1E88E5);">AI</div>
+          <div class="vendor-group-meta">
+            <div class="vendor-group-name">AI Opportunity Fund — Asia Pacific</div>
+            <div class="vendor-group-desc">Funded by AVPN · Google.org · Asian Development Bank</div>
+          </div>
+          <div class="vendor-group-right">
+            <span class="vendor-course-count">2 courses</span>
+            <div class="vendor-chevron">▾</div>
+          </div>
+        </div>
+        <div class="vendor-courses">
+
+          <!-- Card 1 — English -->
+          <div class="nx-card reveal reveal-delay-1">
+            <div class="nx-card-top">
+              <div class="nx-tag-row">
+                <span class="nx-vendor-pill">AVPN · ADB</span>
+                <span class="nx-level level-foundation">Foundation</span>
+              </div>
+              <div class="nx-card-emoji">🤖</div>
+            </div>
+            <div class="nx-card-title">AI Opportunity Fund — Asia Pacific (English)</div>
+            <div class="nx-card-desc">Funded by AVPN, Google.org, and the Asian Development Bank. Build foundational AI skills, responsible AI practices, and practical tools for your career. Includes a recognised certificate upon completion.</div>
+            <div class="nx-card-tags">
+              <span class="nx-tag">AVPN</span>
+              <span class="nx-tag">Google.org</span>
+              <span class="nx-tag">ADB Funded</span>
+              <span class="nx-tag">Certificate</span>
+              <span class="nx-tag">4–6 Weeks</span>
+            </div>
+            <div class="nx-card-footer">
+              <a href="https://pepper-s-site-1c7b.thinkific.com/courses/AVPN-AI-Opportunity-Fund-Asia-Pacific" target="_blank" rel="noopener" class="nx-enroll-btn">
+                <span class="nx-btn-flag">🇬🇧</span> Access in English →
+              </a>
+            </div>
+          </div>
+
+          <!-- Card 2 — BM -->
+          <div class="nx-card reveal reveal-delay-2">
+            <div class="nx-card-top">
+              <div class="nx-tag-row">
+                <span class="nx-vendor-pill">AVPN · ADB</span>
+                <span class="nx-level level-foundation">Foundation</span>
+              </div>
+              <div class="nx-card-emoji">🧠</div>
+            </div>
+            <div class="nx-card-title">AI Ready Malaysia — Edisi Pelajar</div>
+            <div class="nx-card-desc">Program AI yang direka khusus untuk pelajar Malaysia. Pelajari kemahiran AI asas, penggunaan alat AI secara praktikal, dan cara memanfaatkan AI untuk kerjaya masa depan anda. Sijil diiktiraf tersedia.</div>
+            <div class="nx-card-tags">
+              <span class="nx-tag">Bahasa Malaysia</span>
+              <span class="nx-tag">Pelajar</span>
+              <span class="nx-tag">Sijil</span>
+              <span class="nx-tag">Asia Pacific</span>
+              <span class="nx-tag">4–6 Weeks</span>
+            </div>
+            <div class="nx-card-footer">
+              <a href="https://pepper-s-site-1c7b.thinkific.com/courses/ai-ready-malaysia-asia-pacific-edisi-pelajar" target="_blank" rel="noopener" class="nx-enroll-btn">
+                <span class="nx-btn-flag">🇲🇾</span> Akses dalam BM →
+              </a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- ══════════════════════════════
+         ENTREPRENEURS PANEL
+    ══════════════════════════════ -->
+    <div class="catalog-panel" id="panel-entrepreneur">
+      <div class="audience-banner banner-entrepreneur reveal">
+        <div class="audience-banner-icon">🚀</div>
+        <div class="audience-banner-text">
+          <div class="audience-banner-label">Business & Workforce Track</div>
+          <div class="audience-banner-title">Entrepreneurs & Workforce</div>
+          <div class="audience-banner-sub">Leverage AI to grow your business, optimise operations, and stay competitive. Programmes for SME owners, working professionals, and the Malaysian workforce.</div>
+        </div>
+      </div>
+
+      <div class="vendor-group open" id="vg-entrepreneur-avpn">
+        <div class="vendor-group-header" onclick="toggleVendorGroup('vg-entrepreneur-avpn')">
+          <div class="vendor-group-avatar" style="background:linear-gradient(135deg,#1A4A3A,#1FA37B);">WF</div>
+          <div class="vendor-group-meta">
+            <div class="vendor-group-name">AI Opportunity Fund — Workforce</div>
+            <div class="vendor-group-desc">Funded by AVPN · Google.org · Asian Development Bank</div>
+          </div>
+          <div class="vendor-group-right">
+            <span class="vendor-course-count">2 courses</span>
+            <div class="vendor-chevron">▾</div>
+          </div>
+        </div>
+        <div class="vendor-courses">
+
+          <!-- Card 1 — English -->
+          <div class="nx-card reveal reveal-delay-1">
+            <div class="nx-card-top">
+              <div class="nx-tag-row">
+                <span class="nx-vendor-pill">AVPN · ADB</span>
+                <span class="nx-level level-intermediate">Intermediate</span>
+              </div>
+              <div class="nx-card-emoji">💼</div>
+            </div>
+            <div class="nx-card-title">AI Opportunity Fund — Workforce (English)</div>
+            <div class="nx-card-desc">Supported by AVPN, Google.org, and the Asian Development Bank. Designed for working professionals and entrepreneurs to apply AI tools for smarter business decisions, market growth, and operational efficiency.</div>
+            <div class="nx-card-tags">
+              <span class="nx-tag">AVPN</span>
+              <span class="nx-tag">Workforce</span>
+              <span class="nx-tag">MSME</span>
+              <span class="nx-tag">ADB Funded</span>
+              <span class="nx-tag">4–8 Weeks</span>
+            </div>
+            <div class="nx-card-footer">
+              <a href="https://pepper-s-site-1c7b.thinkific.com/courses/avpn-ai-opportunity-fund-asia-pacific-workforce" target="_blank" rel="noopener" class="nx-enroll-btn">
+                <span class="nx-btn-flag">🇬🇧</span> Access in English →
+              </a>
+            </div>
+          </div>
+
+          <!-- Card 2 — BM -->
+          <div class="nx-card reveal reveal-delay-2">
+            <div class="nx-card-top">
+              <div class="nx-tag-row">
+                <span class="nx-vendor-pill">AVPN · ADB</span>
+                <span class="nx-level level-intermediate">Intermediate</span>
+              </div>
+              <div class="nx-card-emoji">📊</div>
+            </div>
+            <div class="nx-card-title">AI Ready Malaysia — Edisi Tenaga Kerja & MSME</div>
+            <div class="nx-card-desc">Program untuk usahawan dan tenaga kerja Malaysia. Pelajari cara menggunakan AI untuk meningkatkan produktiviti perniagaan, membuat keputusan lebih bijak, dan memanfaatkan peluang pasaran baharu.</div>
+            <div class="nx-card-tags">
+              <span class="nx-tag">Bahasa Malaysia</span>
+              <span class="nx-tag">MSME</span>
+              <span class="nx-tag">Tenaga Kerja</span>
+              <span class="nx-tag">Asia Pacific</span>
+              <span class="nx-tag">4–8 Weeks</span>
+            </div>
+            <div class="nx-card-footer">
+              <a href="https://pepper-s-site-1c7b.thinkific.com/courses/ai-ready-malaysia-asia-pacific-edisi-tenaga-kerja-MSME" target="_blank" rel="noopener" class="nx-enroll-btn">
+                <span class="nx-btn-flag">🇲🇾</span> Akses dalam BM →
+              </a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- ══════════════════════════════
+         EDUCATOR PANEL
+    ══════════════════════════════ -->
+    <div class="catalog-panel" id="panel-educator">
+      <div class="audience-banner banner-educator reveal">
+        <div class="audience-banner-icon">🎓</div>
+        <div class="audience-banner-text">
+          <div class="audience-banner-label">Education Track</div>
+          <div class="audience-banner-title">Educators</div>
+          <div class="audience-banner-sub">Bring AI into your classroom. Programmes for teachers, lecturers, and education professionals — with practical tools to enhance teaching and personalise learning for students.</div>
+        </div>
+      </div>
+
+      <div class="vendor-group open" id="vg-educator-avpn">
+        <div class="vendor-group-header" onclick="toggleVendorGroup('vg-educator-avpn')">
+          <div class="vendor-group-avatar" style="background:linear-gradient(135deg,#3A1A0B,#C2692A);">ED</div>
+          <div class="vendor-group-meta">
+            <div class="vendor-group-name">AI Opportunity Fund — Education</div>
+            <div class="vendor-group-desc">Funded by AVPN · Google.org · Asian Development Bank</div>
+          </div>
+          <div class="vendor-group-right">
+            <span class="vendor-course-count">2 courses</span>
+            <div class="vendor-chevron">▾</div>
+          </div>
+        </div>
+        <div class="vendor-courses">
+
+          <!-- Card 1 — English -->
+          <div class="nx-card reveal reveal-delay-1">
+            <div class="nx-card-top">
+              <div class="nx-tag-row">
+                <span class="nx-vendor-pill">AVPN · ADB</span>
+                <span class="nx-level level-foundation">Foundation</span>
+              </div>
+              <div class="nx-card-emoji">📚</div>
+            </div>
+            <div class="nx-card-title">AI Opportunity Fund — Education Workforce (English)</div>
+            <div class="nx-card-desc">Funded by AVPN, Google.org, and ADB. Designed for educators and education-sector professionals. Learn how to integrate AI tools into lesson planning, student assessment, and personalised learning experiences.</div>
+            <div class="nx-card-tags">
+              <span class="nx-tag">AVPN</span>
+              <span class="nx-tag">Education</span>
+              <span class="nx-tag">Classroom AI</span>
+              <span class="nx-tag">ADB Funded</span>
+              <span class="nx-tag">4–6 Weeks</span>
+            </div>
+            <div class="nx-card-footer">
+              <a href="https://pepper-s-site-1c7b.thinkific.com/courses/avpn-ai-opportunity-fund-asia-pacific-education-workforce" target="_blank" rel="noopener" class="nx-enroll-btn">
+                <span class="nx-btn-flag">🇬🇧</span> Access in English →
+              </a>
+            </div>
+          </div>
+
+          <!-- Card 2 — BM -->
+          <div class="nx-card reveal reveal-delay-2">
+            <div class="nx-card-top">
+              <div class="nx-tag-row">
+                <span class="nx-vendor-pill">AVPN · ADB</span>
+                <span class="nx-level level-foundation">Foundation</span>
+              </div>
+              <div class="nx-card-emoji">✏️</div>
+            </div>
+            <div class="nx-card-title">AI Ready Malaysia — Edisi Pendidik</div>
+            <div class="nx-card-desc">Direka khusus untuk pendidik Malaysia. Pelajari cara mengintegrasikan alat AI seperti Microsoft Copilot ke dalam pengajaran anda, merancang pengajaran yang lebih berkesan, dan menilai kemajuan pelajar dengan lebih tepat.</div>
+            <div class="nx-card-tags">
+              <span class="nx-tag">Bahasa Malaysia</span>
+              <span class="nx-tag">Pendidik</span>
+              <span class="nx-tag">Microsoft Copilot</span>
+              <span class="nx-tag">Asia Pacific</span>
+              <span class="nx-tag">4–6 Weeks</span>
+            </div>
+            <div class="nx-card-footer">
+              <a href="https://pepper-s-site-1c7b.thinkific.com/courses/ai-ready-malaysia-asia-pacific-edisi-pendidik" target="_blank" rel="noopener" class="nx-enroll-btn">
+                <span class="nx-btn-flag">🇲🇾</span> Akses dalam BM →
+              </a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="testimonials-section" id="testimonials">
+  <div class="testimonials-inner">
+    <div class="testimonials-left reveal">
+      <div class="t-stories-badge">⭐ Success Stories</div>
+      <h2 class="t-main-heading">
+        What People
+        <span class="t-italic-line">Are Saying</span>
+      </h2>
+      <p class="t-left-sub">Real stories from professionals, educators, and students who've transformed their careers through our AI programmes across Malaysia.</p>
+    </div>
+    <div class="testimonials-right">
+      <div class="t-row">
+        <div class="t-card reveal reveal-delay-1">
+          <div class="t-badge t-badge-ai"><div class="t-badge-icon">🏭</div>E&amp;E</div>
+          <p class="t-quote">"Training yang sepatutnya saya jalani di tempat kerja tidak perlu saya jalani kerana saya telah ada fundamental knowledge and skill yang saya dapat melalui certificate ini."</p>
+          <div class="t-divider"></div>
+          <div class="t-author-name">Mohamad Azzuhairi Bin Mohd Zahir</div>
+          <div class="t-author-role">Front End (FE) Wafer Fabrication Process</div>
+        </div>
+        <div class="t-card reveal reveal-delay-2">
+          <div class="t-badge t-badge-ai"><div class="t-badge-icon">🏭</div>E&amp;E</div>
+          <p class="t-quote">"Dengan join program ni, saya dapat banyak hands on training and soft-skill yang boleh saya implement to my work environment."</p>
+          <div class="t-divider"></div>
+          <div class="t-author-name">Aina Madihah Binti Kamarudzaman</div>
+          <div class="t-author-role">Digital Twin &amp; Intelligent Robotics For Smart Factory</div>
+        </div>
+      </div>
+      <div class="t-row-3">
+        <div class="t-card reveal reveal-delay-1">
+          <div class="t-badge t-badge-ai"><div class="t-badge-icon">🏭</div>E&amp;E</div>
+          <p class="t-quote">"Alhamdulillah, just a month after completing the programme, I secured a job aligned with my bachelor's degree. I'm truly grateful to the trainers, SHRDC staff, classmates and especially the funder for sponsoring this valuable programme."</p>
+          <div class="t-divider"></div>
+          <div class="t-author-name">NurFathin Humairah Binti Ramli</div>
+          <div class="t-author-role">Expert Craftsman in Programmable Logic Controller (EC-PLC)</div>
+        </div>
+        <div class="t-card reveal reveal-delay-2">
+          <div class="t-badge t-badge-ai"><div class="t-badge-icon">🏭</div>E&amp;E</div>
+          <p class="t-quote">"It's more customised and structured based on real industry needs. Once you complete the training, you'll see new doors open for your career."</p>
+          <div class="t-divider"></div>
+          <div class="t-author-name">Ilmi Haikal Mohd Yusof</div>
+          <div class="t-author-role">Expert Craftsman in Programmable Logic Controller (EC-PLC)</div>
+        </div>
+        <div class="t-card reveal reveal-delay-3">
+          <div class="t-badge t-badge-public"><div class="t-badge-icon">💻</div>ICT</div>
+          <p class="t-quote">"The programme I went through under TalentCorp really helped me grasp the foundation of many important topics in computer science — it was simply an abundance of knowledge transfer that is both useful for individual learning and workplace implementations."</p>
+          <div class="t-divider"></div>
+          <div class="t-author-name">Pravin Raj A/L Muralitharan</div>
+          <div class="t-author-role">Software Development</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq-section" id="faq">
+  <div class="container">
+    <div class="faq-layout">
+      <div class="faq-sidebar reveal">
+        <div class="section-label">Got Questions?</div>
+        <h2 class="section-title" style="font-size:clamp(24px,5vw,38px);">Frequently Asked <em>Questions</em></h2>
+        <p class="section-sub" style="font-size:14px;margin-top:8px;">Everything you need to know about the programme.</p>
+        <div class="faq-tabs">
+          <button class="faq-tab active" data-tab="educators">Educators</button>
+          <button class="faq-tab" data-tab="students">Students</button>
+        </div>
+      </div>
+      <div class="faq-content reveal reveal-delay-1" id="faqGrid">
+        <div class="faq-item" data-group="educators"><div class="faq-question"><div class="faq-question-text">Which subjects can I integrate AI tools like Copilot into?</div><div class="faq-icon">▾</div></div><div class="faq-answer"><div class="faq-answer-inner">These tools are cross-curricular. You can use Copilot for lesson planning in any subject and use Reading, Math, and Speaker Progress to personalise assessment and feedback in literacy, numeracy, and public speaking across all relevant subjects.</div></div></div>
+        <div class="faq-item" data-group="educators"><div class="faq-question"><div class="faq-question-text">Do students need their own Microsoft accounts to use the Learning Accelerators?</div><div class="faq-icon">▾</div></div><div class="faq-answer"><div class="faq-answer-inner">Students will need a Microsoft account, typically provided by the school. Your IT administrator can set up student accounts through Microsoft Education. Contact your school's IT department or reach out to us for guidance.</div></div></div>
+        <div class="faq-item" data-group="educators"><div class="faq-question"><div class="faq-question-text">How do I handle students without reliable internet access?</div><div class="faq-icon">▾</div></div><div class="faq-answer"><div class="faq-answer-inner">Many AI tools offer offline or low-bandwidth modes. We also provide guidance on blended approaches that work even with limited connectivity. Reach out to your programme coordinator for location-specific support.</div></div></div>
+        <div class="faq-item" data-group="educators"><div class="faq-question"><div class="faq-question-text">Is there a standardised lesson plan or curriculum guide available?</div><div class="faq-icon">▾</div></div><div class="faq-answer"><div class="faq-answer-inner">Yes. Participants receive a full set of ready-to-use lesson plan templates, curriculum alignment guides, and educator handbooks upon programme registration. These are updated regularly to reflect the latest tools.</div></div></div>
+        <div class="faq-item" data-group="educators"><div class="faq-question"><div class="faq-question-text">How can I access the online training modules again after my session?</div><div class="faq-icon">▾</div></div><div class="faq-answer"><div class="faq-answer-inner">All online learning modules remain accessible to registered participants via our learning portal. You can revisit any module at any time through your personal account dashboard.</div></div></div>
+        <div class="faq-item" data-group="educators"><div class="faq-question"><div class="faq-question-text">What is my role in the LEAPS Journey after training?</div><div class="faq-icon">▾</div></div><div class="faq-answer"><div class="faq-answer-inner">After your Training of Trainers (ToT) session, you are expected to implement AI-enhanced lessons in your classroom, submit activity logs, and guide your students through the LEAPS milestones during the classroom implementation phase.</div></div></div>
+        <div class="faq-item" data-group="students" style="display:none;"><div class="faq-question"><div class="faq-question-text">Am I eligible for the AI Training Hub programmes?</div><div class="faq-icon">▾</div></div><div class="faq-answer"><div class="faq-answer-inner">Yes — the AI Training Hub is open to Malaysian students at all levels, from secondary school to university. Some programmes are also open to recent graduates entering the workforce. Check the specific programme page for eligibility details.</div></div></div>
+        <div class="faq-item" data-group="students" style="display:none;"><div class="faq-question"><div class="faq-question-text">Are the courses free for students?</div><div class="faq-icon">▾</div></div><div class="faq-answer"><div class="faq-answer-inner">Some programmes are fully funded through our partners (AVPN, Google.org, Yayasan Peneraju). Others offer subsidised rates. Contact us directly to find out which funded options you qualify for.</div></div></div>
+        <div class="faq-item" data-group="students" style="display:none;"><div class="faq-question"><div class="faq-question-text">Will I receive a certificate upon completion?</div><div class="faq-icon">▾</div></div><div class="faq-answer"><div class="faq-answer-inner">Yes. All participants who successfully complete their programme receive a Pepper Labs certificate. Certain tracks also carry HRD Corp claimable status or are recognised by partner universities and employers.</div></div></div>
+        <div class="faq-item" data-group="students" style="display:none;"><div class="faq-question"><div class="faq-question-text">What is the time commitment for the upskilling track?</div><div class="faq-icon">▾</div></div><div class="faq-answer"><div class="faq-answer-inner">The AI Upskilling Track runs for 4–8 weeks depending on the pathway. Sessions are typically scheduled on evenings or weekends to accommodate students with existing commitments. Self-paced options are also available.</div></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="final-cta" id="register">
+  <div class="final-cta-inner">
+    <div class="reveal">
+      <div class="final-cta-eyebrow">Lead the Way in AI Education</div>
+      <h2 class="final-cta-title">Are You Ready to Make a Difference?</h2>
+      <p class="final-cta-sub">Discover how this initiative can impact your students, organisation, and community. Start now and be part of the change.</p>
+      <a href="https://pepper-s-site-1c7b.thinkific.com/users/sign_in" class="final-cta-btn">Register Now →</a>
+      <div class="final-cta-links">
+        <a href="https://wa.link/hyc9tg" class="final-cta-link">💬 WhatsApp Us</a>
+        <a href="mailto:info@pepperlabs.my" class="final-cta-link">✉️ info@pepperlabs.my</a>
+        <a href="tel:+60165809532" class="final-cta-link">📞 (+60) 16-580 9532</a>
+      </div>
+    </div>
+    <div class="final-cta-video reveal reveal-delay-2">
+      <div class="video-wrap">
+        <iframe src="https://www.youtube.com/embed/F-Y8ygI-htk" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+      <div class="video-caption">
+        <div class="video-caption-label">Watch on YouTube</div>
+        <div class="video-caption-title">#AIForMYFuture: Microsoft empowers Malaysians with AI skills</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <img src="https://pepperlabs.my/assets/logos/pepperlabs.png" alt="Pepper Labs" style="height:30px;width:auto;display:block;">
+      <p class="footer-brand-desc">A-3-7, Viva Residency (Commercial), Off Jalan Ipoh, 51200, Kuala Lumpur.</p>
+      <p class="footer-brand-contact"><a href="mailto:info@pepperlabs.my">info@pepperlabs.my</a></p>
+      <p class="footer-brand-contact">(+60) 16-350 4840</p>
+    </div>
+    <div>
+      <div class="footer-col-title">Programs</div>
+      <ul class="footer-col-links">
+        <li><a href="#catalog">AI for Government</a></li>
+        <li><a href="#catalog">AI for Students</a></li>
+        <li><a href="#catalog">AI for Entrepreneurs</a></li>
+        <li><a href="#catalog">AI for Educators</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-col-title">Company</div>
+      <ul class="footer-col-links">
+        <li><a href="https://pepperlabs.my/">About Pepper Labs</a></li>
+        <li><a href="#">Partners</a></li>
+        <li><a href="#">Impact Stories</a></li>
+        <li><a href="#">Careers</a></li>
+      </ul>
+    </div>
+    <div class="footer-contact-col">
+      <div class="footer-col-title">Contact</div>
+      <ul class="footer-col-links">
+        <li><a href="mailto:info@pepperlabs.my">info@pepperlabs.my</a></li>
+        <li><a href="tel:+60165809532">(+60) 16-580 9532</a></li>
+        <li><a href="https://wa.link/hyc9tg">WhatsApp</a></li>
+        <li><a href="#">LinkedIn</a></li>
+        <li><a href="#">Instagram</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2025 Pepper Labs Sdn Bhd. All rights reserved.</span>
+    <span>A-3-7, Viva Residency (Commercial), Off Jalan Ipoh, 51200 Kuala Lumpur, Malaysia</span>
+  </div>
+</footer>
+
+<script>
+// ─── Catalog tab switching ───────────────────────────────
+function switchPanel(panelId, tabEl) {
+  document.querySelectorAll('.catalog-tab').forEach(t => t.classList.remove('active'));
+  document.querySelectorAll('.catalog-panel').forEach(p => p.classList.remove('active'));
+  tabEl.classList.add('active');
+  document.getElementById('panel-' + panelId).classList.add('active');
+}
+
+// ─── Vendor group accordion ──────────────────────────────
+function toggleVendorGroup(id) {
+  const group = document.getElementById(id);
+  group.classList.toggle('open');
+}
+
+// ─── News extra toggle ───────────────────────────────────
+function toggleExtraNews() {
+  const wrap = document.getElementById('newsExtraWrap');
+  const card = document.getElementById('newsCtaCard');
+  const isOpen = wrap.classList.contains('open');
+  wrap.classList.toggle('open');
+  card.classList.toggle('open');
+  if (!isOpen) { setTimeout(() => { wrap.scrollIntoView({ behavior:'smooth', block:'nearest' }); }, 100); }
+}
+
+// ─── Scroll reveal ───────────────────────────────────────
+const revObs = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('in'); });
+}, { threshold: 0.06 });
+document.querySelectorAll('.reveal').forEach(el => revObs.observe(el));
+
+// ─── Nav scroll class ────────────────────────────────────
+const nav = document.getElementById('main-nav');
+window.addEventListener('scroll', () => { nav.classList.toggle('scrolled', window.scrollY > 40); }, { passive:true });
+
+// ─── Count-up animation ──────────────────────────────────
+const counters = document.querySelectorAll('.stat-num[data-target]');
+const cObs = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (!e.isIntersecting) return;
+    const el = e.target; const target = parseInt(el.dataset.target); const suffix = el.dataset.suffix || '';
+    const start = performance.now(); const dur = 1600;
+    const tick = (now) => {
+      const p = Math.min((now - start) / dur, 1); const ease = 1 - Math.pow(1 - p, 3);
+      el.textContent = Math.floor(ease * target).toLocaleString() + suffix;
+      if (p < 1) requestAnimationFrame(tick);
+    };
+    requestAnimationFrame(tick); cObs.unobserve(el);
+  });
+}, { threshold: 0.5 });
+counters.forEach(c => cObs.observe(c));
+
+// ─── Smooth scroll for anchor links ─────────────────────
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+  a.addEventListener('click', e => {
+    const href = a.getAttribute('href'); if (href === '#') return;
+    const t = document.querySelector(href);
+    if (t) { e.preventDefault(); t.scrollIntoView({ behavior:'smooth', block:'start' }); }
+  });
+});
+
+// ─── FAQ accordion ───────────────────────────────────────
+document.querySelectorAll('.faq-question').forEach(q => {
+  q.addEventListener('click', () => {
+    const item = q.closest('.faq-item'); const isOpen = item.classList.contains('open');
+    document.querySelectorAll('.faq-item.open').forEach(i => i.classList.remove('open'));
+    if (!isOpen) item.classList.add('open');
+  });
+});
+document.querySelectorAll('.faq-tab').forEach(tab => {
+  tab.addEventListener('click', () => {
+    document.querySelectorAll('.faq-tab').forEach(t => t.classList.remove('active'));
+    tab.classList.add('active');
+    const group = tab.dataset.tab;
+    document.querySelectorAll('.faq-item').forEach(item => {
+      item.style.display = item.dataset.group === group ? '' : 'none';
+      item.classList.remove('open');
+    });
+  });
+});
+</script>
+</body>
+</html>
