@@ -1183,10 +1183,9 @@ footer{background:var(--white);border-top:1px solid var(--border);padding:48px 2
     <div>
       <div class="footer-col-title">Programs</div>
       <ul class="footer-col-links">
-        <li><a href="#catalog">AI for Government</a></li>
-        <li><a href="#catalog">AI for Students</a></li>
-        <li><a href="#catalog">AI for Entrepreneurs</a></li>
-        <li><a href="#catalog">AI for Educators</a></li>
+        <li><a href="#catalog" onclick="switchPanel('students', document.querySelector('[onclick*=students]'))">AI for Students</a></li>
+        <li><a href="#catalog" onclick="switchPanel('entrepreneur', document.querySelector('[onclick*=entrepreneur]'))">AI for Entrepreneurs</a></li>
+        <li><a href="#catalog" onclick="switchPanel('educator', document.querySelector('[onclick*=educator]'))">AI for Educators</a></li>
       </ul>
     </div>
     <div>
