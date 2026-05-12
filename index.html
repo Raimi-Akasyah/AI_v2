@@ -228,6 +228,44 @@ nav.scrolled{box-shadow:0 2px 20px rgba(0,0,0,0.07);}
 @media(min-width:640px){.stakeholder-item img{height:72px;}}
 .stakeholder-item:hover img{filter:grayscale(0%);opacity:1;transform:scale(1.1);}
 .stakeholder-fallback{font-family:var(--font);font-size:9px;font-weight:700;color:var(--text-300);text-align:center;letter-spacing:0.05em;text-transform:uppercase;}
+/* ─── ALUMNI LOGOS ─────────────────────────────────────────────────────── */
+.alumni-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 80px;
+  padding: 10px 16px;
+  background: transparent;
+  border: none;
+  border-radius: 0;
+  transition: transform 0.25s ease;
+}
+.alumni-item:hover {
+  transform: translateY(-3px);
+  box-shadow: none;
+}
+.alumni-item img {
+  display: block;
+  width: 80px !important;
+  height: 52px !important;
+  max-width: unset !important;
+  max-height: unset !important;
+  object-fit: contain;
+  object-position: center;
+  filter: grayscale(100%);
+  opacity: 0.6;
+  transition: filter 0.3s, opacity 0.3s, transform 0.25s;
+}
+@media (min-width: 640px) {
+  .alumni-item        { height: 90px; }
+  .alumni-item img    { width: 96px !important; height: 60px !important; }
+}
+.alumni-item:hover img {
+  filter: grayscale(0%);
+  opacity: 1;
+  transform: scale(1.08);
+}
+/* ─────────────────────────────────────────────────────────────────────── */
 
 /* ═══════════════════════════════════════════════
    COURSE CATALOG — Nexperts-style (updated)
@@ -579,24 +617,26 @@ footer{background:var(--white);border-top:1px solid var(--border);padding:48px 2
       <div class="stakeholder-item"><img src="https://upload.wikimedia.org/wikipedia/commons/8/85/MCMC_Logo.png" alt="KBS" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="stakeholder-fallback" style="display:none">KBS</div></div>
       <div class="stakeholder-item"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/43/Asian_Development_Bank_logo.svg/1280px-Asian_Development_Bank_logo.svg.png?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=thumbnail" alt="Kementerian Sumber Manusia" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="stakeholder-fallback" style="display:none">Kementerian Sumber Manusia</div></div>
     </div>
+
+    <!-- ═══ OUR ALUMNI — uses .alumni-item for uniform logo sizing ═══ -->
     <div class="partners-group-label reveal reveal-delay-1">Our Alumni</div>
     <div class="stakeholders-grid reveal reveal-delay-2">
-      <div class="stakeholder-item"><img src="https://online.anyflip.com/mprll/accountlogo.png" alt="Bahagian Profesionalisme Guru" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="stakeholder-fallback" style="display:none">Bahagian Profesionalisme Guru</div></div>
-      <div class="stakeholder-item"><img src="https://www.pahang.gov.my/pahang/resources/jataphg.png" alt="SUK Pahang" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="stakeholder-fallback" style="display:none">SUK Pahang</div></div>
-      <div class="stakeholder-item"><img src="https://vectorseek.com/wp-content/uploads/2023/09/Perkeso-Socso-Logo-Vector.svg-.png" alt="PERKESO" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="stakeholder-fallback" style="display:none">PERKESO</div></div>
-      <div class="stakeholder-item"><img src="https://www.petra.gov.my/assets/img/logo-petra2.png" alt="PETRA" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="stakeholder-fallback" style="display:none">PETRA</div></div>
-      <div class="stakeholder-item"><img src="https://malaysiagazette.com/wp-content/uploads/2019/02/kpdnhep.png" alt="KPDNHEP" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="stakeholder-fallback" style="display:none">KPDNHEP</div></div>
-      <div class="stakeholder-item"><img src="https://static.wixstatic.com/media/ead8ee_a1de7dd9adfa494ba298de86b29d74ec~mv2.webp/v1/fill/w_199,h_200,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/kkm-logo-baru-01-8-edited.webp" alt="KKM" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="stakeholder-fallback" style="display:none">KKM</div></div>
-      <div class="stakeholder-item"><img src="https://www.iskandarinvestment.com/wp-content/uploads/2022/01/IIB-logo.png" alt="IIB" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="stakeholder-fallback" style="display:none">Iskandar Investment</div></div>
+      <div class="alumni-item"><img src="https://online.anyflip.com/mprll/accountlogo.png" alt="Bahagian Profesionalisme Guru" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="stakeholder-fallback" style="display:none">Bahagian Profesionalisme Guru</div></div>
+      <div class="alumni-item"><img src="https://www.pahang.gov.my/pahang/resources/jataphg.png" alt="SUK Pahang" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="stakeholder-fallback" style="display:none">SUK Pahang</div></div>
+      <div class="alumni-item"><img src="https://vectorseek.com/wp-content/uploads/2023/09/Perkeso-Socso-Logo-Vector.svg-.png" alt="PERKESO" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="stakeholder-fallback" style="display:none">PERKESO</div></div>
+      <div class="alumni-item"><img src="https://www.petra.gov.my/assets/img/logo-petra2.png" alt="PETRA" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="stakeholder-fallback" style="display:none">PETRA</div></div>
+      <div class="alumni-item"><img src="https://malaysiagazette.com/wp-content/uploads/2019/02/kpdnhep.png" alt="KPDNHEP" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="stakeholder-fallback" style="display:none">KPDNHEP</div></div>
+      <div class="alumni-item"><img src="https://mamz.com.my/wp-content/uploads/2024/02/Logo_Rasmi_KKM.png" alt="KKM" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="stakeholder-fallback" style="display:none">KKM</div></div>
+      <div class="alumni-item"><img src="https://www.iskandarinvestment.com/wp-content/uploads/2022/01/IIB-logo.png" alt="IIB" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="stakeholder-fallback" style="display:none">Iskandar Investment</div></div>
     </div>
     <div class="stakeholders-grid reveal reveal-delay-3" style="margin-top:10px;">
-      <div class="stakeholder-item"><img src="https://www.p194.com.my/wp-content/uploads/2022/01/p194-logo.png" alt="P194" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="stakeholder-fallback" style="display:none">P194 Petra Jaya</div></div>
-      <div class="stakeholder-item"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0d/Pejabat_Aku_Audit_Serawak_logo.png/320px-Pejabat_Aku_Audit_Serawak_logo.png" alt="Pejabat Audit" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="stakeholder-fallback" style="display:none">Pejabat Audit Sarawak</div></div>
-      <div class="stakeholder-item"><img src="https://sdec.com.my/wp-content/uploads/2023/03/sdec_logo.png" alt="SDEC" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="stakeholder-fallback" style="display:none">SDEC Sarawak</div></div>
-      <div class="stakeholder-item"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/31/Talentcorp_logo.png/320px-Talentcorp_logo.png" alt="TalentCorp" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="stakeholder-fallback" style="display:none">TalentCorp</div></div>
-      <div class="stakeholder-item"><img src="https://mranti.my/wp-content/uploads/2022/03/mranti-logo.png" alt="MRANTI" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="stakeholder-fallback" style="display:none">MRANTI</div></div>
-      <div class="stakeholder-item"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/MaGIC_logo.png/320px-MaGIC_logo.png" alt="MaGIC" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="stakeholder-fallback" style="display:none">MaGIC</div></div>
-      <div class="stakeholder-item"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/85/Maybank_logo.svg/2560px-Maybank_logo.svg.png" alt="Maybank" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="stakeholder-fallback" style="display:none">Maybank</div></div>
+      <div class="alumni-item"><img src="https://www.p194.com.my/wp-content/uploads/2022/01/p194-logo.png" alt="P194" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="stakeholder-fallback" style="display:none">P194 Petra Jaya</div></div>
+      <div class="alumni-item"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0d/Pejabat_Aku_Audit_Serawak_logo.png/320px-Pejabat_Aku_Audit_Serawak_logo.png" alt="Pejabat Audit" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="stakeholder-fallback" style="display:none">Pejabat Audit Sarawak</div></div>
+      <div class="alumni-item"><img src="https://sdec.com.my/wp-content/uploads/2023/03/sdec_logo.png" alt="SDEC" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="stakeholder-fallback" style="display:none">SDEC Sarawak</div></div>
+      <div class="alumni-item"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/31/Talentcorp_logo.png/320px-Talentcorp_logo.png" alt="TalentCorp" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="stakeholder-fallback" style="display:none">TalentCorp</div></div>
+      <div class="alumni-item"><img src="https://mranti.my/wp-content/uploads/2022/03/mranti-logo.png" alt="MRANTI" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="stakeholder-fallback" style="display:none">MRANTI</div></div>
+      <div class="alumni-item"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/MaGIC_logo.png/320px-MaGIC_logo.png" alt="MaGIC" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="stakeholder-fallback" style="display:none">MaGIC</div></div>
+      <div class="alumni-item"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/85/Maybank_logo.svg/2560px-Maybank_logo.svg.png" alt="Maybank" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="stakeholder-fallback" style="display:none">Maybank</div></div>
     </div>
   </div>
 </section>
@@ -1008,7 +1048,7 @@ footer{background:var(--white);border-top:1px solid var(--border);padding:48px 2
         <div class="vendor-group-header" onclick="toggleVendorGroup('vg-stu-avpn')">
           <div class="vendor-group-avatar" style="background:linear-gradient(135deg,#0D4F7A,#1E88E5);">AI</div>
           <div class="vendor-group-meta">
-            <div class="vendor-group-name">AI Opportunity Fund — Asia Pacific</div>
+            <div class="vendor-group-name">AI Opportunity Fund — Students</div>
             <div class="vendor-group-desc">Funded by AVPN · Google.org · Asian Development Bank</div>
           </div>
           <div class="vendor-group-right">
