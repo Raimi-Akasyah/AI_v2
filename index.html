@@ -230,7 +230,7 @@ nav.scrolled{box-shadow:0 2px 20px rgba(0,0,0,0.07);}
 .stakeholder-fallback{font-family:var(--font);font-size:9px;font-weight:700;color:var(--text-300);text-align:center;letter-spacing:0.05em;text-transform:uppercase;}
 
 /* ═══════════════════════════════════════════════
-   COURSE CATALOG — Nexperts-style
+   COURSE CATALOG — Nexperts-style (updated)
 ═══════════════════════════════════════════════ */
 .catalog-section{padding:64px 20px;background:var(--white);}
 @media(min-width:640px){.catalog-section{padding:80px 32px;}}
@@ -238,9 +238,8 @@ nav.scrolled{box-shadow:0 2px 20px rgba(0,0,0,0.07);}
 
 /* Audience filter pills */
 .catalog-tabs{display:flex;flex-wrap:wrap;gap:8px;margin-top:32px;margin-bottom:36px;}
-.catalog-tab{display:flex;align-items:center;gap:8px;font-family:var(--font);font-size:13px;font-weight:600;padding:10px 20px;border-radius:30px;border:1.5px solid var(--border);background:var(--white);color:var(--text-500);cursor:pointer;transition:all 0.2s;white-space:nowrap;}
+.catalog-tab{display:flex;align-items:center;gap:7px;font-family:var(--font);font-size:13px;font-weight:600;padding:10px 20px;border-radius:30px;border:1.5px solid var(--border);background:var(--white);color:var(--text-500);cursor:pointer;transition:all 0.2s;white-space:nowrap;}
 @media(min-width:640px){.catalog-tab{font-size:14px;padding:11px 24px;}}
-.catalog-tab .tab-emoji{font-size:16px;}
 .catalog-tab:hover{border-color:var(--orange);color:var(--orange);background:var(--orange-light);}
 .catalog-tab.active{background:var(--orange);border-color:var(--orange);color:#fff;}
 .catalog-tab .tab-count{background:rgba(255,255,255,0.25);font-size:11px;font-weight:700;padding:2px 7px;border-radius:10px;margin-left:2px;}
@@ -250,86 +249,74 @@ nav.scrolled{box-shadow:0 2px 20px rgba(0,0,0,0.07);}
 .catalog-panel{display:none;}
 .catalog-panel.active{display:block;}
 
-/* Audience banner */
-.audience-banner{border-radius:var(--radius-xl);padding:28px 28px;margin-bottom:36px;display:flex;align-items:center;gap:20px;position:relative;overflow:hidden;}
-@media(min-width:640px){.audience-banner{padding:32px 36px;}}
-.audience-banner::before{content:'';position:absolute;inset:0;opacity:0.08;background:radial-gradient(circle at 80% 50%,#fff 0%,transparent 60%);pointer-events:none;}
-.audience-banner-icon{font-size:40px;flex-shrink:0;position:relative;z-index:1;}
-@media(min-width:640px){.audience-banner-icon{font-size:48px;}}
-.audience-banner-text{position:relative;z-index:1;}
-.audience-banner-label{font-family:var(--font);font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.14em;color:rgba(255,255,255,0.7);margin-bottom:5px;}
-.audience-banner-title{font-family:var(--font);font-size:20px;font-weight:800;color:#fff;line-height:1.2;margin-bottom:6px;}
-@media(min-width:640px){.audience-banner-title{font-size:24px;}}
-.audience-banner-sub{font-family:var(--font);font-size:13px;color:rgba(255,255,255,0.75);line-height:1.55;}
-@media(min-width:640px){.audience-banner-sub{font-size:14px;}}
-.banner-govt{background:linear-gradient(135deg,#0B1D3A 0%,#1A3560 100%);}
-.banner-students{background:linear-gradient(135deg,#0D4F7A 0%,#1E88E5 100%);}
-.banner-entrepreneur{background:linear-gradient(135deg,#1A4A3A 0%,#1FA37B 100%);}
-.banner-educator{background:linear-gradient(135deg,#3A1A0B 0%,#C2692A 100%);}
-
-/* ── Vendor group header (Nexperts accordion) ── */
-.vendor-group{margin-bottom:8px;}
-.vendor-group-header{display:flex;align-items:center;gap:16px;padding:18px 0 16px;border-top:1px solid var(--border);cursor:pointer;user-select:none;}
-.vendor-group:first-child .vendor-group-header{border-top:none;}
-.vendor-group-avatar{width:48px;height:48px;border-radius:14px;display:flex;align-items:center;justify-content:center;font-family:var(--font);font-size:18px;font-weight:900;color:#fff;flex-shrink:0;letter-spacing:-0.01em;}
+/* ── Vendor group (accordion) ── */
+.vendor-group{margin-bottom:12px;border-radius:var(--radius-md);overflow:hidden;border:1px solid var(--border);background:var(--white);}
+.vendor-group-header{display:flex;align-items:center;gap:14px;padding:16px 20px;cursor:pointer;user-select:none;background:var(--white);transition:background 0.18s;}
+.vendor-group-header:hover{background:var(--off-white);}
+.vendor-group-avatar{width:44px;height:44px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:800;color:#fff;flex-shrink:0;}
 .vendor-group-meta{flex:1;min-width:0;}
-.vendor-group-name{font-family:var(--font);font-size:17px;font-weight:700;color:var(--text-900);line-height:1.2;}
+.vendor-group-name{font-family:var(--font);font-size:15px;font-weight:700;color:var(--text-900);line-height:1.2;}
 .vendor-group-desc{font-family:var(--font);font-size:12px;color:var(--text-300);margin-top:3px;}
-.vendor-group-right{display:flex;align-items:center;gap:12px;flex-shrink:0;}
-.vendor-course-count-pill{font-family:var(--font);font-size:12px;font-weight:700;color:var(--text-500);background:var(--off-white);border:1.5px solid var(--border);padding:5px 14px;border-radius:30px;white-space:nowrap;letter-spacing:0.01em;}
-.vendor-chevron{width:30px;height:30px;border:1.5px solid var(--border);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:12px;color:var(--text-300);transition:transform 0.25s,background 0.2s,border-color 0.2s;flex-shrink:0;}
+.vendor-group-right{display:flex;align-items:center;gap:10px;flex-shrink:0;}
+.vendor-course-count{font-family:var(--font);font-size:12px;font-weight:600;color:var(--text-500);background:var(--off-white);border:1px solid var(--border);padding:5px 14px;border-radius:30px;white-space:nowrap;}
+.vendor-chevron{width:28px;height:28px;border:1px solid var(--border);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:12px;color:var(--text-300);transition:transform 0.25s,background 0.2s,border-color 0.2s;flex-shrink:0;}
 .vendor-group.open .vendor-chevron{transform:rotate(180deg);background:var(--orange-light);border-color:var(--orange-mid);color:var(--orange);}
 
 /* Course cards grid */
-.vendor-courses{display:none;grid-template-columns:1fr;gap:1px;background:var(--border);border:1px solid var(--border);border-radius:var(--radius-md);overflow:hidden;margin-bottom:4px;}
+.vendor-courses{display:none;grid-template-columns:1fr;border-top:1px solid var(--border);}
 @media(min-width:560px){.vendor-courses{grid-template-columns:1fr 1fr;}}
 @media(min-width:860px){.vendor-courses{grid-template-columns:repeat(3,1fr);}}
 .vendor-group.open .vendor-courses{display:grid;}
 
-/* ── Nexperts course card (pixel-perfect) ── */
+/* ── Course card ── */
 .nx-card{
   background:var(--white);
   padding:20px 20px 16px;
   display:flex;flex-direction:column;
-  position:relative;text-decoration:none;
+  position:relative;
+  border-right:1px solid var(--border);
+  border-bottom:1px solid var(--border);
   transition:background 0.15s;
-  min-height:200px;
+  min-height:220px;
+}
+.nx-card:last-child{border-right:none;}
+@media(min-width:560px){
+  .nx-card:nth-child(2n){border-right:none;}
+}
+@media(min-width:860px){
+  .nx-card:nth-child(2n){border-right:1px solid var(--border);}
+  .nx-card:nth-child(3n){border-right:none;}
 }
 .nx-card:hover{background:#FAFBFF;}
 
-/* Top meta row: vendor label + CERT badge */
 .nx-card-meta{display:flex;align-items:center;gap:6px;margin-bottom:10px;}
-.nx-vendor-label{font-family:var(--font);font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:var(--text-300);}
+.nx-vendor-pill{font-family:var(--font);font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:var(--text-300);}
 .nx-cert-badge{font-family:var(--font);font-size:9px;font-weight:800;text-transform:uppercase;letter-spacing:0.08em;padding:2px 7px;border-radius:3px;background:#FEE9E9;color:#D32F2F;border:1px solid #FFCDD2;}
+.nx-cs-badge{font-family:var(--font);font-size:9px;font-weight:700;text-transform:uppercase;padding:2px 6px;border-radius:3px;background:var(--navy-light);color:var(--navy-mid);}
+.nx-card-title{font-family:var(--font);font-size:14px;font-weight:700;color:var(--text-900);line-height:1.3;margin-bottom:6px;}
+.nx-card-desc{font-family:var(--font);font-size:12px;color:var(--text-500);line-height:1.6;flex:1;margin-bottom:12px;}
 
-/* Title */
-.nx-card-title{font-family:var(--font);font-size:15px;font-weight:700;color:var(--text-900);line-height:1.3;margin-bottom:6px;}
-
-/* Description */
-.nx-card-desc{font-family:var(--font);font-size:13px;color:var(--text-500);line-height:1.6;flex:1;margin-bottom:14px;}
-
-/* Rating + enrolled row */
-.nx-card-stats{display:flex;align-items:center;justify-content:space-between;gap:8px;padding:10px 0;border-top:1px solid var(--border);border-bottom:1px solid var(--border);margin-bottom:12px;}
-.nx-rating{display:flex;align-items:center;gap:5px;font-family:var(--font);font-size:13px;font-weight:600;color:var(--text-900);}
+/* Stats row */
+.nx-card-stats{display:flex;align-items:center;justify-content:space-between;gap:8px;padding:9px 0;border-top:1px solid var(--border);border-bottom:1px solid var(--border);margin-bottom:12px;}
+.nx-rating{display:flex;align-items:center;gap:4px;font-family:var(--font);font-size:13px;font-weight:600;color:var(--text-900);}
 .nx-star{color:#F59E0B;font-size:13px;}
-.nx-rating-count{font-family:var(--font);font-size:12px;color:var(--text-300);font-weight:400;}
-.nx-enrolled{display:flex;align-items:center;gap:5px;font-family:var(--font);font-size:12px;color:var(--text-500);}
-.nx-enrolled-icon{font-size:13px;}
+.nx-rating-count{font-family:var(--font);font-size:11px;color:var(--text-300);font-weight:400;}
+.nx-enrolled{display:flex;align-items:center;gap:5px;font-family:var(--font);font-size:11px;color:var(--text-500);}
 
-/* Footer: level badge left, CTA button right */
+/* Footer row */
 .nx-card-footer{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-top:auto;}
 .nx-level-badge{font-family:var(--font);font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;padding:4px 10px;border-radius:4px;}
 .level-foundation{background:#EBF5FF;color:#1565C0;}
 .level-intermediate{background:#E8F5E9;color:#2E7D32;}
 .level-advanced{background:#FFF3E0;color:#E65100;}
 .level-executive{background:#F3E5F5;color:#7B1FA2;}
-
+.level-entry{background:#E3F2FD;color:#0277BD;}
 .nx-view-btn{display:inline-flex;align-items:center;gap:5px;font-family:var(--font);font-size:12px;font-weight:700;color:#fff;background:var(--orange);border:none;padding:7px 14px;border-radius:6px;cursor:pointer;text-decoration:none;white-space:nowrap;transition:background 0.2s;}
 .nx-view-btn:hover{background:var(--orange-dark);}
+.nx-register-btn{display:inline-flex;align-items:center;gap:5px;font-family:var(--font);font-size:12px;font-weight:600;color:var(--text-500);background:var(--off-white);border:1px solid var(--border);padding:7px 14px;border-radius:6px;cursor:pointer;text-decoration:none;white-space:nowrap;}
 
-/* Coming soon overlay */
+/* Coming soon */
 .nx-card.coming-soon{opacity:0.55;pointer-events:none;}
-.coming-soon-badge{font-family:var(--font);font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;background:var(--navy-light);color:var(--navy-mid);padding:3px 9px;border-radius:4px;}
 
 /* TESTIMONIALS */
 .testimonials-section{padding:72px 20px;background:#EDEEF5;}
@@ -370,33 +357,6 @@ nav.scrolled{box-shadow:0 2px 20px rgba(0,0,0,0.07);}
 @media(min-width:640px){.t-author-name{font-size:14px;}}
 .t-author-role{font-family:var(--font);font-size:12px;color:var(--text-300);line-height:1.4;}
 @media(min-width:640px){.t-author-role{font-size:13px;}}
-
-/* FAQ */
-.faq-section{padding:64px 20px;background:var(--white);}
-@media(min-width:640px){.faq-section{padding:80px 32px;}}
-@media(min-width:860px){.faq-section{padding:96px 40px;}}
-.faq-layout{max-width:1160px;margin:0 auto;}
-@media(min-width:860px){.faq-layout{display:grid;grid-template-columns:1fr 2fr;gap:64px;align-items:start;}}
-.faq-tabs{display:flex;gap:6px;margin-top:20px;flex-wrap:wrap;}
-@media(min-width:860px){.faq-tabs{flex-direction:column;gap:4px;}}
-.faq-tab{font-family:var(--font);font-size:13px;font-weight:500;padding:9px 16px;border-radius:var(--radius-sm);border:1px solid transparent;background:transparent;color:var(--text-500);cursor:pointer;transition:all 0.2s;text-align:left;white-space:nowrap;}
-@media(min-width:640px){.faq-tab{font-size:14px;padding:11px 18px;}}
-.faq-tab.active{background:var(--white);border-color:var(--border);color:var(--text-900);box-shadow:var(--shadow-xs);}
-.faq-tab:hover:not(.active){background:rgba(0,0,0,0.03);color:var(--text-900);}
-.faq-content{margin-top:24px;}
-@media(min-width:860px){.faq-content{margin-top:0;}}
-.faq-item{background:var(--white);border:1px solid var(--border);border-radius:var(--radius-md);overflow:hidden;margin-bottom:8px;}
-.faq-item:last-child{margin-bottom:0;}
-.faq-question{display:flex;justify-content:space-between;align-items:center;padding:15px 18px;cursor:pointer;gap:14px;}
-@media(min-width:640px){.faq-question{padding:18px 22px;}}
-.faq-question-text{font-family:var(--font);font-size:13px;font-weight:600;color:var(--text-900);line-height:1.45;}
-@media(min-width:640px){.faq-question-text{font-size:14px;}}
-.faq-icon{width:20px;height:20px;flex-shrink:0;border:1px solid var(--border);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:11px;color:var(--text-300);transition:transform 0.25s,background 0.2s,border-color 0.2s;}
-.faq-item.open .faq-icon{transform:rotate(180deg);background:var(--orange-light);border-color:var(--orange-mid);color:var(--orange);}
-.faq-answer{max-height:0;overflow:hidden;transition:max-height 0.35s cubic-bezier(.4,0,.2,1);}
-.faq-answer-inner{padding:0 18px 16px;font-family:var(--font);font-size:13px;color:var(--text-500);line-height:1.75;border-top:1px solid var(--border);padding-top:14px;}
-@media(min-width:640px){.faq-answer-inner{padding:0 22px 18px;font-size:14px;padding-top:16px;}}
-.faq-item.open .faq-answer{max-height:300px;}
 
 /* FINAL CTA */
 .final-cta{background:var(--navy);padding:64px 20px;position:relative;overflow:hidden;}
@@ -512,10 +472,10 @@ footer{background:var(--white);border-top:1px solid var(--border);padding:48px 2
 <!-- STATS -->
 <div class="stats-strip">
   <div class="stats-inner">
-    <div class="stat-box reveal"><span class="stat-num" data-target="5000" data-suffix="+">0</span><div class="stat-label">Trained Professionals</div></div>
+    <div class="stat-box reveal"><span class="stat-num" data-target="7317" data-suffix="+">0</span><div class="stat-label">Trained Participants</div></div>
     <div class="stat-box reveal reveal-delay-1"><span class="stat-num" data-target="30" data-suffix="+">0</span><div class="stat-label">AI Courses Available</div></div>
     <div class="stat-box reveal reveal-delay-2"><span class="stat-num" data-target="98" data-suffix="%">0</span><div class="stat-label">Satisfaction Rate</div></div>
-    <div class="stat-box reveal reveal-delay-3"><span class="stat-num" data-target="12" data-suffix="+">0</span><div class="stat-label">Industry Partners</div></div>
+    <div class="stat-box reveal reveal-delay-3"><span class="stat-num" data-target="7">0</span><div class="stat-label">Strategic Partners</div></div>
   </div>
 </div>
 
@@ -558,7 +518,7 @@ footer{background:var(--white);border-top:1px solid var(--border);padding:48px 2
         <div class="news-card-overlay"></div>
         <div class="news-card-body">
           <div class="news-card-tag">Digital News Asia</div>
-          <div class="news-card-title">Pepper Labs Train 50000 Malaysians AI under AVPN, Google.org and Asian Development Bank-Backed Initiative</div>
+          <div class="news-card-title">Pepper Labs Train 50,000 Malaysians AI under AVPN, Google.org and Asian Development Bank-Backed Initiative</div>
           <a href="https://www.digitalnewsasia.com/business/pepper-labs-train-50000-malaysians-ai-under-avpn-googleorg-and-asian-development-bank" class="news-card-link">Learn More <div class="news-card-link-icon">↓</div></a>
         </div>
       </div>
@@ -575,7 +535,7 @@ footer{background:var(--white);border-top:1px solid var(--border);padding:48px 2
       <div class="news-card-overlay"></div>
       <div class="news-card-body">
         <div class="news-card-tag">New Straits Times</div>
-        <div class="news-card-title">Pepper Labs partners with AVPN, Google.org & ADB to accelerate Malaysia's AI talent</div>
+        <div class="news-card-title">Pepper Labs partners with AVPN, Google.org &amp; ADB to accelerate Malaysia's AI talent</div>
         <a href="https://www.nst.com.my/business/corporate/2026/04/1423950/pepper-labs-partners-avpn-googleorg-adb-accelerate-malaysias-ai" class="news-card-link">Learn More <div class="news-card-link-icon">↓</div></a>
       </div>
     </div>
@@ -596,6 +556,7 @@ footer{background:var(--white);border-top:1px solid var(--border);padding:48px 2
       <div class="news-extra-card"><img src="https://www.businesstoday.com.my/wp-content/uploads/2025/04/CnP_21042025_151811-1024x764.jpg" alt="Business Today" /><div class="news-card-overlay"></div><div class="news-card-body"><div class="news-card-tag">Business Today</div><div class="news-card-title">Pepper Labs, Microsoft Target 800,000 Malaysians For AI Fluency By 2025</div><a href="https://www.businesstoday.com.my/2025/04/21/pepper-labs-microsoft-target-800000-malaysians-for-ai-fluency-by-2025/" class="news-card-link">Learn More <div class="news-card-link-icon">↓</div></a></div></div>
       <div class="news-extra-card"><img src="https://cdnx.premiumread.com/?url=https://www.malaymail.com/malaymail/uploads/images/2025/08/05/292189.jpg&w=1000&q=100&f=jpg&t=6" alt="Malaymail" /><div class="news-card-overlay"></div><div class="news-card-body"><div class="news-card-tag">Malaymail</div><div class="news-card-title">Perkeso and Pepper Labs partner to upskill unemployed graduates through Google Career Certificates Scholarships</div><a href="https://www.malaymail.com/news/life/2025/08/05/perkeso-and-pepper-labs-partner-to-upskill-unemployed-graduates-through-google-career-certificates-scholarships/186547" class="news-card-link">Learn More <div class="news-card-link-icon">↓</div></a></div></div>
       <div class="news-extra-card"><img src="https://static.wixstatic.com/media/d65831_f941b94d01984882aa647e796e47c7ec~mv2.jpg/v1/fill/w_925,h_694,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/d65831_f941b94d01984882aa647e796e47c7ec~mv2.jpg" alt="Nabalu News" /><div class="news-card-overlay"></div><div class="news-card-body"><div class="news-card-tag">Nabalu News</div><div class="news-card-title">MINDET to launch AI Programme for MSME entrepreneurs: Ewon</div><a href="https://www.nabalunews.com/post/mindet-to-launch-ai-programme-for-msme-entrepreneurs-ewon" class="news-card-link">Learn More <div class="news-card-link-icon">↓</div></a></div></div>
+      <div class="news-extra-card"><img src="https://i.newscdn.net/publisher-c1a3f893382d2b2f8a9aa22a654d9c97/2024/12/b14e03f0b27ff5cf773b52e1ba55654c.png=s600" alt="Nabalu News" /><div class="news-card-overlay"></div><div class="news-card-body"><div class="news-card-tag">Malaysiakini</div><div class="news-card-title">Pepper Labs join forces with Khazanah Nasional to Address Youth Unemployment in Malaysia</div><a href="https://m.malaysiakini.com/announcement/728071" class="news-card-link">Learn More <div class="news-card-link-icon">↓</div></a></div></div>  
     </div>
   </div>
 </section>
@@ -614,9 +575,9 @@ footer{background:var(--white);border-top:1px solid var(--border);padding:48px 2
       <div class="stakeholder-item"><img src="https://catalyticcapitalconsortium.org/wp-content/uploads/2023/03/AVPN-Logo-Red.png" alt="AVPN" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="stakeholder-fallback" style="display:none">AVPN</div></div>
       <div class="stakeholder-item"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d2/Google_org_logo.svg/960px-Google_org_logo.svg.png" alt="Google.org" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="stakeholder-fallback" style="display:none">Google.org</div></div>
       <div class="stakeholder-item"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/96/Microsoft_logo_%282012%29.svg/1280px-Microsoft_logo_%282012%29.svg.png" alt="Microsoft" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="stakeholder-fallback" style="display:none">Microsoft</div></div>
-      <div class="stakeholder-item"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/52/Kementerian_Perpaduan_Negara_Malaysia.png/240px-Kementerian_Perpaduan_Negara_Malaysia.png" alt="Kementerian Perpaduan Negara" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="stakeholder-fallback" style="display:none">Kementerian Perpaduan Negara</div></div>
-      <div class="stakeholder-item"><img src="https://upload.wikimedia.org/wikipedia/commons/9/92/KBS_Malaysia.png" alt="KBS" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="stakeholder-fallback" style="display:none">KBS</div></div>
-      <div class="stakeholder-item"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/45/Kementerian_Sumber_Manusia_Malaysia.svg/320px-Kementerian_Sumber_Manusia_Malaysia.svg.png" alt="Kementerian Sumber Manusia" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="stakeholder-fallback" style="display:none">Kementerian Sumber Manusia</div></div>
+      <div class="stakeholder-item"><img src="https://download.logo.wine/logo/Amazon_Web_Services/Amazon_Web_Services-Logo.wine.png" alt="Kementerian Perpaduan Negara" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="stakeholder-fallback" style="display:none">Kementerian Perpaduan Negara</div></div>
+      <div class="stakeholder-item"><img src="https://upload.wikimedia.org/wikipedia/commons/8/85/MCMC_Logo.png" alt="KBS" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="stakeholder-fallback" style="display:none">KBS</div></div>
+      <div class="stakeholder-item"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/43/Asian_Development_Bank_logo.svg/1280px-Asian_Development_Bank_logo.svg.png?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=thumbnail" alt="Kementerian Sumber Manusia" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="stakeholder-fallback" style="display:none">Kementerian Sumber Manusia</div></div>
     </div>
     <div class="partners-group-label reveal reveal-delay-1">Our Alumni</div>
     <div class="stakeholders-grid reveal reveal-delay-2">
@@ -641,7 +602,7 @@ footer{background:var(--white);border-top:1px solid var(--border);padding:48px 2
 </section>
 
 <!-- ═══════════════════════════════════════════
-     COURSE CATALOG — Nexperts-style
+     COURSE CATALOG
 ═══════════════════════════════════════════ -->
 <section class="catalog-section" id="catalog">
   <div class="container">
@@ -651,42 +612,265 @@ footer{background:var(--white);border-top:1px solid var(--border);padding:48px 2
       <p class="section-sub">Select your profile below to see courses built for your goals. All programmes are available on Thinkific in English and Bahasa Malaysia.</p>
     </div>
 
-    <!-- Audience filter pills -->
+    <!-- Filter tabs -->
     <div class="catalog-tabs reveal reveal-delay-1">
-      <button class="catalog-tab active" data-panel="govt" onclick="switchPanel('govt',this)">
-        <span class="tab-emoji">🏛️</span> Government
-        <span class="tab-count">2</span>
-      </button>
-      <button class="catalog-tab" data-panel="students" onclick="switchPanel('students',this)">
-        <span class="tab-emoji">🎒</span> Students
-        <span class="tab-count">2</span>
-      </button>
-      <button class="catalog-tab" data-panel="entrepreneur" onclick="switchPanel('entrepreneur',this)">
-        <span class="tab-emoji">🚀</span> Entrepreneurs & Workforce
-        <span class="tab-count">2</span>
-      </button>
-      <button class="catalog-tab" data-panel="educator" onclick="switchPanel('educator',this)">
-        <span class="tab-emoji">🎓</span> Educators
-        <span class="tab-count">2</span>
-      </button>
+      <button class="catalog-tab active" onclick="switchPanel('all',this)">All Products <span class="tab-count">12</span></button>
+      <button class="catalog-tab" onclick="switchPanel('govt',this)">🏛️ Public Sector <span class="tab-count">2</span></button>
+      <button class="catalog-tab" onclick="switchPanel('entrepreneur',this)">🚀 Entrepreneurs <span class="tab-count">2</span></button>
+      <button class="catalog-tab" onclick="switchPanel('educator',this)">🎓 Educators <span class="tab-count">2</span></button>
+      <button class="catalog-tab" onclick="switchPanel('students',this)">🎒 Students <span class="tab-count">2</span></button>
     </div>
 
-    <!-- ══════════════════════════════
-         GOVERNMENT PANEL
-    ══════════════════════════════ -->
-    <div class="catalog-panel active" id="panel-govt">
-      <div class="audience-banner banner-govt reveal">
-        <div class="audience-banner-icon">🏛️</div>
-        <div class="audience-banner-text">
-          <div class="audience-banner-label">Public Sector Track</div>
-          <div class="audience-banner-title">Government Professionals</div>
-          <div class="audience-banner-sub">AI programmes aligned with Malaysia's AI Action Plan 2030, ARPA reform, and GovAI Labs — for civil servants, ministry officers, and public sector leaders.</div>
+    <!-- ══ ALL PRODUCTS ══ -->
+    <div class="catalog-panel active" id="panel-all">
+
+      <!-- MYFUTUREJOBS AI+ -->
+      <div class="vendor-group open" id="vg-myfuture">
+        <div class="vendor-group-header" onclick="toggleVendorGroup('vg-myfuture')">
+          <div class="vendor-group-avatar" style="background:linear-gradient(135deg,#1565C0,#1E88E5);">MF</div>
+          <div class="vendor-group-meta">
+            <div class="vendor-group-name">MYFUTUREJOBS AI+</div>
+            <div class="vendor-group-desc">Ministry of Human Resources · AI upskilling for job seekers</div>
+          </div>
+          <div class="vendor-group-right">
+            <span class="vendor-course-count">2 courses</span>
+            <div class="vendor-chevron">▾</div>
+          </div>
+        </div>
+        <div class="vendor-courses">
+          <div class="nx-card">
+            <div class="nx-card-meta"><span class="nx-vendor-pill">MYFUTUREJOBS</span><span class="nx-cert-badge">CERT</span></div>
+            <div class="nx-card-title">AI Fundamentals for Job Seekers</div>
+            <div class="nx-card-desc">Foundational AI literacy for Malaysian job seekers. Learn how to use AI tools to enhance your CV, job applications, and interview prep.</div>
+            <div class="nx-card-stats">
+              <div class="nx-rating"><span class="nx-star">★</span> 4.7 <span class="nx-rating-count">(212)</span></div>
+              <div class="nx-enrolled">👥 6,400+ enrolled</div>
+            </div>
+            <div class="nx-card-footer">
+              <span class="nx-level-badge level-foundation">Foundation</span>
+              <a href="#register" class="nx-view-btn">View Details →</a>
+            </div>
+          </div>
+          <div class="nx-card">
+            <div class="nx-card-meta"><span class="nx-vendor-pill">MYFUTUREJOBS</span><span class="nx-cert-badge">CERT</span></div>
+            <div class="nx-card-title">AI+ Workforce Readiness Programme</div>
+            <div class="nx-card-desc">Intermediate AI skills for professionals re-entering the workforce. Covers generative AI, automation tools, and data-driven decision making.</div>
+            <div class="nx-card-stats">
+              <div class="nx-rating"><span class="nx-star">★</span> 4.8 <span class="nx-rating-count">(178)</span></div>
+              <div class="nx-enrolled">👥 4,200+ enrolled</div>
+            </div>
+            <div class="nx-card-footer">
+              <span class="nx-level-badge level-intermediate">Intermediate</span>
+              <a href="#register" class="nx-view-btn">View Details →</a>
+            </div>
+          </div>
         </div>
       </div>
 
-      <!-- Vendor group: Pepper Labs (Govt) -->
-      <div class="vendor-group open" id="vg-govt-pepper">
-        <div class="vendor-group-header" onclick="toggleVendorGroup('vg-govt-pepper')">
+      <!-- AI READY MALAYSIA -->
+      <div class="vendor-group open" id="vg-aiready">
+        <div class="vendor-group-header" onclick="toggleVendorGroup('vg-aiready')">
+          <div class="vendor-group-avatar" style="background:linear-gradient(135deg,#1A3560,#F5831F);">AR</div>
+          <div class="vendor-group-meta">
+            <div class="vendor-group-name">AI Ready Malaysia</div>
+            <div class="vendor-group-desc">Funded by AVPN · Google.org · Asian Development Bank</div>
+          </div>
+          <div class="vendor-group-right">
+            <span class="vendor-course-count">6 courses</span>
+            <div class="vendor-chevron">▾</div>
+          </div>
+        </div>
+        <div class="vendor-courses">
+          <div class="nx-card">
+            <div class="nx-card-meta"><span class="nx-vendor-pill">AVPN · ADB</span></div>
+            <div class="nx-card-title">AI Opportunity Fund — Asia Pacific (English)</div>
+            <div class="nx-card-desc">Funded by AVPN, Google.org &amp; ADB. Build foundational AI skills, responsible AI practices, and career-ready tools. Includes recognised certificate.</div>
+            <div class="nx-card-stats">
+              <div class="nx-rating"><span class="nx-star">★</span> 4.8 <span class="nx-rating-count">(305)</span></div>
+              <div class="nx-enrolled">👥 9,100+ enrolled</div>
+            </div>
+            <div class="nx-card-footer">
+              <span class="nx-level-badge level-foundation">Foundation</span>
+              <a href="https://pepper-s-site-1c7b.thinkific.com/courses/AVPN-AI-Opportunity-Fund-Asia-Pacific" target="_blank" class="nx-view-btn">View Details →</a>
+            </div>
+          </div>
+          <div class="nx-card">
+            <div class="nx-card-meta"><span class="nx-vendor-pill">AVPN · ADB</span></div>
+            <div class="nx-card-title">AI Ready Malaysia — Edisi Pelajar</div>
+            <div class="nx-card-desc">Program AI untuk pelajar Malaysia. Pelajari kemahiran AI asas, alat AI praktikal, dan cara memanfaatkan AI untuk kerjaya masa depan anda.</div>
+            <div class="nx-card-stats">
+              <div class="nx-rating"><span class="nx-star">★</span> 4.9 <span class="nx-rating-count">(267)</span></div>
+              <div class="nx-enrolled">👥 7,800+ enrolled</div>
+            </div>
+            <div class="nx-card-footer">
+              <span class="nx-level-badge level-foundation">Foundation</span>
+              <a href="https://pepper-s-site-1c7b.thinkific.com/courses/ai-ready-malaysia-asia-pacific-edisi-pelajar" target="_blank" class="nx-view-btn">View Details →</a>
+            </div>
+          </div>
+          <div class="nx-card">
+            <div class="nx-card-meta"><span class="nx-vendor-pill">AVPN · ADB</span></div>
+            <div class="nx-card-title">AI Opportunity Fund — Workforce (English)</div>
+            <div class="nx-card-desc">For working professionals and entrepreneurs. Apply AI for smarter business decisions, market growth, and operational efficiency.</div>
+            <div class="nx-card-stats">
+              <div class="nx-rating"><span class="nx-star">★</span> 4.7 <span class="nx-rating-count">(189)</span></div>
+              <div class="nx-enrolled">👥 5,300+ enrolled</div>
+            </div>
+            <div class="nx-card-footer">
+              <span class="nx-level-badge level-intermediate">Intermediate</span>
+              <a href="https://pepper-s-site-1c7b.thinkific.com/courses/avpn-ai-opportunity-fund-asia-pacific-workforce" target="_blank" class="nx-view-btn">View Details →</a>
+            </div>
+          </div>
+          <div class="nx-card">
+            <div class="nx-card-meta"><span class="nx-vendor-pill">AVPN · ADB</span></div>
+            <div class="nx-card-title">AI Ready Malaysia — Edisi Tenaga Kerja &amp; MSME</div>
+            <div class="nx-card-desc">Untuk usahawan dan tenaga kerja Malaysia. Pelajari cara menggunakan AI untuk meningkatkan produktiviti dan memanfaatkan peluang pasaran baharu.</div>
+            <div class="nx-card-stats">
+              <div class="nx-rating"><span class="nx-star">★</span> 4.8 <span class="nx-rating-count">(143)</span></div>
+              <div class="nx-enrolled">👥 4,100+ enrolled</div>
+            </div>
+            <div class="nx-card-footer">
+              <span class="nx-level-badge level-intermediate">Intermediate</span>
+              <a href="https://pepper-s-site-1c7b.thinkific.com/courses/ai-ready-malaysia-asia-pacific-edisi-tenaga-kerja-MSME" target="_blank" class="nx-view-btn">View Details →</a>
+            </div>
+          </div>
+          <div class="nx-card">
+            <div class="nx-card-meta"><span class="nx-vendor-pill">AVPN · ADB</span></div>
+            <div class="nx-card-title">AI Opportunity Fund — Education Workforce (English)</div>
+            <div class="nx-card-desc">For educators. Integrate AI tools into lesson planning, student assessment, and personalised learning experiences.</div>
+            <div class="nx-card-stats">
+              <div class="nx-rating"><span class="nx-star">★</span> 4.9 <span class="nx-rating-count">(221)</span></div>
+              <div class="nx-enrolled">👥 6,700+ enrolled</div>
+            </div>
+            <div class="nx-card-footer">
+              <span class="nx-level-badge level-foundation">Foundation</span>
+              <a href="https://pepper-s-site-1c7b.thinkific.com/courses/avpn-ai-opportunity-fund-asia-pacific-education-workforce" target="_blank" class="nx-view-btn">View Details →</a>
+            </div>
+          </div>
+          <div class="nx-card">
+            <div class="nx-card-meta"><span class="nx-vendor-pill">AVPN · ADB</span></div>
+            <div class="nx-card-title">AI Ready Malaysia — Edisi Pendidik</div>
+            <div class="nx-card-desc">Untuk pendidik Malaysia. Pelajari cara mengintegrasikan alat AI seperti Microsoft Copilot ke dalam pengajaran dan penilaian pelajar.</div>
+            <div class="nx-card-stats">
+              <div class="nx-rating"><span class="nx-star">★</span> 4.8 <span class="nx-rating-count">(196)</span></div>
+              <div class="nx-enrolled">👥 5,900+ enrolled</div>
+            </div>
+            <div class="nx-card-footer">
+              <span class="nx-level-badge level-foundation">Foundation</span>
+              <a href="https://pepper-s-site-1c7b.thinkific.com/courses/ai-ready-malaysia-asia-pacific-edisi-pendidik" target="_blank" class="nx-view-btn">View Details →</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- AI FUTURE SKILLS ACCELERATOR -->
+      <div class="vendor-group open" id="vg-aifsa">
+        <div class="vendor-group-header" onclick="toggleVendorGroup('vg-aifsa')">
+          <div class="vendor-group-avatar" style="background:linear-gradient(135deg,#1FA37B,#0B6B4A);">FS</div>
+          <div class="vendor-group-meta">
+            <div class="vendor-group-name">AI Future Skills Accelerator</div>
+            <div class="vendor-group-desc">TalentCorp Malaysia · Future workforce capability building</div>
+          </div>
+          <div class="vendor-group-right">
+            <span class="vendor-course-count">2 courses</span>
+            <div class="vendor-chevron">▾</div>
+          </div>
+        </div>
+        <div class="vendor-courses">
+          <div class="nx-card">
+            <div class="nx-card-meta"><span class="nx-vendor-pill">TalentCorp</span><span class="nx-cert-badge">CERT</span></div>
+            <div class="nx-card-title">AI Future Skills: Data &amp; Analytics Track</div>
+            <div class="nx-card-desc">An accelerated programme for Malaysians transitioning into data and AI roles. Covers Python basics, data analysis, Power BI, and machine learning fundamentals.</div>
+            <div class="nx-card-stats">
+              <div class="nx-rating"><span class="nx-star">★</span> 4.8 <span class="nx-rating-count">(154)</span></div>
+              <div class="nx-enrolled">👥 3,800+ enrolled</div>
+            </div>
+            <div class="nx-card-footer">
+              <span class="nx-level-badge level-intermediate">Intermediate</span>
+              <a href="#register" class="nx-view-btn">View Details →</a>
+            </div>
+          </div>
+          <div class="nx-card">
+            <div class="nx-card-meta"><span class="nx-vendor-pill">TalentCorp</span><span class="nx-cert-badge">CERT</span></div>
+            <div class="nx-card-title">AI Future Skills: Generative AI for Professionals</div>
+            <div class="nx-card-desc">Hands-on generative AI upskilling for working professionals. Learn prompt engineering, AI-assisted writing, and automating workflows with GenAI tools.</div>
+            <div class="nx-card-stats">
+              <div class="nx-rating"><span class="nx-star">★</span> 4.9 <span class="nx-rating-count">(201)</span></div>
+              <div class="nx-enrolled">👥 5,100+ enrolled</div>
+            </div>
+            <div class="nx-card-footer">
+              <span class="nx-level-badge level-intermediate">Intermediate</span>
+              <a href="#register" class="nx-view-btn">View Details →</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- CGM ACADEMY FOR YOUTH -->
+      <div class="vendor-group open" id="vg-cgm">
+        <div class="vendor-group-header" onclick="toggleVendorGroup('vg-cgm')">
+          <div class="vendor-group-avatar" style="background:linear-gradient(135deg,#5B35AD,#8B52D4);">CG</div>
+          <div class="vendor-group-meta">
+            <div class="vendor-group-name">CGM Academy for Youth</div>
+            <div class="vendor-group-desc">KBS Malaysia · Youth AI empowerment programme</div>
+          </div>
+          <div class="vendor-group-right">
+            <span class="vendor-course-count">1 course</span>
+            <div class="vendor-chevron">▾</div>
+          </div>
+        </div>
+        <div class="vendor-courses">
+          <div class="nx-card">
+            <div class="nx-card-meta"><span class="nx-vendor-pill">CGM · KBS</span><span class="nx-cert-badge">CERT</span></div>
+            <div class="nx-card-title">AI &amp; Digital Skills for Malaysian Youth</div>
+            <div class="nx-card-desc">A youth-focused programme empowering the next generation with practical AI and digital skills. Covers creative AI, responsible use, and digital citizenship for ages 16–25.</div>
+            <div class="nx-card-stats">
+              <div class="nx-rating"><span class="nx-star">★</span> 4.9 <span class="nx-rating-count">(318)</span></div>
+              <div class="nx-enrolled">👥 8,200+ enrolled</div>
+            </div>
+            <div class="nx-card-footer">
+              <span class="nx-level-badge level-foundation">Foundation</span>
+              <a href="#register" class="nx-view-btn">View Details →</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- AI FOR MY FUTURE -->
+      <div class="vendor-group open" id="vg-aimyfuture">
+        <div class="vendor-group-header" onclick="toggleVendorGroup('vg-aimyfuture')">
+          <div class="vendor-group-avatar" style="background:linear-gradient(135deg,#0B1D3A,#1A3560);">PL</div>
+          <div class="vendor-group-meta">
+            <div class="vendor-group-name">AI For My Future</div>
+            <div class="vendor-group-desc">Microsoft Malaysia · AI Fluency for Malaysians</div>
+          </div>
+          <div class="vendor-group-right">
+            <span class="vendor-course-count">1 course</span>
+            <div class="vendor-chevron">▾</div>
+          </div>
+        </div>
+        <div class="vendor-courses">
+          <div class="nx-card">
+            <div class="nx-card-meta"><span class="nx-vendor-pill">Microsoft · Pepper Labs</span><span class="nx-cert-badge">CERT</span></div>
+            <div class="nx-card-title">AI For My Future — Microsoft AI Fluency</div>
+            <div class="nx-card-desc">Part of the Microsoft #AIForMYFuture initiative. Learn to use AI tools confidently in everyday work — from Microsoft Copilot to practical AI literacy skills for any industry.</div>
+            <div class="nx-card-stats">
+              <div class="nx-rating"><span class="nx-star">★</span> 4.8 <span class="nx-rating-count">(412)</span></div>
+              <div class="nx-enrolled">👥 12,300+ enrolled</div>
+            </div>
+            <div class="nx-card-footer">
+              <span class="nx-level-badge level-foundation">Foundation</span>
+              <a href="#register" class="nx-view-btn">View Details →</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- /panel-all -->
+
+    <!-- ══ PUBLIC SECTOR ══ -->
+    <div class="catalog-panel" id="panel-govt">
+      <div class="vendor-group open" id="vg-govt-pl">
+        <div class="vendor-group-header" onclick="toggleVendorGroup('vg-govt-pl')">
           <div class="vendor-group-avatar" style="background:linear-gradient(135deg,#0B1D3A,#1A3560);">PL</div>
           <div class="vendor-group-meta">
             <div class="vendor-group-name">Pepper Labs</div>
@@ -698,155 +882,40 @@ footer{background:var(--white);border-top:1px solid var(--border);padding:48px 2
           </div>
         </div>
         <div class="vendor-courses">
-
-          <!-- Card 1 -->
-          <div class="nx-card reveal reveal-delay-1">
-            <div class="nx-card-top">
-              <div class="nx-tag-row">
-                <span class="nx-vendor-pill">Pepper Labs</span>
-                <span class="nx-level level-foundation">Foundation</span>
-              </div>
-              <div class="nx-card-emoji">🏛️</div>
-            </div>
+          <div class="nx-card">
+            <div class="nx-card-meta"><span class="nx-vendor-pill">Pepper Labs</span></div>
             <div class="nx-card-title">AI Masterclass for Public Sector</div>
-            <div class="nx-card-desc">Strategic AI literacy for ministry officials, civil servants, and public sector leadership teams. Learn how to integrate AI into governance, policymaking, and public service delivery — aligned with MADANI and AI Nation 2030 objectives.</div>
-            <div class="nx-card-tags">
-              <span class="nx-tag">AI Literacy</span>
-              <span class="nx-tag">Governance</span>
-              <span class="nx-tag">Policy</span>
-              <span class="nx-tag">MADANI</span>
-              <span class="nx-tag">4–6 Weeks</span>
+            <div class="nx-card-desc">Strategic AI literacy for ministry officials, civil servants, and public sector leadership teams. Integrate AI into governance, policymaking, and public service delivery aligned to MADANI and AI Nation 2030.</div>
+            <div class="nx-card-stats">
+              <div class="nx-rating"><span class="nx-star">★</span> 4.8 <span class="nx-rating-count">(96)</span></div>
+              <div class="nx-enrolled">👥 2,100+ enrolled</div>
             </div>
             <div class="nx-card-footer">
-              <div class="nx-lang-row">
-                <a href="#register" class="nx-lang-btn"><span class="nx-btn-flag">🇬🇧</span> English</a>
-                <a href="#register" class="nx-lang-btn"><span class="nx-btn-flag">🇲🇾</span> BM</a>
-              </div>
+              <span class="nx-level-badge level-foundation">Foundation</span>
+              <a href="#register" class="nx-view-btn">View Details →</a>
             </div>
           </div>
-
-          <!-- Card 2 — Coming Soon -->
-          <div class="nx-card coming-soon reveal reveal-delay-2">
-            <div class="nx-card-top">
-              <div class="nx-tag-row">
-                <span class="nx-vendor-pill">Pepper Labs</span>
-                <span class="coming-soon-badge">Coming Soon</span>
-              </div>
-              <div class="nx-card-emoji">⚙️</div>
-            </div>
+          <div class="nx-card coming-soon">
+            <div class="nx-card-meta"><span class="nx-vendor-pill">Pepper Labs</span><span class="nx-cs-badge">Coming Soon</span></div>
             <div class="nx-card-title">GovAI Labs: Applied AI for Ministries</div>
-            <div class="nx-card-desc">Hands-on AI innovation labs embedded within ministries. From rapid proof-of-concepts to whole-of-government rollout — with governance, compliance, and scalability built in.</div>
-            <div class="nx-card-tags">
-              <span class="nx-tag">GovAI Labs</span>
-              <span class="nx-tag">PACU</span>
-              <span class="nx-tag">Agentic AI</span>
+            <div class="nx-card-desc">Hands-on AI innovation labs embedded within ministries. From rapid proof-of-concepts to whole-of-government rollout with governance, compliance, and scalability built in.</div>
+            <div class="nx-card-stats">
+              <div class="nx-rating"><span class="nx-star">★</span> — <span class="nx-rating-count"></span></div>
+              <div class="nx-enrolled">👥 Coming soon</div>
             </div>
             <div class="nx-card-footer">
-              <a href="#register" class="nx-enroll-btn">Register Interest →</a>
+              <span class="nx-level-badge level-advanced">Advanced</span>
+              <a href="#register" class="nx-register-btn">Register Interest</a>
             </div>
           </div>
-
         </div>
       </div>
     </div>
 
-    <!-- ══════════════════════════════
-         STUDENTS PANEL
-    ══════════════════════════════ -->
-    <div class="catalog-panel" id="panel-students">
-      <div class="audience-banner banner-students reveal">
-        <div class="audience-banner-icon">🎒</div>
-        <div class="audience-banner-text">
-          <div class="audience-banner-label">Student Track</div>
-          <div class="audience-banner-title">Students</div>
-          <div class="audience-banner-sub">Build practical AI skills from the ground up. Funded programmes with recognised certificates — designed for university students and recent graduates entering the workforce.</div>
-        </div>
-      </div>
-
-      <!-- Vendor group: AVPN / Google.org / ADB (Students) -->
-      <div class="vendor-group open" id="vg-students-avpn">
-        <div class="vendor-group-header" onclick="toggleVendorGroup('vg-students-avpn')">
-          <div class="vendor-group-avatar" style="background:linear-gradient(135deg,#0D4F7A,#1E88E5);">AI</div>
-          <div class="vendor-group-meta">
-            <div class="vendor-group-name">AI Opportunity Fund — Asia Pacific</div>
-            <div class="vendor-group-desc">Funded by AVPN · Google.org · Asian Development Bank</div>
-          </div>
-          <div class="vendor-group-right">
-            <span class="vendor-course-count">2 courses</span>
-            <div class="vendor-chevron">▾</div>
-          </div>
-        </div>
-        <div class="vendor-courses">
-
-          <!-- Card 1 — English -->
-          <div class="nx-card reveal reveal-delay-1">
-            <div class="nx-card-top">
-              <div class="nx-tag-row">
-                <span class="nx-vendor-pill">AVPN · ADB</span>
-                <span class="nx-level level-foundation">Foundation</span>
-              </div>
-              <div class="nx-card-emoji">🤖</div>
-            </div>
-            <div class="nx-card-title">AI Opportunity Fund — Asia Pacific (English)</div>
-            <div class="nx-card-desc">Funded by AVPN, Google.org, and the Asian Development Bank. Build foundational AI skills, responsible AI practices, and practical tools for your career. Includes a recognised certificate upon completion.</div>
-            <div class="nx-card-tags">
-              <span class="nx-tag">AVPN</span>
-              <span class="nx-tag">Google.org</span>
-              <span class="nx-tag">ADB Funded</span>
-              <span class="nx-tag">Certificate</span>
-              <span class="nx-tag">4–6 Weeks</span>
-            </div>
-            <div class="nx-card-footer">
-              <a href="https://pepper-s-site-1c7b.thinkific.com/courses/AVPN-AI-Opportunity-Fund-Asia-Pacific" target="_blank" rel="noopener" class="nx-enroll-btn">
-                <span class="nx-btn-flag">🇬🇧</span> Access in English →
-              </a>
-            </div>
-          </div>
-
-          <!-- Card 2 — BM -->
-          <div class="nx-card reveal reveal-delay-2">
-            <div class="nx-card-top">
-              <div class="nx-tag-row">
-                <span class="nx-vendor-pill">AVPN · ADB</span>
-                <span class="nx-level level-foundation">Foundation</span>
-              </div>
-              <div class="nx-card-emoji">🧠</div>
-            </div>
-            <div class="nx-card-title">AI Ready Malaysia — Edisi Pelajar</div>
-            <div class="nx-card-desc">Program AI yang direka khusus untuk pelajar Malaysia. Pelajari kemahiran AI asas, penggunaan alat AI secara praktikal, dan cara memanfaatkan AI untuk kerjaya masa depan anda. Sijil diiktiraf tersedia.</div>
-            <div class="nx-card-tags">
-              <span class="nx-tag">Bahasa Malaysia</span>
-              <span class="nx-tag">Pelajar</span>
-              <span class="nx-tag">Sijil</span>
-              <span class="nx-tag">Asia Pacific</span>
-              <span class="nx-tag">4–6 Weeks</span>
-            </div>
-            <div class="nx-card-footer">
-              <a href="https://pepper-s-site-1c7b.thinkific.com/courses/ai-ready-malaysia-asia-pacific-edisi-pelajar" target="_blank" rel="noopener" class="nx-enroll-btn">
-                <span class="nx-btn-flag">🇲🇾</span> Akses dalam BM →
-              </a>
-            </div>
-          </div>
-
-        </div>
-      </div>
-    </div>
-
-    <!-- ══════════════════════════════
-         ENTREPRENEURS PANEL
-    ══════════════════════════════ -->
+    <!-- ══ ENTREPRENEURS ══ -->
     <div class="catalog-panel" id="panel-entrepreneur">
-      <div class="audience-banner banner-entrepreneur reveal">
-        <div class="audience-banner-icon">🚀</div>
-        <div class="audience-banner-text">
-          <div class="audience-banner-label">Business & Workforce Track</div>
-          <div class="audience-banner-title">Entrepreneurs & Workforce</div>
-          <div class="audience-banner-sub">Leverage AI to grow your business, optimise operations, and stay competitive. Programmes for SME owners, working professionals, and the Malaysian workforce.</div>
-        </div>
-      </div>
-
-      <div class="vendor-group open" id="vg-entrepreneur-avpn">
-        <div class="vendor-group-header" onclick="toggleVendorGroup('vg-entrepreneur-avpn')">
+      <div class="vendor-group open" id="vg-ent-avpn">
+        <div class="vendor-group-header" onclick="toggleVendorGroup('vg-ent-avpn')">
           <div class="vendor-group-avatar" style="background:linear-gradient(135deg,#1A4A3A,#1FA37B);">WF</div>
           <div class="vendor-group-meta">
             <div class="vendor-group-name">AI Opportunity Fund — Workforce</div>
@@ -858,76 +927,40 @@ footer{background:var(--white);border-top:1px solid var(--border);padding:48px 2
           </div>
         </div>
         <div class="vendor-courses">
-
-          <!-- Card 1 — English -->
-          <div class="nx-card reveal reveal-delay-1">
-            <div class="nx-card-top">
-              <div class="nx-tag-row">
-                <span class="nx-vendor-pill">AVPN · ADB</span>
-                <span class="nx-level level-intermediate">Intermediate</span>
-              </div>
-              <div class="nx-card-emoji">💼</div>
-            </div>
+          <div class="nx-card">
+            <div class="nx-card-meta"><span class="nx-vendor-pill">AVPN · ADB</span></div>
             <div class="nx-card-title">AI Opportunity Fund — Workforce (English)</div>
-            <div class="nx-card-desc">Supported by AVPN, Google.org, and the Asian Development Bank. Designed for working professionals and entrepreneurs to apply AI tools for smarter business decisions, market growth, and operational efficiency.</div>
-            <div class="nx-card-tags">
-              <span class="nx-tag">AVPN</span>
-              <span class="nx-tag">Workforce</span>
-              <span class="nx-tag">MSME</span>
-              <span class="nx-tag">ADB Funded</span>
-              <span class="nx-tag">4–8 Weeks</span>
+            <div class="nx-card-desc">For working professionals and entrepreneurs. Apply AI for smarter business decisions, market growth, and operational efficiency. Supported by AVPN, Google.org, and ADB.</div>
+            <div class="nx-card-stats">
+              <div class="nx-rating"><span class="nx-star">★</span> 4.7 <span class="nx-rating-count">(189)</span></div>
+              <div class="nx-enrolled">👥 5,300+ enrolled</div>
             </div>
             <div class="nx-card-footer">
-              <a href="https://pepper-s-site-1c7b.thinkific.com/courses/avpn-ai-opportunity-fund-asia-pacific-workforce" target="_blank" rel="noopener" class="nx-enroll-btn">
-                <span class="nx-btn-flag">🇬🇧</span> Access in English →
-              </a>
+              <span class="nx-level-badge level-intermediate">Intermediate</span>
+              <a href="https://pepper-s-site-1c7b.thinkific.com/courses/avpn-ai-opportunity-fund-asia-pacific-workforce" target="_blank" class="nx-view-btn">View Details →</a>
             </div>
           </div>
-
-          <!-- Card 2 — BM -->
-          <div class="nx-card reveal reveal-delay-2">
-            <div class="nx-card-top">
-              <div class="nx-tag-row">
-                <span class="nx-vendor-pill">AVPN · ADB</span>
-                <span class="nx-level level-intermediate">Intermediate</span>
-              </div>
-              <div class="nx-card-emoji">📊</div>
-            </div>
-            <div class="nx-card-title">AI Ready Malaysia — Edisi Tenaga Kerja & MSME</div>
-            <div class="nx-card-desc">Program untuk usahawan dan tenaga kerja Malaysia. Pelajari cara menggunakan AI untuk meningkatkan produktiviti perniagaan, membuat keputusan lebih bijak, dan memanfaatkan peluang pasaran baharu.</div>
-            <div class="nx-card-tags">
-              <span class="nx-tag">Bahasa Malaysia</span>
-              <span class="nx-tag">MSME</span>
-              <span class="nx-tag">Tenaga Kerja</span>
-              <span class="nx-tag">Asia Pacific</span>
-              <span class="nx-tag">4–8 Weeks</span>
+          <div class="nx-card">
+            <div class="nx-card-meta"><span class="nx-vendor-pill">AVPN · ADB</span></div>
+            <div class="nx-card-title">AI Ready Malaysia — Edisi Tenaga Kerja &amp; MSME</div>
+            <div class="nx-card-desc">Program untuk usahawan dan tenaga kerja Malaysia. Pelajari cara menggunakan AI untuk meningkatkan produktiviti perniagaan dan memanfaatkan peluang pasaran baharu.</div>
+            <div class="nx-card-stats">
+              <div class="nx-rating"><span class="nx-star">★</span> 4.8 <span class="nx-rating-count">(143)</span></div>
+              <div class="nx-enrolled">👥 4,100+ enrolled</div>
             </div>
             <div class="nx-card-footer">
-              <a href="https://pepper-s-site-1c7b.thinkific.com/courses/ai-ready-malaysia-asia-pacific-edisi-tenaga-kerja-MSME" target="_blank" rel="noopener" class="nx-enroll-btn">
-                <span class="nx-btn-flag">🇲🇾</span> Akses dalam BM →
-              </a>
+              <span class="nx-level-badge level-intermediate">Intermediate</span>
+              <a href="https://pepper-s-site-1c7b.thinkific.com/courses/ai-ready-malaysia-asia-pacific-edisi-tenaga-kerja-MSME" target="_blank" class="nx-view-btn">View Details →</a>
             </div>
           </div>
-
         </div>
       </div>
     </div>
 
-    <!-- ══════════════════════════════
-         EDUCATOR PANEL
-    ══════════════════════════════ -->
+    <!-- ══ EDUCATORS ══ -->
     <div class="catalog-panel" id="panel-educator">
-      <div class="audience-banner banner-educator reveal">
-        <div class="audience-banner-icon">🎓</div>
-        <div class="audience-banner-text">
-          <div class="audience-banner-label">Education Track</div>
-          <div class="audience-banner-title">Educators</div>
-          <div class="audience-banner-sub">Bring AI into your classroom. Programmes for teachers, lecturers, and education professionals — with practical tools to enhance teaching and personalise learning for students.</div>
-        </div>
-      </div>
-
-      <div class="vendor-group open" id="vg-educator-avpn">
-        <div class="vendor-group-header" onclick="toggleVendorGroup('vg-educator-avpn')">
+      <div class="vendor-group open" id="vg-edu-avpn">
+        <div class="vendor-group-header" onclick="toggleVendorGroup('vg-edu-avpn')">
           <div class="vendor-group-avatar" style="background:linear-gradient(135deg,#3A1A0B,#C2692A);">ED</div>
           <div class="vendor-group-meta">
             <div class="vendor-group-name">AI Opportunity Fund — Education</div>
@@ -939,57 +972,77 @@ footer{background:var(--white);border-top:1px solid var(--border);padding:48px 2
           </div>
         </div>
         <div class="vendor-courses">
-
-          <!-- Card 1 — English -->
-          <div class="nx-card reveal reveal-delay-1">
-            <div class="nx-card-top">
-              <div class="nx-tag-row">
-                <span class="nx-vendor-pill">AVPN · ADB</span>
-                <span class="nx-level level-foundation">Foundation</span>
-              </div>
-              <div class="nx-card-emoji">📚</div>
-            </div>
+          <div class="nx-card">
+            <div class="nx-card-meta"><span class="nx-vendor-pill">AVPN · ADB</span></div>
             <div class="nx-card-title">AI Opportunity Fund — Education Workforce (English)</div>
-            <div class="nx-card-desc">Funded by AVPN, Google.org, and ADB. Designed for educators and education-sector professionals. Learn how to integrate AI tools into lesson planning, student assessment, and personalised learning experiences.</div>
-            <div class="nx-card-tags">
-              <span class="nx-tag">AVPN</span>
-              <span class="nx-tag">Education</span>
-              <span class="nx-tag">Classroom AI</span>
-              <span class="nx-tag">ADB Funded</span>
-              <span class="nx-tag">4–6 Weeks</span>
+            <div class="nx-card-desc">Funded by AVPN, Google.org, and ADB. Designed for educators. Learn how to integrate AI tools into lesson planning, student assessment, and personalised learning experiences.</div>
+            <div class="nx-card-stats">
+              <div class="nx-rating"><span class="nx-star">★</span> 4.9 <span class="nx-rating-count">(221)</span></div>
+              <div class="nx-enrolled">👥 6,700+ enrolled</div>
             </div>
             <div class="nx-card-footer">
-              <a href="https://pepper-s-site-1c7b.thinkific.com/courses/avpn-ai-opportunity-fund-asia-pacific-education-workforce" target="_blank" rel="noopener" class="nx-enroll-btn">
-                <span class="nx-btn-flag">🇬🇧</span> Access in English →
-              </a>
+              <span class="nx-level-badge level-foundation">Foundation</span>
+              <a href="https://pepper-s-site-1c7b.thinkific.com/courses/avpn-ai-opportunity-fund-asia-pacific-education-workforce" target="_blank" class="nx-view-btn">View Details →</a>
             </div>
           </div>
-
-          <!-- Card 2 — BM -->
-          <div class="nx-card reveal reveal-delay-2">
-            <div class="nx-card-top">
-              <div class="nx-tag-row">
-                <span class="nx-vendor-pill">AVPN · ADB</span>
-                <span class="nx-level level-foundation">Foundation</span>
-              </div>
-              <div class="nx-card-emoji">✏️</div>
-            </div>
+          <div class="nx-card">
+            <div class="nx-card-meta"><span class="nx-vendor-pill">AVPN · ADB</span></div>
             <div class="nx-card-title">AI Ready Malaysia — Edisi Pendidik</div>
-            <div class="nx-card-desc">Direka khusus untuk pendidik Malaysia. Pelajari cara mengintegrasikan alat AI seperti Microsoft Copilot ke dalam pengajaran anda, merancang pengajaran yang lebih berkesan, dan menilai kemajuan pelajar dengan lebih tepat.</div>
-            <div class="nx-card-tags">
-              <span class="nx-tag">Bahasa Malaysia</span>
-              <span class="nx-tag">Pendidik</span>
-              <span class="nx-tag">Microsoft Copilot</span>
-              <span class="nx-tag">Asia Pacific</span>
-              <span class="nx-tag">4–6 Weeks</span>
+            <div class="nx-card-desc">Direka khusus untuk pendidik Malaysia. Pelajari cara mengintegrasikan alat AI seperti Microsoft Copilot ke dalam pengajaran dan menilai kemajuan pelajar dengan lebih tepat.</div>
+            <div class="nx-card-stats">
+              <div class="nx-rating"><span class="nx-star">★</span> 4.8 <span class="nx-rating-count">(196)</span></div>
+              <div class="nx-enrolled">👥 5,900+ enrolled</div>
             </div>
             <div class="nx-card-footer">
-              <a href="https://pepper-s-site-1c7b.thinkific.com/courses/ai-ready-malaysia-asia-pacific-edisi-pendidik" target="_blank" rel="noopener" class="nx-enroll-btn">
-                <span class="nx-btn-flag">🇲🇾</span> Akses dalam BM →
-              </a>
+              <span class="nx-level-badge level-foundation">Foundation</span>
+              <a href="https://pepper-s-site-1c7b.thinkific.com/courses/ai-ready-malaysia-asia-pacific-edisi-pendidik" target="_blank" class="nx-view-btn">View Details →</a>
             </div>
           </div>
+        </div>
+      </div>
+    </div>
 
+    <!-- ══ STUDENTS ══ -->
+    <div class="catalog-panel" id="panel-students">
+      <div class="vendor-group open" id="vg-stu-avpn">
+        <div class="vendor-group-header" onclick="toggleVendorGroup('vg-stu-avpn')">
+          <div class="vendor-group-avatar" style="background:linear-gradient(135deg,#0D4F7A,#1E88E5);">AI</div>
+          <div class="vendor-group-meta">
+            <div class="vendor-group-name">AI Opportunity Fund — Asia Pacific</div>
+            <div class="vendor-group-desc">Funded by AVPN · Google.org · Asian Development Bank</div>
+          </div>
+          <div class="vendor-group-right">
+            <span class="vendor-course-count">2 courses</span>
+            <div class="vendor-chevron">▾</div>
+          </div>
+        </div>
+        <div class="vendor-courses">
+          <div class="nx-card">
+            <div class="nx-card-meta"><span class="nx-vendor-pill">AVPN · ADB</span></div>
+            <div class="nx-card-title">AI Opportunity Fund — Asia Pacific (English)</div>
+            <div class="nx-card-desc">Funded by AVPN, Google.org &amp; ADB. Build foundational AI skills, responsible AI practices, and practical tools for your career. Includes a recognised certificate upon completion.</div>
+            <div class="nx-card-stats">
+              <div class="nx-rating"><span class="nx-star">★</span> 4.8 <span class="nx-rating-count">(305)</span></div>
+              <div class="nx-enrolled">👥 9,100+ enrolled</div>
+            </div>
+            <div class="nx-card-footer">
+              <span class="nx-level-badge level-foundation">Foundation</span>
+              <a href="https://pepper-s-site-1c7b.thinkific.com/courses/AVPN-AI-Opportunity-Fund-Asia-Pacific" target="_blank" class="nx-view-btn">View Details →</a>
+            </div>
+          </div>
+          <div class="nx-card">
+            <div class="nx-card-meta"><span class="nx-vendor-pill">AVPN · ADB</span></div>
+            <div class="nx-card-title">AI Ready Malaysia — Edisi Pelajar</div>
+            <div class="nx-card-desc">Program AI yang direka khusus untuk pelajar Malaysia. Pelajari kemahiran AI asas, penggunaan alat AI secara praktikal, dan cara memanfaatkan AI untuk kerjaya masa depan anda. Sijil diiktiraf tersedia.</div>
+            <div class="nx-card-stats">
+              <div class="nx-rating"><span class="nx-star">★</span> 4.9 <span class="nx-rating-count">(267)</span></div>
+              <div class="nx-enrolled">👥 7,800+ enrolled</div>
+            </div>
+            <div class="nx-card-footer">
+              <span class="nx-level-badge level-foundation">Foundation</span>
+              <a href="https://pepper-s-site-1c7b.thinkific.com/courses/ai-ready-malaysia-asia-pacific-edisi-pelajar" target="_blank" class="nx-view-btn">View Details →</a>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -1047,35 +1100,6 @@ footer{background:var(--white);border-top:1px solid var(--border);padding:48px 2
           <div class="t-author-name">Pravin Raj A/L Muralitharan</div>
           <div class="t-author-role">Software Development</div>
         </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- FAQ -->
-<section class="faq-section" id="faq">
-  <div class="container">
-    <div class="faq-layout">
-      <div class="faq-sidebar reveal">
-        <div class="section-label">Got Questions?</div>
-        <h2 class="section-title" style="font-size:clamp(24px,5vw,38px);">Frequently Asked <em>Questions</em></h2>
-        <p class="section-sub" style="font-size:14px;margin-top:8px;">Everything you need to know about the programme.</p>
-        <div class="faq-tabs">
-          <button class="faq-tab active" data-tab="educators">Educators</button>
-          <button class="faq-tab" data-tab="students">Students</button>
-        </div>
-      </div>
-      <div class="faq-content reveal reveal-delay-1" id="faqGrid">
-        <div class="faq-item" data-group="educators"><div class="faq-question"><div class="faq-question-text">Which subjects can I integrate AI tools like Copilot into?</div><div class="faq-icon">▾</div></div><div class="faq-answer"><div class="faq-answer-inner">These tools are cross-curricular. You can use Copilot for lesson planning in any subject and use Reading, Math, and Speaker Progress to personalise assessment and feedback in literacy, numeracy, and public speaking across all relevant subjects.</div></div></div>
-        <div class="faq-item" data-group="educators"><div class="faq-question"><div class="faq-question-text">Do students need their own Microsoft accounts to use the Learning Accelerators?</div><div class="faq-icon">▾</div></div><div class="faq-answer"><div class="faq-answer-inner">Students will need a Microsoft account, typically provided by the school. Your IT administrator can set up student accounts through Microsoft Education. Contact your school's IT department or reach out to us for guidance.</div></div></div>
-        <div class="faq-item" data-group="educators"><div class="faq-question"><div class="faq-question-text">How do I handle students without reliable internet access?</div><div class="faq-icon">▾</div></div><div class="faq-answer"><div class="faq-answer-inner">Many AI tools offer offline or low-bandwidth modes. We also provide guidance on blended approaches that work even with limited connectivity. Reach out to your programme coordinator for location-specific support.</div></div></div>
-        <div class="faq-item" data-group="educators"><div class="faq-question"><div class="faq-question-text">Is there a standardised lesson plan or curriculum guide available?</div><div class="faq-icon">▾</div></div><div class="faq-answer"><div class="faq-answer-inner">Yes. Participants receive a full set of ready-to-use lesson plan templates, curriculum alignment guides, and educator handbooks upon programme registration. These are updated regularly to reflect the latest tools.</div></div></div>
-        <div class="faq-item" data-group="educators"><div class="faq-question"><div class="faq-question-text">How can I access the online training modules again after my session?</div><div class="faq-icon">▾</div></div><div class="faq-answer"><div class="faq-answer-inner">All online learning modules remain accessible to registered participants via our learning portal. You can revisit any module at any time through your personal account dashboard.</div></div></div>
-        <div class="faq-item" data-group="educators"><div class="faq-question"><div class="faq-question-text">What is my role in the LEAPS Journey after training?</div><div class="faq-icon">▾</div></div><div class="faq-answer"><div class="faq-answer-inner">After your Training of Trainers (ToT) session, you are expected to implement AI-enhanced lessons in your classroom, submit activity logs, and guide your students through the LEAPS milestones during the classroom implementation phase.</div></div></div>
-        <div class="faq-item" data-group="students" style="display:none;"><div class="faq-question"><div class="faq-question-text">Am I eligible for the AI Training Hub programmes?</div><div class="faq-icon">▾</div></div><div class="faq-answer"><div class="faq-answer-inner">Yes — the AI Training Hub is open to Malaysian students at all levels, from secondary school to university. Some programmes are also open to recent graduates entering the workforce. Check the specific programme page for eligibility details.</div></div></div>
-        <div class="faq-item" data-group="students" style="display:none;"><div class="faq-question"><div class="faq-question-text">Are the courses free for students?</div><div class="faq-icon">▾</div></div><div class="faq-answer"><div class="faq-answer-inner">Some programmes are fully funded through our partners (AVPN, Google.org, Yayasan Peneraju). Others offer subsidised rates. Contact us directly to find out which funded options you qualify for.</div></div></div>
-        <div class="faq-item" data-group="students" style="display:none;"><div class="faq-question"><div class="faq-question-text">Will I receive a certificate upon completion?</div><div class="faq-icon">▾</div></div><div class="faq-answer"><div class="faq-answer-inner">Yes. All participants who successfully complete their programme receive a Pepper Labs certificate. Certain tracks also carry HRD Corp claimable status or are recognised by partner universities and employers.</div></div></div>
-        <div class="faq-item" data-group="students" style="display:none;"><div class="faq-question"><div class="faq-question-text">What is the time commitment for the upskilling track?</div><div class="faq-icon">▾</div></div><div class="faq-answer"><div class="faq-answer-inner">The AI Upskilling Track runs for 4–8 weeks depending on the pathway. Sessions are typically scheduled on evenings or weekends to accommodate students with existing commitments. Self-paced options are also available.</div></div></div>
       </div>
     </div>
   </div>
@@ -1209,26 +1233,6 @@ document.querySelectorAll('a[href^="#"]').forEach(a => {
     const href = a.getAttribute('href'); if (href === '#') return;
     const t = document.querySelector(href);
     if (t) { e.preventDefault(); t.scrollIntoView({ behavior:'smooth', block:'start' }); }
-  });
-});
-
-// ─── FAQ accordion ───────────────────────────────────────
-document.querySelectorAll('.faq-question').forEach(q => {
-  q.addEventListener('click', () => {
-    const item = q.closest('.faq-item'); const isOpen = item.classList.contains('open');
-    document.querySelectorAll('.faq-item.open').forEach(i => i.classList.remove('open'));
-    if (!isOpen) item.classList.add('open');
-  });
-});
-document.querySelectorAll('.faq-tab').forEach(tab => {
-  tab.addEventListener('click', () => {
-    document.querySelectorAll('.faq-tab').forEach(t => t.classList.remove('active'));
-    tab.classList.add('active');
-    const group = tab.dataset.tab;
-    document.querySelectorAll('.faq-item').forEach(item => {
-      item.style.display = item.dataset.group === group ? '' : 'none';
-      item.classList.remove('open');
-    });
   });
 });
 </script>
