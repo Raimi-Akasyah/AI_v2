@@ -210,71 +210,122 @@ nav.scrolled{box-shadow:0 2px 20px rgba(0,0,0,0.07);}
 .news-extra-wrap.open .news-extra-card:nth-child(5){transition-delay:0.33s;}
 .news-extra-card:hover{transform:translateY(-4px);box-shadow:0 20px 50px rgba(0,0,0,0.15);}
 .news-extra-card img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;}
+/* ─── PARTNERS SECTION ──────────────────────────────────── */
+.partners-section{padding:64px 0;}
+@media(min-width:640px){.partners-section{padding:80px 0;}}
+@media(min-width:860px){.partners-section{padding:96px 0;}}
 
-/* PARTNERS */
-.partners-section{padding:64px 20px;background:var(--off-white);}
-@media(min-width:640px){.partners-section{padding:80px 32px;}}
-@media(min-width:860px){.partners-section{padding:96px 40px;}}
+.partners-section .container{max-width:100%;padding:0 40px;}
+@media(min-width:1400px){.partners-section .container{padding:0 80px;}}
+
 .partners-group-label{font-family:var(--font);font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.12em;color:var(--text-300);padding:24px 0 14px;border-top:1px solid var(--border-dark);margin-top:24px;}
 .partners-group-label:first-of-type{border-top:none;margin-top:32px;padding-top:0;}
-.stakeholders-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:32px 16px;}
-@media(min-width:480px){.stakeholders-grid{grid-template-columns:repeat(4,1fr);gap:36px 20px;}}
-@media(min-width:640px){.stakeholders-grid{gap:40px 24px;}}
-@media(min-width:860px){.stakeholders-grid{grid-template-columns:repeat(7,1fr);gap:36px 20px;}}
-.stakeholder-item{background:transparent;border:none;border-radius:0;padding:0;display:flex;align-items:center;justify-content:center;min-height:72px;transition:transform 0.25s ease;}
-@media(min-width:640px){.stakeholder-item{min-height:84px;}}
-.stakeholder-item:hover{box-shadow:none;transform:translateY(-3px);border-color:transparent;}
-.stakeholder-item img{height:64px;width:auto;max-width:100%;object-fit:contain;filter:grayscale(100%);opacity:0.65;transition:filter 0.3s,opacity 0.3s,transform 0.25s;display:block;}
-@media(min-width:640px){.stakeholder-item img{height:72px;}}
-.stakeholder-item:hover img{filter:grayscale(0%);opacity:1;transform:scale(1.1);}
-.stakeholder-fallback{font-family:var(--font);font-size:9px;font-weight:700;color:var(--text-300);text-align:center;letter-spacing:0.05em;text-transform:uppercase;}
-/* ─── ALUMNI LOGOS ─────────────────────────────────────────────────────── */
-.alumni-item {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 80px;
-  padding: 10px 16px;
-  background: transparent;
-  border: none;
-  border-radius: 0;
-  transition: transform 0.25s ease;
+
+/* ─── STRATEGIC PARTNERS ─── */
+.strategic-grid{
+  display:grid;
+  grid-template-columns:repeat(7,1fr);
+  gap:0;
+  justify-items:center;
+  align-items:center;
+  width:100%;
 }
-.alumni-item:hover {
-  transform: translateY(-3px);
-  box-shadow: none;
+@media(max-width:860px){.strategic-grid{grid-template-columns:repeat(4,1fr);}}
+@media(max-width:480px){.strategic-grid{grid-template-columns:repeat(3,1fr);}}
+
+.strategic-item{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  width:100%;
+  min-height:120px;
+  padding:16px 20px;
+  transition:transform 0.25s ease;
 }
-.alumni-item img {
-  display: block;
-  width: 80px !important;
-  height: 52px !important;
-  max-width: unset !important;
-  max-height: unset !important;
-  object-fit: contain;
-  object-position: center;
-  filter: grayscale(100%);
-  opacity: 0.6;
-  transition: filter 0.3s, opacity 0.3s, transform 0.25s;
+.strategic-item:hover{transform:translateY(-3px);}
+.strategic-item img{
+  display:block;
+  width:auto;
+  height:80px;
+  max-width:140px;
+  object-fit:contain;
+  object-position:center;
 }
-@media (min-width: 640px) {
-  .alumni-item        { height: 90px; }
-  .alumni-item img    { width: 96px !important; height: 60px !important; }
+@media(min-width:640px){
+  .strategic-item{min-height:140px;}
+  .strategic-item img{height:96px;max-width:160px;}
 }
-.alumni-item:hover img {
-  filter: grayscale(0%);
-  opacity: 1;
-  transform: scale(1.08);
+
+/* ─── ALUMNI SLIDER ─── */
+.alumni-slider-wrap{position:relative;margin-top:4px;}
+.alumni-slider-viewport{overflow:hidden;border-radius:var(--radius-md);}
+.alumni-slider-track{display:flex;transition:transform 0.5s cubic-bezier(.4,0,.2,1);}
+
+.alumni-page{
+  flex-shrink:0;
+  width:100%;
+  display:grid;
+  grid-template-columns:repeat(7,1fr);
+  gap:0;
+  justify-items:center;
+  align-items:center;
+  padding:8px 0 16px;
 }
-/* ─────────────────────────────────────────────────────────────────────── */
+@media(max-width:860px){.alumni-page{grid-template-columns:repeat(4,1fr);}}
+@media(max-width:480px){.alumni-page{grid-template-columns:repeat(3,1fr);}}
+
+.alumni-item{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  width:100%;
+  min-height:120px;
+  padding:16px 20px;
+  transition:transform 0.25s ease;
+}
+.alumni-item:hover{transform:translateY(-3px);}
+.alumni-item img{
+  display:block;
+  width:auto;
+  height:80px;
+  max-width:140px;
+  object-fit:contain;
+  object-position:center;
+}
+@media(min-width:640px){
+  .alumni-item{min-height:140px;}
+  .alumni-item img{height:96px;max-width:160px;}
+}
+
+.stakeholder-fallback{
+  font-family:var(--font);
+  font-size:11px;
+  font-weight:700;
+  color:var(--text-300);
+  text-align:center;
+  letter-spacing:0.05em;
+  text-transform:uppercase;
+  line-height:1.4;
+  padding:0 4px;
+}
+
+/* Slider controls */
+.alumni-controls{display:flex;align-items:center;justify-content:center;gap:12px;margin-top:20px;}
+.alumni-arrow{width:40px;height:40px;border-radius:50%;border:1.5px solid var(--border-dark);background:var(--white);cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:16px;color:var(--text-500);transition:background 0.2s,border-color 0.2s,color 0.2s,transform 0.15s;flex-shrink:0;font-family:var(--font);}
+.alumni-arrow:hover{background:var(--orange);border-color:var(--orange);color:#fff;transform:scale(1.05);}
+.alumni-arrow:disabled{opacity:0.3;cursor:not-allowed;pointer-events:none;}
+.alumni-dots{display:flex;gap:6px;align-items:center;}
+.alumni-dot{width:8px;height:8px;border-radius:50%;background:var(--border-dark);cursor:pointer;transition:background 0.2s,transform 0.2s;border:none;padding:0;}
+.alumni-dot.active{background:var(--orange);transform:scale(1.25);}
+.alumni-page-label{font-family:var(--font);font-size:12px;color:var(--text-300);min-width:52px;text-align:center;}
 
 /* ═══════════════════════════════════════════════
-   COURSE CATALOG — Nexperts-style (updated)
-═══════════════════════════════════════════════ */
+   COURSE CATALOG
+═══════════════════════════════════════════ */
 .catalog-section{padding:64px 20px;background:var(--white);}
 @media(min-width:640px){.catalog-section{padding:80px 32px;}}
 @media(min-width:860px){.catalog-section{padding:96px 40px;}}
 
-/* Audience filter pills */
 .catalog-tabs{display:flex;flex-wrap:wrap;gap:8px;margin-top:32px;margin-bottom:36px;}
 .catalog-tab{display:flex;align-items:center;gap:7px;font-family:var(--font);font-size:13px;font-weight:600;padding:10px 20px;border-radius:30px;border:1.5px solid var(--border);background:var(--white);color:var(--text-500);cursor:pointer;transition:all 0.2s;white-space:nowrap;}
 @media(min-width:640px){.catalog-tab{font-size:14px;padding:11px 24px;}}
@@ -283,11 +334,9 @@ nav.scrolled{box-shadow:0 2px 20px rgba(0,0,0,0.07);}
 .catalog-tab .tab-count{background:rgba(255,255,255,0.25);font-size:11px;font-weight:700;padding:2px 7px;border-radius:10px;margin-left:2px;}
 .catalog-tab:not(.active) .tab-count{background:var(--off-white);color:var(--text-300);}
 
-/* Panel */
 .catalog-panel{display:none;}
 .catalog-panel.active{display:block;}
 
-/* ── Vendor group (accordion) ── */
 .vendor-group{margin-bottom:12px;border-radius:var(--radius-md);overflow:hidden;border:1px solid var(--border);background:var(--white);}
 .vendor-group-header{display:flex;align-items:center;gap:14px;padding:16px 20px;cursor:pointer;user-select:none;background:var(--white);transition:background 0.18s;}
 .vendor-group-header:hover{background:var(--off-white);}
@@ -300,48 +349,30 @@ nav.scrolled{box-shadow:0 2px 20px rgba(0,0,0,0.07);}
 .vendor-chevron{width:28px;height:28px;border:1px solid var(--border);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:12px;color:var(--text-300);transition:transform 0.25s,background 0.2s,border-color 0.2s;flex-shrink:0;}
 .vendor-group.open .vendor-chevron{transform:rotate(180deg);background:var(--orange-light);border-color:var(--orange-mid);color:var(--orange);}
 
-/* Course cards grid */
 .vendor-courses{display:none;grid-template-columns:1fr;border-top:1px solid var(--border);}
 @media(min-width:560px){.vendor-courses{grid-template-columns:1fr 1fr;}}
 @media(min-width:860px){.vendor-courses{grid-template-columns:repeat(3,1fr);}}
 .vendor-group.open .vendor-courses{display:grid;}
 
-/* ── Course card ── */
-.nx-card{
-  background:var(--white);
-  padding:20px 20px 16px;
-  display:flex;flex-direction:column;
-  position:relative;
-  border-right:1px solid var(--border);
-  border-bottom:1px solid var(--border);
-  transition:background 0.15s;
-  min-height:220px;
-}
+.nx-card{background:var(--white);padding:20px 20px 16px;display:flex;flex-direction:column;position:relative;border-right:1px solid var(--border);border-bottom:1px solid var(--border);transition:background 0.15s;min-height:220px;}
 .nx-card:last-child{border-right:none;}
-@media(min-width:560px){
-  .nx-card:nth-child(2n){border-right:none;}
-}
+@media(min-width:560px){.nx-card:nth-child(2n){border-right:none;}}
 @media(min-width:860px){
   .nx-card:nth-child(2n){border-right:1px solid var(--border);}
   .nx-card:nth-child(3n){border-right:none;}
 }
 .nx-card:hover{background:#FAFBFF;}
-
 .nx-card-meta{display:flex;align-items:center;gap:6px;margin-bottom:10px;}
 .nx-vendor-pill{font-family:var(--font);font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:var(--text-300);}
 .nx-cert-badge{font-family:var(--font);font-size:9px;font-weight:800;text-transform:uppercase;letter-spacing:0.08em;padding:2px 7px;border-radius:3px;background:#FEE9E9;color:#D32F2F;border:1px solid #FFCDD2;}
 .nx-cs-badge{font-family:var(--font);font-size:9px;font-weight:700;text-transform:uppercase;padding:2px 6px;border-radius:3px;background:var(--navy-light);color:var(--navy-mid);}
 .nx-card-title{font-family:var(--font);font-size:14px;font-weight:700;color:var(--text-900);line-height:1.3;margin-bottom:6px;}
 .nx-card-desc{font-family:var(--font);font-size:12px;color:var(--text-500);line-height:1.6;flex:1;margin-bottom:12px;}
-
-/* Stats row */
 .nx-card-stats{display:flex;align-items:center;justify-content:space-between;gap:8px;padding:9px 0;border-top:1px solid var(--border);border-bottom:1px solid var(--border);margin-bottom:12px;}
 .nx-rating{display:flex;align-items:center;gap:4px;font-family:var(--font);font-size:13px;font-weight:600;color:var(--text-900);}
 .nx-star{color:#F59E0B;font-size:13px;}
 .nx-rating-count{font-family:var(--font);font-size:11px;color:var(--text-300);font-weight:400;}
 .nx-enrolled{display:flex;align-items:center;gap:5px;font-family:var(--font);font-size:11px;color:var(--text-500);}
-
-/* Footer row */
 .nx-card-footer{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-top:auto;}
 .nx-level-badge{font-family:var(--font);font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;padding:4px 10px;border-radius:4px;}
 .level-foundation{background:#EBF5FF;color:#1565C0;}
@@ -352,8 +383,6 @@ nav.scrolled{box-shadow:0 2px 20px rgba(0,0,0,0.07);}
 .nx-view-btn{display:inline-flex;align-items:center;gap:5px;font-family:var(--font);font-size:12px;font-weight:700;color:#fff;background:var(--orange);border:none;padding:7px 14px;border-radius:6px;cursor:pointer;text-decoration:none;white-space:nowrap;transition:background 0.2s;}
 .nx-view-btn:hover{background:var(--orange-dark);}
 .nx-register-btn{display:inline-flex;align-items:center;gap:5px;font-family:var(--font);font-size:12px;font-weight:600;color:var(--text-500);background:var(--off-white);border:1px solid var(--border);padding:7px 14px;border-radius:6px;cursor:pointer;text-decoration:none;white-space:nowrap;}
-
-/* Coming soon */
 .nx-card.coming-soon{opacity:0.55;pointer-events:none;}
 
 /* TESTIMONIALS */
@@ -594,7 +623,7 @@ footer{background:var(--white);border-top:1px solid var(--border);padding:48px 2
       <div class="news-extra-card"><img src="https://www.businesstoday.com.my/wp-content/uploads/2025/04/CnP_21042025_151811-1024x764.jpg" alt="Business Today" /><div class="news-card-overlay"></div><div class="news-card-body"><div class="news-card-tag">Business Today</div><div class="news-card-title">Pepper Labs, Microsoft Target 800,000 Malaysians For AI Fluency By 2025</div><a href="https://www.businesstoday.com.my/2025/04/21/pepper-labs-microsoft-target-800000-malaysians-for-ai-fluency-by-2025/" class="news-card-link">Learn More <div class="news-card-link-icon">↓</div></a></div></div>
       <div class="news-extra-card"><img src="https://cdnx.premiumread.com/?url=https://www.malaymail.com/malaymail/uploads/images/2025/08/05/292189.jpg&w=1000&q=100&f=jpg&t=6" alt="Malaymail" /><div class="news-card-overlay"></div><div class="news-card-body"><div class="news-card-tag">Malaymail</div><div class="news-card-title">Perkeso and Pepper Labs partner to upskill unemployed graduates through Google Career Certificates Scholarships</div><a href="https://www.malaymail.com/news/life/2025/08/05/perkeso-and-pepper-labs-partner-to-upskill-unemployed-graduates-through-google-career-certificates-scholarships/186547" class="news-card-link">Learn More <div class="news-card-link-icon">↓</div></a></div></div>
       <div class="news-extra-card"><img src="https://static.wixstatic.com/media/d65831_f941b94d01984882aa647e796e47c7ec~mv2.jpg/v1/fill/w_925,h_694,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/d65831_f941b94d01984882aa647e796e47c7ec~mv2.jpg" alt="Nabalu News" /><div class="news-card-overlay"></div><div class="news-card-body"><div class="news-card-tag">Nabalu News</div><div class="news-card-title">MINDET to launch AI Programme for MSME entrepreneurs: Ewon</div><a href="https://www.nabalunews.com/post/mindet-to-launch-ai-programme-for-msme-entrepreneurs-ewon" class="news-card-link">Learn More <div class="news-card-link-icon">↓</div></a></div></div>
-      <div class="news-extra-card"><img src="https://i.newscdn.net/publisher-c1a3f893382d2b2f8a9aa22a654d9c97/2024/12/b14e03f0b27ff5cf773b52e1ba55654c.png=s600" alt="Nabalu News" /><div class="news-card-overlay"></div><div class="news-card-body"><div class="news-card-tag">Malaysiakini</div><div class="news-card-title">Pepper Labs join forces with Khazanah Nasional to Address Youth Unemployment in Malaysia</div><a href="https://m.malaysiakini.com/announcement/728071" class="news-card-link">Learn More <div class="news-card-link-icon">↓</div></a></div></div>  
+      <div class="news-extra-card"><img src="https://i.newscdn.net/publisher-c1a3f893382d2b2f8a9aa22a654d9c97/2024/12/b14e03f0b27ff5cf773b52e1ba55654c.png=s600" alt="Malaysiakini" /><div class="news-card-overlay"></div><div class="news-card-body"><div class="news-card-tag">Malaysiakini</div><div class="news-card-title">Pepper Labs join forces with Khazanah Nasional to Address Youth Unemployment in Malaysia</div><a href="https://m.malaysiakini.com/announcement/728071" class="news-card-link">Learn More <div class="news-card-link-icon">↓</div></a></div></div>  
     </div>
   </div>
 </section>
@@ -607,43 +636,119 @@ footer{background:var(--white);border-top:1px solid var(--border);padding:48px 2
       <h2 class="section-title">Strategic <em>Partners</em></h2>
       <p class="section-sub" style="margin:0 auto;text-align:justify;">Collaborating with leading ministries, agencies, and institutions to drive practical, responsible AI adoption across Malaysia — supporting MADANI governance, ARPA reform, and the AI Nation 2030 agenda.</p>
     </div>
+
+    <!-- Strategic Partners — enlarged logos -->
     <div class="partners-group-label reveal reveal-delay-1">Strategic Partners</div>
-    <div class="stakeholders-grid reveal reveal-delay-2">
-      <div class="stakeholder-item"><img src="https://maset.org.my/assets/img/yayasan/Yayasan-Peneraju.png" alt="Yayasan Peneraju" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="stakeholder-fallback" style="display:none">Yayasan Peneraju</div></div>
-      <div class="stakeholder-item"><img src="https://catalyticcapitalconsortium.org/wp-content/uploads/2023/03/AVPN-Logo-Red.png" alt="AVPN" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="stakeholder-fallback" style="display:none">AVPN</div></div>
-      <div class="stakeholder-item"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d2/Google_org_logo.svg/960px-Google_org_logo.svg.png" alt="Google.org" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="stakeholder-fallback" style="display:none">Google.org</div></div>
-      <div class="stakeholder-item"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/96/Microsoft_logo_%282012%29.svg/1280px-Microsoft_logo_%282012%29.svg.png" alt="Microsoft" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="stakeholder-fallback" style="display:none">Microsoft</div></div>
-      <div class="stakeholder-item"><img src="https://download.logo.wine/logo/Amazon_Web_Services/Amazon_Web_Services-Logo.wine.png" alt="Kementerian Perpaduan Negara" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="stakeholder-fallback" style="display:none">Kementerian Perpaduan Negara</div></div>
-      <div class="stakeholder-item"><img src="https://upload.wikimedia.org/wikipedia/commons/8/85/MCMC_Logo.png" alt="KBS" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="stakeholder-fallback" style="display:none">KBS</div></div>
-      <div class="stakeholder-item"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/43/Asian_Development_Bank_logo.svg/1280px-Asian_Development_Bank_logo.svg.png?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=thumbnail" alt="Kementerian Sumber Manusia" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="stakeholder-fallback" style="display:none">Kementerian Sumber Manusia</div></div>
+    <div class="strategic-grid reveal reveal-delay-2">
+      <div class="strategic-item">
+        <img src="https://maset.org.my/assets/img/yayasan/Yayasan-Peneraju.png" alt="Yayasan Peneraju" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="stakeholder-fallback" style="display:none">Yayasan Peneraju</div>
+      </div>
+      <div class="strategic-item">
+        <img src="https://catalyticcapitalconsortium.org/wp-content/uploads/2023/03/AVPN-Logo-Red.png" alt="AVPN" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="stakeholder-fallback" style="display:none">AVPN</div>
+      </div>
+      <div class="strategic-item">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d2/Google_org_logo.svg/960px-Google_org_logo.svg.png" alt="Google.org" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="stakeholder-fallback" style="display:none">Google.org</div>
+      </div>
+      <div class="strategic-item">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/96/Microsoft_logo_%282012%29.svg/1280px-Microsoft_logo_%282012%29.svg.png" alt="Microsoft" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="stakeholder-fallback" style="display:none">Microsoft</div>
+      </div>
+      <div class="strategic-item">
+        <img src="https://download.logo.wine/logo/Amazon_Web_Services/Amazon_Web_Services-Logo.wine.png" alt="Amazon Web Services" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="stakeholder-fallback" style="display:none">AWS</div>
+      </div>
+      <div class="strategic-item">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/8/85/MCMC_Logo.png" alt="MCMC" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="stakeholder-fallback" style="display:none">MCMC</div>
+      </div>
+      <div class="strategic-item">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/43/Asian_Development_Bank_logo.svg/1280px-Asian_Development_Bank_logo.svg.png" alt="Asian Development Bank" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="stakeholder-fallback" style="display:none">Asian Development Bank</div>
+      </div>
     </div>
 
-    <!-- ═══ OUR ALUMNI — uses .alumni-item for uniform logo sizing ═══ -->
+    <!-- Our Alumni — slider -->
     <div class="partners-group-label reveal reveal-delay-1">Our Alumni</div>
-    <div class="stakeholders-grid reveal reveal-delay-2">
-      <div class="alumni-item"><img src="https://online.anyflip.com/mprll/accountlogo.png" alt="Bahagian Profesionalisme Guru" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="stakeholder-fallback" style="display:none">Bahagian Profesionalisme Guru</div></div>
-      <div class="alumni-item"><img src="https://www.pahang.gov.my/pahang/resources/jataphg.png" alt="SUK Pahang" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="stakeholder-fallback" style="display:none">SUK Pahang</div></div>
-      <div class="alumni-item"><img src="https://vectorseek.com/wp-content/uploads/2023/09/Perkeso-Socso-Logo-Vector.svg-.png" alt="PERKESO" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="stakeholder-fallback" style="display:none">PERKESO</div></div>
-      <div class="alumni-item"><img src="https://www.petra.gov.my/assets/img/logo-petra2.png" alt="PETRA" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="stakeholder-fallback" style="display:none">PETRA</div></div>
-      <div class="alumni-item"><img src="https://malaysiagazette.com/wp-content/uploads/2019/02/kpdnhep.png" alt="KPDNHEP" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="stakeholder-fallback" style="display:none">KPDNHEP</div></div>
-      <div class="alumni-item"><img src="https://mamz.com.my/wp-content/uploads/2024/02/Logo_Rasmi_KKM.png" alt="KKM" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="stakeholder-fallback" style="display:none">KKM</div></div>
-      <div class="alumni-item"><img src="https://www.iskandarinvestment.com/wp-content/uploads/2022/01/IIB-logo.png" alt="IIB" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="stakeholder-fallback" style="display:none">Iskandar Investment</div></div>
-    </div>
-    <div class="stakeholders-grid reveal reveal-delay-3" style="margin-top:10px;">
-      <div class="alumni-item"><img src="https://www.p194.com.my/wp-content/uploads/2022/01/p194-logo.png" alt="P194" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="stakeholder-fallback" style="display:none">P194 Petra Jaya</div></div>
-      <div class="alumni-item"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0d/Pejabat_Aku_Audit_Serawak_logo.png/320px-Pejabat_Aku_Audit_Serawak_logo.png" alt="Pejabat Audit" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="stakeholder-fallback" style="display:none">Pejabat Audit Sarawak</div></div>
-      <div class="alumni-item"><img src="https://sdec.com.my/wp-content/uploads/2023/03/sdec_logo.png" alt="SDEC" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="stakeholder-fallback" style="display:none">SDEC Sarawak</div></div>
-      <div class="alumni-item"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/31/Talentcorp_logo.png/320px-Talentcorp_logo.png" alt="TalentCorp" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="stakeholder-fallback" style="display:none">TalentCorp</div></div>
-      <div class="alumni-item"><img src="https://mranti.my/wp-content/uploads/2022/03/mranti-logo.png" alt="MRANTI" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="stakeholder-fallback" style="display:none">MRANTI</div></div>
-      <div class="alumni-item"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/MaGIC_logo.png/320px-MaGIC_logo.png" alt="MaGIC" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="stakeholder-fallback" style="display:none">MaGIC</div></div>
-      <div class="alumni-item"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/85/Maybank_logo.svg/2560px-Maybank_logo.svg.png" alt="Maybank" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="stakeholder-fallback" style="display:none">Maybank</div></div>
-    </div>
+    <div class="alumni-slider-wrap reveal reveal-delay-2">
+      <div class="alumni-slider-viewport">
+        <div class="alumni-slider-track" id="alumniTrack">
+
+          <!-- PAGE 1: entries 1–7 -->
+          <div class="alumni-page">
+            <div class="alumni-item"><img src="https://residensiwilayah.jwp.gov.my/images/kwp-logo.png" alt="JWP" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><div class="stakeholder-fallback" style="display:none">JWP</div></div>
+            <div class="alumni-item"><img src="https://www.mitra.gov.my/images/MITRA.png" alt="MITRA" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><div class="stakeholder-fallback" style="display:none">MITRA</div></div>
+            <div class="alumni-item"><img src="https://www.kosmo.com.my/wp-content/uploads/2021/03/kpnlogoloader.png" alt="Kementerian Perpaduan" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><div class="stakeholder-fallback" style="display:none">Kementerian Perpaduan</div></div>
+            <div class="alumni-item"><img src="https://dpn.mot.gov.my/portal/images/jata.png" alt="Kementerian Pengangkutan" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><div class="stakeholder-fallback" style="display:none">Kementerian Pengangkutan</div></div>
+            <div class="alumni-item"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQyq--GXwQg9tCMd6jCbq9mOyTZpO06D2xLfQ&s" alt="Jabatan Audit Negara" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><div class="stakeholder-fallback" style="display:none">Jabatan Audit Negara</div></div>
+            <div class="alumni-item"><img src="https://www.nicepng.com/png/full/977-9774684_jabatan-bomba-dan-penyelamat-malaysia-logo-vector-malaysian.png" alt="Bomba" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><div class="stakeholder-fallback" style="display:none">Bomba</div></div>
+            <div class="alumni-item"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ6ajTKym_BkFxcuuuWpVpO_ln33Rbp4NNBzg&s" alt="APAD" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><div class="stakeholder-fallback" style="display:none">APAD</div></div>
+          </div>
+
+          <!-- PAGE 2: entries 8–14 -->
+          <div class="alumni-page">
+            <div class="alumni-item"><img src="https://utusantv.com/wp-content/uploads/2023/10/KPKM.jpeg" alt="KPKM" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><div class="stakeholder-fallback" style="display:none">KPKM</div></div>
+            <div class="alumni-item"><img src="https://www.jpj.gov.my/wp-content/uploads/2022/04/JPJLogo.png" alt="JPJ" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><div class="stakeholder-fallback" style="display:none">JPJ</div></div>
+            <div class="alumni-item"><img src="https://www.iaphworldports.org/iaph-md/directory/storage/uploads/logo/20231213_6fcf471d-2b91-44d9-a1fe-89d15989da53/Penang-Port-Commission.png" alt="Penang Port Commission" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><div class="stakeholder-fallback" style="display:none">Penang Port Commission</div></div>
+            <div class="alumni-item"><img src="https://www.westportsholdings.com/wp-content/uploads/2021/02/unnamed-copy.png" alt="Pelabuhan Klang" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><div class="stakeholder-fallback" style="display:none">Pelabuhan Klang</div></div>
+            <div class="alumni-item"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSPAlZMt1Dpf-MYbSF_d6hFDuyWiahY7EoyWg&s" alt="KUSKOP" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><div class="stakeholder-fallback" style="display:none">KUSKOP</div></div>
+            <div class="alumni-item"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ7fT8Julo91als-tn3qvXkKRQ5p70Lflr2vg&s" alt="JPNIN KRT" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><div class="stakeholder-fallback" style="display:none">JPNIN KRT</div></div>
+            <div class="alumni-item"><img src="https://upload.wikimedia.org/wikipedia/ms/b/b4/BSN.png" alt="BSN" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><div class="stakeholder-fallback" style="display:none">BSN</div></div>
+          </div>
+
+          <!-- PAGE 3: entries 15–21 -->
+          <div class="alumni-page">
+            <div class="alumni-item"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTiOVMtldLMpFZ2DEEmjBEHj27qp9os7oP6TA&s" alt="UUM" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><div class="stakeholder-fallback" style="display:none">UUM Lecturers &amp; Students</div></div>
+            <div class="alumni-item"><img src="https://www.uthm.edu.my/en/downloads/uthm-official-logo/26-logo-rasmi-uthm/file" alt="UTHM" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><div class="stakeholder-fallback" style="display:none">UTHM Staff</div></div>
+            <div class="alumni-item"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQOicFKzjQKbXPIPcxElXgT1aamf1ibEgJxZg&s" alt="Delta Semarak" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><div class="stakeholder-fallback" style="display:none">Delta Semarak</div></div>
+            <div class="alumni-item"><img src="https://vectorise.net/logo/wp-content/uploads/2019/08/Logo-Universiti-Tenaga-Nasional-UNITEN.png" alt="UNITEN Bangi" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><div class="stakeholder-fallback" style="display:none">UNITEN Bangi</div></div>
+            <div class="alumni-item">
+              <img src="https://vectorseek.com/wp-content/uploads/2023/09/Perkeso-Socso-Logo-Vector.svg-.png" alt="PERKESO" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+              <div class="stakeholder-fallback" style="display:none">PERKESO</div>
+            </div>
+            <div class="alumni-item"><img src="https://convocation.aiu.edu.my/wp-content/uploads/2021/10/cropped-AIU-Official-Logo-01.png" alt="AIU" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><div class="stakeholder-fallback" style="display:none">AIU</div></div>
+            <div class="alumni-item"><img src="https://www.unitar.my/wp-content/uploads/2024/12/UNITAR-University.png" alt="UNITAR" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><div class="stakeholder-fallback" style="display:none">UNITAR</div></div>
+          </div>
+
+          <!-- PAGE 4: entries 22–28 -->
+          <div class="alumni-page">
+            <div class="alumni-item"><img src="https://media.licdn.com/dms/image/v2/C560BAQFtb7geu7Bbzg/company-logo_200_200/company-logo_200_200/0/1630630676793?e=2147483647&v=beta&t=yPtXwG-Szc_UKZEODle_ch88WdVDF-S3Wy_kxwjUCaw" alt="Kolej Matrikulasi Kejuruteraan Johor" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><div class="stakeholder-fallback" style="display:none">Kol. Mat. Kejuruteraan Johor</div></div>
+            <div class="alumni-item"><img src="https://www.rc.my/wp-content/uploads/2024/04/KVSA-1.webp" alt="Kolej Vokasional Shah Alam" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><div class="stakeholder-fallback" style="display:none">KV Shah Alam</div></div>
+            <div class="alumni-item"><img src="https://kkjelebu.mypolycc.edu.my/images/00%20-%20Utama/logo_KKJU.png" alt="Kolej Komuniti Jelebu" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><div class="stakeholder-fallback" style="display:none">KK Jelebu</div></div>
+            <div class="alumni-item"><img src="https://vectorise.net/logo/wp-content/uploads/2011/01/logo-giat-mara.png" alt="GIATMARA Cheras" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><div class="stakeholder-fallback" style="display:none">GIATMARA Cheras</div></div>
+            <div class="alumni-item"><img src="https://mara.b-cdn.net/wp-content/uploads/2019/08/tysa-01-1-1030x427.png" alt="Institut Kemahiran Lumut" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><div class="stakeholder-fallback" style="display:none">IK Lumut</div></div>
+            <div class="alumni-item"><img src="#" alt="GIATMARA Putrajaya" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><div class="stakeholder-fallback" style="display:none">GIATMARA Putrajaya</div></div>
+            <div class="alumni-item"><img src="https://online.anyflip.com/mprll/accountlogo.png" alt="Teacher Professionalism Division (BPG)" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><div class="stakeholder-fallback" style="display:none">BPG</div></div>
+          </div>
+
+          <!-- PAGE 5: entries 29–30 (partial page) -->
+          <div class="alumni-page">
+            <div class="alumni-item"><img src="https://secondsonsarts.com/wp-content/uploads/2025/07/ADTEC-KEMAMAN.png" alt="ADTEC Kemaman" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><div class="stakeholder-fallback" style="display:none">ADTEC Kemaman</div></div>
+            <div class="alumni-item"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQmbGSBr-gAjiS6CpZJT8IqiRQmPA2Dn3mjaw&s" alt="Kolej Matrikulasi Labuan" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><div class="stakeholder-fallback" style="display:none">Kol. Mat. Labuan</div></div>
+            <!-- Also re-include the ones we had logos for originally -->
+            <div class="alumni-item"><img src="https://www.pahang.gov.my/pahang/resources/jataphg.png" alt="SUK Pahang" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><div class="stakeholder-fallback" style="display:none">SUK Pahang</div></div>
+            <div class="alumni-item"><img src="https://www.petra.gov.my/assets/img/logo-petra2.png" alt="PETRA" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><div class="stakeholder-fallback" style="display:none">PETRA</div></div>
+            <div class="alumni-item"><img src="https://mamz.com.my/wp-content/uploads/2024/02/Logo_Rasmi_KKM.png" alt="KKM" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><div class="stakeholder-fallback" style="display:none">KKM</div></div>
+          </div>
+
+        </div><!-- /alumni-slider-track -->
+      </div><!-- /alumni-slider-viewport -->
+
+      <!-- Slider controls -->
+      <div class="alumni-controls">
+        <button class="alumni-arrow" id="alumniPrev" onclick="alumniSlide(-1)" aria-label="Previous page">&#8592;</button>
+        <div class="alumni-dots" id="alumniDots"></div>
+        <span class="alumni-page-label" id="alumniPageLabel">1 / 5</span>
+        <button class="alumni-arrow" id="alumniNext" onclick="alumniSlide(1)" aria-label="Next page">&#8594;</button>
+      </div>
+    </div><!-- /alumni-slider-wrap -->
+
   </div>
 </section>
 
-<!-- ═══════════════════════════════════════════
-     COURSE CATALOG
-═══════════════════════════════════════════ -->
+<!-- COURSE CATALOG -->
 <section class="catalog-section" id="catalog">
   <div class="container">
     <div class="reveal">
@@ -652,7 +757,6 @@ footer{background:var(--white);border-top:1px solid var(--border);padding:48px 2
       <p class="section-sub">Select your profile below to see courses built for your goals. All programmes are available on Thinkific in English and Bahasa Malaysia.</p>
     </div>
 
-    <!-- Filter tabs -->
     <div class="catalog-tabs reveal reveal-delay-1">
       <button class="catalog-tab active" onclick="switchPanel('all',this)">All Products <span class="tab-count">12</span></button>
       <button class="catalog-tab" onclick="switchPanel('govt',this)">🏛️ Public Sector <span class="tab-count">2</span></button>
@@ -661,10 +765,8 @@ footer{background:var(--white);border-top:1px solid var(--border);padding:48px 2
       <button class="catalog-tab" onclick="switchPanel('students',this)">🎒 Students <span class="tab-count">2</span></button>
     </div>
 
-    <!-- ══ ALL PRODUCTS ══ -->
+    <!-- ALL PRODUCTS -->
     <div class="catalog-panel active" id="panel-all">
-
-      <!-- MYFUTUREJOBS AI+ -->
       <div class="vendor-group open" id="vg-myfuture">
         <div class="vendor-group-header" onclick="toggleVendorGroup('vg-myfuture')">
           <div class="vendor-group-avatar" style="background:linear-gradient(135deg,#1565C0,#1E88E5);">MF</div>
@@ -707,7 +809,6 @@ footer{background:var(--white);border-top:1px solid var(--border);padding:48px 2
         </div>
       </div>
 
-      <!-- AI READY MALAYSIA -->
       <div class="vendor-group open" id="vg-aiready">
         <div class="vendor-group-header" onclick="toggleVendorGroup('vg-aiready')">
           <div class="vendor-group-avatar" style="background:linear-gradient(135deg,#1A3560,#F5831F);">AR</div>
@@ -802,7 +903,6 @@ footer{background:var(--white);border-top:1px solid var(--border);padding:48px 2
         </div>
       </div>
 
-      <!-- AI FUTURE SKILLS ACCELERATOR -->
       <div class="vendor-group open" id="vg-aifsa">
         <div class="vendor-group-header" onclick="toggleVendorGroup('vg-aifsa')">
           <div class="vendor-group-avatar" style="background:linear-gradient(135deg,#1FA37B,#0B6B4A);">FS</div>
@@ -845,7 +945,6 @@ footer{background:var(--white);border-top:1px solid var(--border);padding:48px 2
         </div>
       </div>
 
-      <!-- CGM ACADEMY FOR YOUTH -->
       <div class="vendor-group open" id="vg-cgm">
         <div class="vendor-group-header" onclick="toggleVendorGroup('vg-cgm')">
           <div class="vendor-group-avatar" style="background:linear-gradient(135deg,#5B35AD,#8B52D4);">CG</div>
@@ -875,7 +974,6 @@ footer{background:var(--white);border-top:1px solid var(--border);padding:48px 2
         </div>
       </div>
 
-      <!-- AI FOR MY FUTURE -->
       <div class="vendor-group open" id="vg-aimyfuture">
         <div class="vendor-group-header" onclick="toggleVendorGroup('vg-aimyfuture')">
           <div class="vendor-group-avatar" style="background:linear-gradient(135deg,#0B1D3A,#1A3560);">PL</div>
@@ -904,10 +1002,9 @@ footer{background:var(--white);border-top:1px solid var(--border);padding:48px 2
           </div>
         </div>
       </div>
+    </div>
 
-    </div><!-- /panel-all -->
-
-    <!-- ══ PUBLIC SECTOR ══ -->
+    <!-- PUBLIC SECTOR -->
     <div class="catalog-panel" id="panel-govt">
       <div class="vendor-group open" id="vg-govt-pl">
         <div class="vendor-group-header" onclick="toggleVendorGroup('vg-govt-pl')">
@@ -952,7 +1049,7 @@ footer{background:var(--white);border-top:1px solid var(--border);padding:48px 2
       </div>
     </div>
 
-    <!-- ══ ENTREPRENEURS ══ -->
+    <!-- ENTREPRENEURS -->
     <div class="catalog-panel" id="panel-entrepreneur">
       <div class="vendor-group open" id="vg-ent-avpn">
         <div class="vendor-group-header" onclick="toggleVendorGroup('vg-ent-avpn')">
@@ -970,7 +1067,7 @@ footer{background:var(--white);border-top:1px solid var(--border);padding:48px 2
           <div class="nx-card">
             <div class="nx-card-meta"><span class="nx-vendor-pill">AVPN · ADB</span></div>
             <div class="nx-card-title">AI Opportunity Fund — Workforce (English)</div>
-            <div class="nx-card-desc">For working professionals and entrepreneurs. Apply AI for smarter business decisions, market growth, and operational efficiency. Supported by AVPN, Google.org, and ADB.</div>
+            <div class="nx-card-desc">For working professionals and entrepreneurs. Apply AI for smarter business decisions, market growth, and operational efficiency.</div>
             <div class="nx-card-stats">
               <div class="nx-rating"><span class="nx-star">★</span> 4.7 <span class="nx-rating-count">(189)</span></div>
               <div class="nx-enrolled">👥 5,300+ enrolled</div>
@@ -997,7 +1094,7 @@ footer{background:var(--white);border-top:1px solid var(--border);padding:48px 2
       </div>
     </div>
 
-    <!-- ══ EDUCATORS ══ -->
+    <!-- EDUCATORS -->
     <div class="catalog-panel" id="panel-educator">
       <div class="vendor-group open" id="vg-edu-avpn">
         <div class="vendor-group-header" onclick="toggleVendorGroup('vg-edu-avpn')">
@@ -1015,7 +1112,7 @@ footer{background:var(--white);border-top:1px solid var(--border);padding:48px 2
           <div class="nx-card">
             <div class="nx-card-meta"><span class="nx-vendor-pill">AVPN · ADB</span></div>
             <div class="nx-card-title">AI Opportunity Fund — Education Workforce (English)</div>
-            <div class="nx-card-desc">Funded by AVPN, Google.org, and ADB. Designed for educators. Learn how to integrate AI tools into lesson planning, student assessment, and personalised learning experiences.</div>
+            <div class="nx-card-desc">Funded by AVPN, Google.org, and ADB. Designed for educators to integrate AI tools into lesson planning, student assessment, and personalised learning.</div>
             <div class="nx-card-stats">
               <div class="nx-rating"><span class="nx-star">★</span> 4.9 <span class="nx-rating-count">(221)</span></div>
               <div class="nx-enrolled">👥 6,700+ enrolled</div>
@@ -1028,7 +1125,7 @@ footer{background:var(--white);border-top:1px solid var(--border);padding:48px 2
           <div class="nx-card">
             <div class="nx-card-meta"><span class="nx-vendor-pill">AVPN · ADB</span></div>
             <div class="nx-card-title">AI Ready Malaysia — Edisi Pendidik</div>
-            <div class="nx-card-desc">Direka khusus untuk pendidik Malaysia. Pelajari cara mengintegrasikan alat AI seperti Microsoft Copilot ke dalam pengajaran dan menilai kemajuan pelajar dengan lebih tepat.</div>
+            <div class="nx-card-desc">Direka khusus untuk pendidik Malaysia. Pelajari cara mengintegrasikan alat AI seperti Microsoft Copilot ke dalam pengajaran dan menilai kemajuan pelajar.</div>
             <div class="nx-card-stats">
               <div class="nx-rating"><span class="nx-star">★</span> 4.8 <span class="nx-rating-count">(196)</span></div>
               <div class="nx-enrolled">👥 5,900+ enrolled</div>
@@ -1042,7 +1139,7 @@ footer{background:var(--white);border-top:1px solid var(--border);padding:48px 2
       </div>
     </div>
 
-    <!-- ══ STUDENTS ══ -->
+    <!-- STUDENTS -->
     <div class="catalog-panel" id="panel-students">
       <div class="vendor-group open" id="vg-stu-avpn">
         <div class="vendor-group-header" onclick="toggleVendorGroup('vg-stu-avpn')">
@@ -1060,7 +1157,7 @@ footer{background:var(--white);border-top:1px solid var(--border);padding:48px 2
           <div class="nx-card">
             <div class="nx-card-meta"><span class="nx-vendor-pill">AVPN · ADB</span></div>
             <div class="nx-card-title">AI Opportunity Fund — Asia Pacific (English)</div>
-            <div class="nx-card-desc">Funded by AVPN, Google.org &amp; ADB. Build foundational AI skills, responsible AI practices, and practical tools for your career. Includes a recognised certificate upon completion.</div>
+            <div class="nx-card-desc">Funded by AVPN, Google.org &amp; ADB. Build foundational AI skills, responsible AI practices, and practical tools for your career. Includes a recognised certificate.</div>
             <div class="nx-card-stats">
               <div class="nx-rating"><span class="nx-star">★</span> 4.8 <span class="nx-rating-count">(305)</span></div>
               <div class="nx-enrolled">👥 9,100+ enrolled</div>
@@ -1073,7 +1170,7 @@ footer{background:var(--white);border-top:1px solid var(--border);padding:48px 2
           <div class="nx-card">
             <div class="nx-card-meta"><span class="nx-vendor-pill">AVPN · ADB</span></div>
             <div class="nx-card-title">AI Ready Malaysia — Edisi Pelajar</div>
-            <div class="nx-card-desc">Program AI yang direka khusus untuk pelajar Malaysia. Pelajari kemahiran AI asas, penggunaan alat AI secara praktikal, dan cara memanfaatkan AI untuk kerjaya masa depan anda. Sijil diiktiraf tersedia.</div>
+            <div class="nx-card-desc">Program AI yang direka khusus untuk pelajar Malaysia. Pelajari kemahiran AI asas, penggunaan alat AI secara praktikal, dan cara memanfaatkan AI untuk kerjaya masa depan anda.</div>
             <div class="nx-card-stats">
               <div class="nx-rating"><span class="nx-star">★</span> 4.9 <span class="nx-rating-count">(267)</span></div>
               <div class="nx-enrolled">👥 7,800+ enrolled</div>
@@ -1215,7 +1312,7 @@ footer{background:var(--white);border-top:1px solid var(--border);padding:48px 2
 </footer>
 
 <script>
-// ─── Catalog tab switching ───────────────────────────────
+/* ── Catalog tab switching ── */
 function switchPanel(panelId, tabEl) {
   document.querySelectorAll('.catalog-tab').forEach(t => t.classList.remove('active'));
   document.querySelectorAll('.catalog-panel').forEach(p => p.classList.remove('active'));
@@ -1223,13 +1320,12 @@ function switchPanel(panelId, tabEl) {
   document.getElementById('panel-' + panelId).classList.add('active');
 }
 
-// ─── Vendor group accordion ──────────────────────────────
+/* ── Vendor group accordion ── */
 function toggleVendorGroup(id) {
-  const group = document.getElementById(id);
-  group.classList.toggle('open');
+  document.getElementById(id).classList.toggle('open');
 }
 
-// ─── News extra toggle ───────────────────────────────────
+/* ── News extra toggle ── */
 function toggleExtraNews() {
   const wrap = document.getElementById('newsExtraWrap');
   const card = document.getElementById('newsCtaCard');
@@ -1238,18 +1334,78 @@ function toggleExtraNews() {
   card.classList.toggle('open');
   if (!isOpen) { setTimeout(() => { wrap.scrollIntoView({ behavior:'smooth', block:'nearest' }); }, 100); }
 }
+/* ── Alumni Slider ── */
+(function() {
+  const track = document.getElementById('alumniTrack');
+  const pages = track ? track.querySelectorAll('.alumni-page') : [];
+  const totalPages = pages.length;
+  let current = 0;
+  let autoTimer = null;
+  const AUTO_INTERVAL = 4000; // ms between auto-slides
 
-// ─── Scroll reveal ───────────────────────────────────────
+  function buildDots() {
+    const dotsEl = document.getElementById('alumniDots');
+    if (!dotsEl) return;
+    dotsEl.innerHTML = '';
+    for (let i = 0; i < totalPages; i++) {
+      const btn = document.createElement('button');
+      btn.className = 'alumni-dot' + (i === 0 ? ' active' : '');
+      btn.setAttribute('aria-label', 'Page ' + (i + 1));
+      btn.addEventListener('click', function() { goTo(i); resetAuto(); });
+      dotsEl.appendChild(btn);
+    }
+  }
+
+  function updateUI() {
+    if (!track) return;
+    track.style.transform = 'translateX(-' + (current * 100) + '%)';
+    const label = document.getElementById('alumniPageLabel');
+    if (label) label.textContent = (current + 1) + ' / ' + totalPages;
+    const prevBtn = document.getElementById('alumniPrev');
+    const nextBtn = document.getElementById('alumniNext');
+    if (prevBtn) prevBtn.disabled = false; // loop — never disable
+    if (nextBtn) nextBtn.disabled = false;
+    document.querySelectorAll('.alumni-dot').forEach((d, i) => d.classList.toggle('active', i === current));
+  }
+
+  function goTo(n) {
+    current = ((n % totalPages) + totalPages) % totalPages; // wrap
+    updateUI();
+  }
+
+  function startAuto() {
+    autoTimer = setInterval(function() { goTo(current + 1); }, AUTO_INTERVAL);
+  }
+
+  function resetAuto() {
+    clearInterval(autoTimer);
+    startAuto();
+  }
+
+  window.alumniSlide = function(dir) { goTo(current + dir); resetAuto(); };
+
+  buildDots();
+  updateUI();
+  startAuto();
+
+  // Pause on hover
+  const wrap = document.querySelector('.alumni-slider-wrap');
+  if (wrap) {
+    wrap.addEventListener('mouseenter', function() { clearInterval(autoTimer); });
+    wrap.addEventListener('mouseleave', function() { startAuto(); });
+  }
+})();
+/* ── Scroll reveal ── */
 const revObs = new IntersectionObserver((entries) => {
   entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('in'); });
 }, { threshold: 0.06 });
 document.querySelectorAll('.reveal').forEach(el => revObs.observe(el));
 
-// ─── Nav scroll class ────────────────────────────────────
+/* ── Nav scroll class ── */
 const nav = document.getElementById('main-nav');
 window.addEventListener('scroll', () => { nav.classList.toggle('scrolled', window.scrollY > 40); }, { passive:true });
 
-// ─── Count-up animation ──────────────────────────────────
+/* ── Count-up animation ── */
 const counters = document.querySelectorAll('.stat-num[data-target]');
 const cObs = new IntersectionObserver((entries) => {
   entries.forEach(e => {
@@ -1266,7 +1422,7 @@ const cObs = new IntersectionObserver((entries) => {
 }, { threshold: 0.5 });
 counters.forEach(c => cObs.observe(c));
 
-// ─── Smooth scroll for anchor links ─────────────────────
+/* ── Smooth scroll for anchor links ── */
 document.querySelectorAll('a[href^="#"]').forEach(a => {
   a.addEventListener('click', e => {
     const href = a.getAttribute('href'); if (href === '#') return;
