@@ -210,6 +210,7 @@ nav.scrolled{box-shadow:0 2px 20px rgba(0,0,0,0.07);}
 .news-extra-wrap.open .news-extra-card:nth-child(5){transition-delay:0.33s;}
 .news-extra-card:hover{transform:translateY(-4px);box-shadow:0 20px 50px rgba(0,0,0,0.15);}
 .news-extra-card img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;}
+
 /* ─── PARTNERS SECTION ──────────────────────────────────── */
 .partners-section{padding:64px 0;}
 @media(min-width:640px){.partners-section{padding:80px 0;}}
@@ -245,15 +246,14 @@ nav.scrolled{box-shadow:0 2px 20px rgba(0,0,0,0.07);}
 .strategic-item:hover{transform:translateY(-3px);}
 .strategic-item img{
   display:block;
-  width:auto;
+  width:120px;
   height:80px;
-  max-width:140px;
   object-fit:contain;
   object-position:center;
 }
 @media(min-width:640px){
   .strategic-item{min-height:140px;}
-  .strategic-item img{height:96px;max-width:160px;}
+  .strategic-item img{width:150px;height:96px;}
 }
 
 /* ─── ALUMNI SLIDER ─── */
@@ -286,15 +286,14 @@ nav.scrolled{box-shadow:0 2px 20px rgba(0,0,0,0.07);}
 .alumni-item:hover{transform:translateY(-3px);}
 .alumni-item img{
   display:block;
-  width:auto;
+  width:120px;
   height:80px;
-  max-width:140px;
   object-fit:contain;
   object-position:center;
 }
 @media(min-width:640px){
   .alumni-item{min-height:140px;}
-  .alumni-item img{height:96px;max-width:160px;}
+  .alumni-item img{width:150px;height:96px;}
 }
 
 .stakeholder-fallback{
@@ -623,7 +622,7 @@ footer{background:var(--white);border-top:1px solid var(--border);padding:48px 2
       <div class="news-extra-card"><img src="https://www.businesstoday.com.my/wp-content/uploads/2025/04/CnP_21042025_151811-1024x764.jpg" alt="Business Today" /><div class="news-card-overlay"></div><div class="news-card-body"><div class="news-card-tag">Business Today</div><div class="news-card-title">Pepper Labs, Microsoft Target 800,000 Malaysians For AI Fluency By 2025</div><a href="https://www.businesstoday.com.my/2025/04/21/pepper-labs-microsoft-target-800000-malaysians-for-ai-fluency-by-2025/" class="news-card-link">Learn More <div class="news-card-link-icon">↓</div></a></div></div>
       <div class="news-extra-card"><img src="https://cdnx.premiumread.com/?url=https://www.malaymail.com/malaymail/uploads/images/2025/08/05/292189.jpg&w=1000&q=100&f=jpg&t=6" alt="Malaymail" /><div class="news-card-overlay"></div><div class="news-card-body"><div class="news-card-tag">Malaymail</div><div class="news-card-title">Perkeso and Pepper Labs partner to upskill unemployed graduates through Google Career Certificates Scholarships</div><a href="https://www.malaymail.com/news/life/2025/08/05/perkeso-and-pepper-labs-partner-to-upskill-unemployed-graduates-through-google-career-certificates-scholarships/186547" class="news-card-link">Learn More <div class="news-card-link-icon">↓</div></a></div></div>
       <div class="news-extra-card"><img src="https://static.wixstatic.com/media/d65831_f941b94d01984882aa647e796e47c7ec~mv2.jpg/v1/fill/w_925,h_694,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/d65831_f941b94d01984882aa647e796e47c7ec~mv2.jpg" alt="Nabalu News" /><div class="news-card-overlay"></div><div class="news-card-body"><div class="news-card-tag">Nabalu News</div><div class="news-card-title">MINDET to launch AI Programme for MSME entrepreneurs: Ewon</div><a href="https://www.nabalunews.com/post/mindet-to-launch-ai-programme-for-msme-entrepreneurs-ewon" class="news-card-link">Learn More <div class="news-card-link-icon">↓</div></a></div></div>
-      <div class="news-extra-card"><img src="https://i.newscdn.net/publisher-c1a3f893382d2b2f8a9aa22a654d9c97/2024/12/b14e03f0b27ff5cf773b52e1ba55654c.png=s600" alt="Malaysiakini" /><div class="news-card-overlay"></div><div class="news-card-body"><div class="news-card-tag">Malaysiakini</div><div class="news-card-title">Pepper Labs join forces with Khazanah Nasional to Address Youth Unemployment in Malaysia</div><a href="https://m.malaysiakini.com/announcement/728071" class="news-card-link">Learn More <div class="news-card-link-icon">↓</div></a></div></div>  
+      <div class="news-extra-card"><img src="https://i.newscdn.net/publisher-c1a3f893382d2b2f8a9aa22a654d9c97/2024/12/b14e03f0b27ff5cf773b52e1ba55654c.png=s600" alt="Malaysiakini" /><div class="news-card-overlay"></div><div class="news-card-body"><div class="news-card-tag">Malaysiakini</div><div class="news-card-title">Pepper Labs join forces with Khazanah Nasional to Address Youth Unemployment in Malaysia</div><a href="https://m.malaysiakini.com/announcement/728071" class="news-card-link">Learn More <div class="news-card-link-icon">↓</div></a></div></div>
     </div>
   </div>
 </section>
@@ -637,7 +636,7 @@ footer{background:var(--white);border-top:1px solid var(--border);padding:48px 2
       <p class="section-sub" style="margin:0 auto;text-align:justify;">Collaborating with leading ministries, agencies, and institutions to drive practical, responsible AI adoption across Malaysia — supporting MADANI governance, ARPA reform, and the AI Nation 2030 agenda.</p>
     </div>
 
-    <!-- Strategic Partners — enlarged logos -->
+    <!-- Strategic Partners -->
     <div class="partners-group-label reveal reveal-delay-1">Strategic Partners</div>
     <div class="strategic-grid reveal reveal-delay-2">
       <div class="strategic-item">
@@ -676,61 +675,56 @@ footer{background:var(--white);border-top:1px solid var(--border);padding:48px 2
       <div class="alumni-slider-viewport">
         <div class="alumni-slider-track" id="alumniTrack">
 
-          <!-- PAGE 1: entries 1–7 -->
+          <!-- PAGE 1 -->
           <div class="alumni-page">
             <div class="alumni-item"><img src="https://residensiwilayah.jwp.gov.my/images/kwp-logo.png" alt="JWP" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><div class="stakeholder-fallback" style="display:none">JWP</div></div>
             <div class="alumni-item"><img src="https://www.mitra.gov.my/images/MITRA.png" alt="MITRA" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><div class="stakeholder-fallback" style="display:none">MITRA</div></div>
-            <div class="alumni-item"><img src="https://www.kosmo.com.my/wp-content/uploads/2021/03/kpnlogoloader.png" alt="Kementerian Perpaduan" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><div class="stakeholder-fallback" style="display:none">Kementerian Perpaduan</div></div>
+            <div class="alumni-item"><img src="JABATAN PERDANA MENTERI JABATAN WILAYAH PERSEKUTUAN.png" alt="Kementerian Perpaduan" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><div class="stakeholder-fallback" style="display:none">Kementerian Perpaduan</div></div>
             <div class="alumni-item"><img src="https://dpn.mot.gov.my/portal/images/jata.png" alt="Kementerian Pengangkutan" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><div class="stakeholder-fallback" style="display:none">Kementerian Pengangkutan</div></div>
-            <div class="alumni-item"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQyq--GXwQg9tCMd6jCbq9mOyTZpO06D2xLfQ&s" alt="Jabatan Audit Negara" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><div class="stakeholder-fallback" style="display:none">Jabatan Audit Negara</div></div>
+            <div class="alumni-item"><img src="https://vectorise.net/logo/wp-content/uploads/2009/10/Logo-Jabatan-Audit-Negara-Malaysia.png" alt="Jabatan Audit Negara" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><div class="stakeholder-fallback" style="display:none">Jabatan Audit Negara</div></div>
             <div class="alumni-item"><img src="https://www.nicepng.com/png/full/977-9774684_jabatan-bomba-dan-penyelamat-malaysia-logo-vector-malaysian.png" alt="Bomba" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><div class="stakeholder-fallback" style="display:none">Bomba</div></div>
-            <div class="alumni-item"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ6ajTKym_BkFxcuuuWpVpO_ln33Rbp4NNBzg&s" alt="APAD" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><div class="stakeholder-fallback" style="display:none">APAD</div></div>
+            <div class="alumni-item"><img src="JABATAN PERDANA MENTERI JABATAN WILAYAH PERSEKUTUAN (2).png" alt="APAD" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><div class="stakeholder-fallback" style="display:none">APAD</div></div>
           </div>
 
-          <!-- PAGE 2: entries 8–14 -->
+          <!-- PAGE 2 -->
           <div class="alumni-page">
-            <div class="alumni-item"><img src="https://utusantv.com/wp-content/uploads/2023/10/KPKM.jpeg" alt="KPKM" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><div class="stakeholder-fallback" style="display:none">KPKM</div></div>
+            <div class="alumni-item"><img src="JABATAN PERDANA MENTERI JABATAN WILAYAH PERSEKUTUAN (3).png" alt="KPKM" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><div class="stakeholder-fallback" style="display:none;">KPKM</div></div>
             <div class="alumni-item"><img src="https://www.jpj.gov.my/wp-content/uploads/2022/04/JPJLogo.png" alt="JPJ" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><div class="stakeholder-fallback" style="display:none">JPJ</div></div>
             <div class="alumni-item"><img src="https://www.iaphworldports.org/iaph-md/directory/storage/uploads/logo/20231213_6fcf471d-2b91-44d9-a1fe-89d15989da53/Penang-Port-Commission.png" alt="Penang Port Commission" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><div class="stakeholder-fallback" style="display:none">Penang Port Commission</div></div>
             <div class="alumni-item"><img src="https://www.westportsholdings.com/wp-content/uploads/2021/02/unnamed-copy.png" alt="Pelabuhan Klang" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><div class="stakeholder-fallback" style="display:none">Pelabuhan Klang</div></div>
-            <div class="alumni-item"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSPAlZMt1Dpf-MYbSF_d6hFDuyWiahY7EoyWg&s" alt="KUSKOP" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><div class="stakeholder-fallback" style="display:none">KUSKOP</div></div>
+            <div class="alumni-item"><img src="JABATAN PERDANA MENTERI JABATAN WILAYAH PERSEKUTUAN (4).png" alt="KUSKOP" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><div class="stakeholder-fallback" style="display:none">KUSKOP</div></div>
             <div class="alumni-item"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ7fT8Julo91als-tn3qvXkKRQ5p70Lflr2vg&s" alt="JPNIN KRT" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><div class="stakeholder-fallback" style="display:none">JPNIN KRT</div></div>
             <div class="alumni-item"><img src="https://upload.wikimedia.org/wikipedia/ms/b/b4/BSN.png" alt="BSN" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><div class="stakeholder-fallback" style="display:none">BSN</div></div>
           </div>
 
-          <!-- PAGE 3: entries 15–21 -->
+          <!-- PAGE 3 -->
           <div class="alumni-page">
             <div class="alumni-item"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTiOVMtldLMpFZ2DEEmjBEHj27qp9os7oP6TA&s" alt="UUM" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><div class="stakeholder-fallback" style="display:none">UUM Lecturers &amp; Students</div></div>
             <div class="alumni-item"><img src="https://www.uthm.edu.my/en/downloads/uthm-official-logo/26-logo-rasmi-uthm/file" alt="UTHM" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><div class="stakeholder-fallback" style="display:none">UTHM Staff</div></div>
             <div class="alumni-item"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQOicFKzjQKbXPIPcxElXgT1aamf1ibEgJxZg&s" alt="Delta Semarak" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><div class="stakeholder-fallback" style="display:none">Delta Semarak</div></div>
             <div class="alumni-item"><img src="https://vectorise.net/logo/wp-content/uploads/2019/08/Logo-Universiti-Tenaga-Nasional-UNITEN.png" alt="UNITEN Bangi" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><div class="stakeholder-fallback" style="display:none">UNITEN Bangi</div></div>
-            <div class="alumni-item">
-              <img src="https://vectorseek.com/wp-content/uploads/2023/09/Perkeso-Socso-Logo-Vector.svg-.png" alt="PERKESO" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
-              <div class="stakeholder-fallback" style="display:none">PERKESO</div>
-            </div>
+            <div class="alumni-item"><img src="https://vectorseek.com/wp-content/uploads/2023/09/Perkeso-Socso-Logo-Vector.svg-.png" alt="PERKESO" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><div class="stakeholder-fallback" style="display:none">PERKESO</div></div>
             <div class="alumni-item"><img src="https://convocation.aiu.edu.my/wp-content/uploads/2021/10/cropped-AIU-Official-Logo-01.png" alt="AIU" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><div class="stakeholder-fallback" style="display:none">AIU</div></div>
             <div class="alumni-item"><img src="https://www.unitar.my/wp-content/uploads/2024/12/UNITAR-University.png" alt="UNITAR" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><div class="stakeholder-fallback" style="display:none">UNITAR</div></div>
           </div>
 
-          <!-- PAGE 4: entries 22–28 -->
+          <!-- PAGE 4 -->
           <div class="alumni-page">
             <div class="alumni-item"><img src="https://media.licdn.com/dms/image/v2/C560BAQFtb7geu7Bbzg/company-logo_200_200/company-logo_200_200/0/1630630676793?e=2147483647&v=beta&t=yPtXwG-Szc_UKZEODle_ch88WdVDF-S3Wy_kxwjUCaw" alt="Kolej Matrikulasi Kejuruteraan Johor" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><div class="stakeholder-fallback" style="display:none">Kol. Mat. Kejuruteraan Johor</div></div>
             <div class="alumni-item"><img src="https://www.rc.my/wp-content/uploads/2024/04/KVSA-1.webp" alt="Kolej Vokasional Shah Alam" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><div class="stakeholder-fallback" style="display:none">KV Shah Alam</div></div>
             <div class="alumni-item"><img src="https://kkjelebu.mypolycc.edu.my/images/00%20-%20Utama/logo_KKJU.png" alt="Kolej Komuniti Jelebu" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><div class="stakeholder-fallback" style="display:none">KK Jelebu</div></div>
             <div class="alumni-item"><img src="https://vectorise.net/logo/wp-content/uploads/2011/01/logo-giat-mara.png" alt="GIATMARA Cheras" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><div class="stakeholder-fallback" style="display:none">GIATMARA Cheras</div></div>
             <div class="alumni-item"><img src="https://mara.b-cdn.net/wp-content/uploads/2019/08/tysa-01-1-1030x427.png" alt="Institut Kemahiran Lumut" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><div class="stakeholder-fallback" style="display:none">IK Lumut</div></div>
-            <div class="alumni-item"><img src="#" alt="GIATMARA Putrajaya" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><div class="stakeholder-fallback" style="display:none">GIATMARA Putrajaya</div></div>
+            <div class="alumni-item"><img src="JABATAN PERDANA MENTERI JABATAN WILAYAH PERSEKUTUAN (6).png" alt="KKM" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><div class="stakeholder-fallback" style="display:none">KKM</div></div>
             <div class="alumni-item"><img src="https://online.anyflip.com/mprll/accountlogo.png" alt="Teacher Professionalism Division (BPG)" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><div class="stakeholder-fallback" style="display:none">BPG</div></div>
           </div>
 
-          <!-- PAGE 5: entries 29–30 (partial page) -->
+          <!-- PAGE 5 -->
           <div class="alumni-page">
             <div class="alumni-item"><img src="https://secondsonsarts.com/wp-content/uploads/2025/07/ADTEC-KEMAMAN.png" alt="ADTEC Kemaman" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><div class="stakeholder-fallback" style="display:none">ADTEC Kemaman</div></div>
             <div class="alumni-item"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQmbGSBr-gAjiS6CpZJT8IqiRQmPA2Dn3mjaw&s" alt="Kolej Matrikulasi Labuan" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><div class="stakeholder-fallback" style="display:none">Kol. Mat. Labuan</div></div>
-            <!-- Also re-include the ones we had logos for originally -->
             <div class="alumni-item"><img src="https://www.pahang.gov.my/pahang/resources/jataphg.png" alt="SUK Pahang" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><div class="stakeholder-fallback" style="display:none">SUK Pahang</div></div>
-            <div class="alumni-item"><img src="https://www.petra.gov.my/assets/img/logo-petra2.png" alt="PETRA" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><div class="stakeholder-fallback" style="display:none">PETRA</div></div>
-            <div class="alumni-item"><img src="https://mamz.com.my/wp-content/uploads/2024/02/Logo_Rasmi_KKM.png" alt="KKM" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><div class="stakeholder-fallback" style="display:none">KKM</div></div>
+            <div class="alumni-item"><img src="JABATAN PERDANA MENTERI JABATAN WILAYAH PERSEKUTUAN (5).png" alt="PETRA" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><div class="stakeholder-fallback" style="display:none">PETRA</div></div>
           </div>
 
         </div><!-- /alumni-slider-track -->
@@ -1334,6 +1328,7 @@ function toggleExtraNews() {
   card.classList.toggle('open');
   if (!isOpen) { setTimeout(() => { wrap.scrollIntoView({ behavior:'smooth', block:'nearest' }); }, 100); }
 }
+
 /* ── Alumni Slider ── */
 (function() {
   const track = document.getElementById('alumniTrack');
@@ -1341,7 +1336,7 @@ function toggleExtraNews() {
   const totalPages = pages.length;
   let current = 0;
   let autoTimer = null;
-  const AUTO_INTERVAL = 4000; // ms between auto-slides
+  const AUTO_INTERVAL = 6000; // 6 seconds — slow enough to screenshot
 
   function buildDots() {
     const dotsEl = document.getElementById('alumniDots');
@@ -1363,13 +1358,13 @@ function toggleExtraNews() {
     if (label) label.textContent = (current + 1) + ' / ' + totalPages;
     const prevBtn = document.getElementById('alumniPrev');
     const nextBtn = document.getElementById('alumniNext');
-    if (prevBtn) prevBtn.disabled = false; // loop — never disable
+    if (prevBtn) prevBtn.disabled = false;
     if (nextBtn) nextBtn.disabled = false;
     document.querySelectorAll('.alumni-dot').forEach((d, i) => d.classList.toggle('active', i === current));
   }
 
   function goTo(n) {
-    current = ((n % totalPages) + totalPages) % totalPages; // wrap
+    current = ((n % totalPages) + totalPages) % totalPages;
     updateUI();
   }
 
@@ -1395,6 +1390,7 @@ function toggleExtraNews() {
     wrap.addEventListener('mouseleave', function() { startAuto(); });
   }
 })();
+
 /* ── Scroll reveal ── */
 const revObs = new IntersectionObserver((entries) => {
   entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('in'); });
