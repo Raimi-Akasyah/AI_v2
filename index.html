@@ -127,11 +127,13 @@ nav.scrolled{box-shadow:0 2px 20px rgba(0,0,0,0.07);}
 .stat-label{font-family:var(--font);font-size:12px;color:var(--text-300);margin-top:5px;font-weight:500;line-height:1.4;}
 
 /* MARQUEE */
-.marquee-wrap{border-top:1px solid var(--border);border-bottom:1px solid var(--border);background:var(--off-white);padding:14px 0;overflow:hidden;}
-.marquee-track{display:flex;gap:40px;animation:marquee 28s linear infinite;width:max-content;white-space:nowrap;}
-@media(min-width:640px){.marquee-track{gap:56px;}}
-.marquee-item{display:flex;align-items:center;gap:7px;font-family:var(--font);font-size:11px;font-weight:600;color:var(--text-300);letter-spacing:0.06em;text-transform:uppercase;}
-.marquee-item span{color:var(--orange);font-size:14px;}
+.marquee-wrap{border-top:1px solid var(--border);border-bottom:1px solid var(--border);background:var(--off-white);padding:16px 0;overflow:hidden;}
+.marquee-track{display:flex;gap:0;animation:marquee 60s linear infinite;width:max-content;white-space:nowrap;align-items:center;}
+.marquee-item{display:inline-flex;align-items:center;gap:8px;padding:0 28px;font-family:var(--font);font-size:13px;font-weight:700;color:var(--text-700);letter-spacing:0;}
+.marquee-item span{font-size:15px;flex-shrink:0;}
+.marquee-item strong{font-weight:700;color:var(--text-700);}
+.marquee-item .mq-sub{font-style:normal;font-weight:500;font-size:11px;color:var(--text-300);letter-spacing:0.02em;margin-left:2px;}
+.marquee-item.mq-div{padding:0 4px;color:var(--orange);font-size:10px;font-weight:900;}
 @keyframes marquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}
 
 /* SECTION */
@@ -745,26 +747,36 @@ footer{background:var(--white);border-top:1px solid var(--border);padding:48px 2
 <!-- MARQUEE -->
 <div class="marquee-wrap">
   <div class="marquee-track">
-    <div class="marquee-item"><span>🤖</span> Generative AI</div>
-    <div class="marquee-item"><span>📊</span> Data Analysis</div>
-    <div class="marquee-item"><span>🧠</span> Machine Learning</div>
-    <div class="marquee-item"><span>⚡</span> Agentic AI</div>
-    <div class="marquee-item"><span>🔐</span> Responsible AI</div>
-    <div class="marquee-item"><span>📈</span> Power BI</div>
-    <div class="marquee-item"><span>🌐</span> AI Governance</div>
-    <div class="marquee-item"><span>💼</span> Workforce AI</div>
-    <div class="marquee-item"><span>🏛️</span> Public Sector AI</div>
-    <div class="marquee-item"><span>🎓</span> AI Certification</div>
-    <div class="marquee-item"><span>🤖</span> Generative AI</div>
-    <div class="marquee-item"><span>📊</span> Data Analysis</div>
-    <div class="marquee-item"><span>🧠</span> Machine Learning</div>
-    <div class="marquee-item"><span>⚡</span> Agentic AI</div>
-    <div class="marquee-item"><span>🔐</span> Responsible AI</div>
-    <div class="marquee-item"><span>📈</span> Power BI</div>
-    <div class="marquee-item"><span>🌐</span> AI Governance</div>
-    <div class="marquee-item"><span>💼</span> Workforce AI</div>
-    <div class="marquee-item"><span>🏛️</span> Public Sector AI</div>
-    <div class="marquee-item"><span>🎓</span> AI Certification</div>
+    <!-- set 1 -->
+    <div class="marquee-item"><span>🎯</span> <strong>MYFUTUREJOBS AI+</strong> <em class="mq-sub">Ministry of Human Resources</em></div>
+    <div class="marquee-item mq-div">◆</div>
+    <div class="marquee-item"><span>🌏</span> <strong>AI Ready Malaysia</strong> <em class="mq-sub">AVPN · Google.org · ADB</em></div>
+    <div class="marquee-item mq-div">◆</div>
+    <div class="marquee-item"><span>📊</span> <strong>AI Future Skills Accelerator</strong> <em class="mq-sub">TalentCorp Malaysia</em></div>
+    <div class="marquee-item mq-div">◆</div>
+    <div class="marquee-item"><span>🧑‍💻</span> <strong>CGM Academy for Youth</strong> <em class="mq-sub">KBS Malaysia</em></div>
+    <div class="marquee-item mq-div">◆</div>
+    <div class="marquee-item"><span>🪟</span> <strong>AI For My Future</strong> <em class="mq-sub">Microsoft Malaysia</em></div>
+    <div class="marquee-item mq-div">◆</div>
+    <div class="marquee-item"><span>☁️</span> <strong>AWS @ NADI</strong> <em class="mq-sub">Amazon Web Services</em></div>
+    <div class="marquee-item mq-div">◆</div>
+    <div class="marquee-item"><span>🏛️</span> <strong>AI Masterclass for Public Sector</strong> <em class="mq-sub">Pepper Labs</em></div>
+    <div class="marquee-item mq-div">◆</div>
+    <!-- set 2 — exact duplicate for seamless loop -->
+    <div class="marquee-item"><span>🎯</span> <strong>MYFUTUREJOBS AI+</strong> <em class="mq-sub">Ministry of Human Resources</em></div>
+    <div class="marquee-item mq-div">◆</div>
+    <div class="marquee-item"><span>🌏</span> <strong>AI Ready Malaysia</strong> <em class="mq-sub">AVPN · Google.org · ADB</em></div>
+    <div class="marquee-item mq-div">◆</div>
+    <div class="marquee-item"><span>📊</span> <strong>AI Future Skills Accelerator</strong> <em class="mq-sub">TalentCorp Malaysia</em></div>
+    <div class="marquee-item mq-div">◆</div>
+    <div class="marquee-item"><span>🧑‍💻</span> <strong>CGM Academy for Youth</strong> <em class="mq-sub">KBS Malaysia</em></div>
+    <div class="marquee-item mq-div">◆</div>
+    <div class="marquee-item"><span>🪟</span> <strong>AI For My Future</strong> <em class="mq-sub">Microsoft Malaysia</em></div>
+    <div class="marquee-item mq-div">◆</div>
+    <div class="marquee-item"><span>☁️</span> <strong>AWS @ NADI</strong> <em class="mq-sub">Amazon Web Services</em></div>
+    <div class="marquee-item mq-div">◆</div>
+    <div class="marquee-item"><span>🏛️</span> <strong>AI Masterclass for Public Sector</strong> <em class="mq-sub">Pepper Labs</em></div>
+    <div class="marquee-item mq-div">◆</div>
   </div>
 </div>
 
@@ -1652,19 +1664,40 @@ function toggleExtraNews() {
 /* ── Peek Video Carousel ── */
 (function() {
   var TOTAL = 4;
-  var SLIDE_DURATION = 8000;
   var current = 0;
   var isMuted = true;
-  var autoTimer = null;
 
   function getVideo(i) { return document.getElementById('vcVideo' + i); }
   function getSlide(i) { return document.getElementById('vcSlide' + i); }
+
+  /* Remove the ended listener from every video */
+  function clearEndedListeners() {
+    for (var i = 0; i < TOTAL; i++) {
+      var v = getVideo(i);
+      if (v && v._vcEnded) {
+        v.removeEventListener('ended', v._vcEnded);
+        v._vcEnded = null;
+      }
+    }
+  }
+
+  /* Stop and reset all videos */
+  function stopAll() {
+    clearEndedListeners();
+    for (var i = 0; i < TOTAL; i++) {
+      var v = getVideo(i);
+      if (!v) continue;
+      v.pause();
+      v.muted = true;
+      v.loop = false;
+      v.currentTime = 0;
+    }
+  }
 
   /* Position all cards relative to current */
   function layoutCards() {
     var stage = document.getElementById('vcStage');
     var stageW = stage ? stage.offsetWidth : 400;
-    /* Active card centred */
     var cardW = getSlide(0) ? getSlide(0).offsetWidth : 260;
     var centre = (stageW - cardW) / 2;
 
@@ -1672,48 +1705,41 @@ function toggleExtraNews() {
       var slide = getSlide(i);
       if (!slide) continue;
 
-      /* Relative index wrapping */
       var rel = ((i - current) % TOTAL + TOTAL) % TOTAL;
-      if (rel > TOTAL / 2) rel = rel - TOTAL; /* -2,-1,0,1,2 */
+      if (rel > TOTAL / 2) rel = rel - TOTAL;
 
       slide.className = 'video-slide';
       slide.style.left = centre + 'px';
 
-      if (rel === 0) {
-        slide.classList.add('vc-active');
-      } else if (rel === -1) {
-        slide.classList.add('vc-prev');
-      } else if (rel === 1) {
-        slide.classList.add('vc-next');
-      } else {
-        slide.classList.add('vc-far');
-      }
+      if      (rel ===  0) slide.classList.add('vc-active');
+      else if (rel === -1) slide.classList.add('vc-prev');
+      else if (rel ===  1) slide.classList.add('vc-next');
+      else                 slide.classList.add('vc-far');
     }
 
-    /* Position mute button over active card */
     var muteBtn = document.getElementById('vcMuteBtn');
-    if (muteBtn) {
-      muteBtn.style.left = (centre + cardW - 44) + 'px';
-    }
+    if (muteBtn) muteBtn.style.left = (centre + cardW - 44) + 'px';
   }
 
-  function stopAll() {
-    for (var i = 0; i < TOTAL; i++) {
-      var v = getVideo(i);
-      if (!v) continue;
-      v.pause();
-      v.muted = true;
-      v.currentTime = 0;
-    }
-  }
-
+  /* Play current video; when it ends, advance automatically */
   function playActive() {
     var v = getVideo(current);
     if (!v) return;
     v.currentTime = 0;
     v.muted = isMuted;
-    v.loop = true;
+    v.loop = false; /* must NOT loop so the ended event fires */
+
+    /* Attach ended → next listener */
+    function onEnded() {
+      v.removeEventListener('ended', onEnded);
+      v._vcEnded = null;
+      goTo(current + 1);
+    }
+    v._vcEnded = onEnded;
+    v.addEventListener('ended', onEnded);
+
     v.play().catch(function() {
+      /* Autoplay blocked — retry muted */
       v.muted = true;
       isMuted = true;
       updateMuteBtn();
@@ -1732,6 +1758,7 @@ function toggleExtraNews() {
     });
   }
 
+  /* Core navigation — used by both auto-advance and arrow clicks */
   function goTo(n) {
     stopAll();
     current = ((n % TOTAL) + TOTAL) % TOTAL;
@@ -1741,13 +1768,9 @@ function toggleExtraNews() {
     playActive();
   }
 
-  function startAuto() {
-    clearInterval(autoTimer);
-    autoTimer = setInterval(function() { goTo(current + 1); }, SLIDE_DURATION);
-  }
-
-  window.vcSlide = function(dir) { goTo(current + dir); startAuto(); };
-  window.vcGoTo  = function(n)   { goTo(n); startAuto(); };
+  /* Arrow buttons and dot clicks */
+  window.vcSlide = function(dir) { goTo(current + dir); };
+  window.vcGoTo  = function(n)   { goTo(n); };
 
   window.vcToggleMute = function() {
     isMuted = !isMuted;
@@ -1756,7 +1779,7 @@ function toggleExtraNews() {
     updateMuteBtn();
   };
 
-  /* Touch / swipe */
+  /* Touch / swipe support */
   (function() {
     var stage = document.getElementById('vcStage');
     if (!stage) return;
@@ -1774,14 +1797,6 @@ function toggleExtraNews() {
     }, { passive: true });
   })();
 
-  /* Pause on hover */
-  (function() {
-    var wrap = document.getElementById('vcWrap');
-    if (!wrap) return;
-    wrap.addEventListener('mouseenter', function() { clearInterval(autoTimer); });
-    wrap.addEventListener('mouseleave', function() { startAuto(); });
-  })();
-
   /* Re-layout on resize */
   window.addEventListener('resize', function() { layoutCards(); });
 
@@ -1790,7 +1805,6 @@ function toggleExtraNews() {
     layoutCards();
     updateDots();
     playActive();
-    startAuto();
   });
 
 })();
